@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EXAM HELP</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width:600px) {
+      body{
+        padding: 20px;
+      }
+    }
+    .container {
+      background: linear-gradient(135deg, #fff 60%, #e3f0ff 100%);
+      box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+      border-radius: 20px;
+      padding: 40px 32px !important;
+      max-width: 480px;
+      width: 100%;
+      margin: auto;
+      transition: box-shadow 0.3s;
+      position: relative;
+      animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    h1 {
+      margin-bottom: 24px;
+      color: #0077ff;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    #progress-container {
+      width: 100%;
+      background: #e3e3e3;
+      height: 14px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      display: none;
+    }
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0077ff 60%, #74ebd5 100%);
+      transition: width 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    #timer {
+      text-align: right;
+      font-weight: 500;
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: #555;
+      display: none;
+    }
+    button {
+      margin: 10px 6px;
+      padding: 12px 28px;
+      border: none;
+      background: linear-gradient(90deg, #0077ff 60%, #74ebd5 100%);
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: inherit;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #0052cc 60%, #74ebd5 100%);
+      box-shadow: 0 4px 16px rgba(44,62,80,0.12);
+    }
+    #question-navigation {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    #question-navigation button {
+      width: 38px;
+      margin: 3px;
+      background-color: #f0f0f0;
+      color: #0077ff;
+      border-radius: 8px;
+      font-weight: 600;
+      border: 1px solid #e3e3e3;
+      transition: background 0.3s, color 0.3s;
+    }
+    #question-navigation button.active {
+      background-color: #0077ff;
+      color: white;
+      font-weight: bold;
+    }
+    #question-navigation button.select{
+      background-color: #74ebd5;
+      color: #0077ff;
+      font-weight: bold;
+    }
+    #result {
+      font-size: 22px;
+      margin-top: 18px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+    .summary {
+      background: #f9f9f9;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+    }
+    .correct { color: #4CAF50; font-weight: 600;}
+    .incorrect { color: #f44336; font-weight: 600;}
+    .summary-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    #prevBtn, #nextBtn{
+      display: none;
+    }
+    .correct-answer {
+      background-color: #4CAF50 !important;
+      color: white !important;
+    }
+    .wrong-answer {
+      background-color: #f44336 !important;
+      color: white !important;
+    }
+    .show-correct {
+      border: 2px solid #4CAF50 !important;
+      background-color: #a5d6a7 !important;
+    }
+    .option {
+      background: #f0f0f0;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+    }
+    .option:hover {
+      background: #e3f0ff;
+    }
+    .selected {
+      background: #a0c4ff !important;
+      font-weight: bold;
+      color: #0077ff;
+    }
+    /* Switch styles */
+    /* #feedback-toggle {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 15px;
+      user-select: none;
+    } */
+     #feedback-toggle {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 15px;
+      -webkit-user-select: none; /* For iOS Safari */
+      -moz-user-select: none;    /* For Firefox */
+      -ms-user-select: none;     /* For IE10+ */
+      user-select: none;
+}
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 54px;
+      height: 28px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #0077ff;
+      transition: .4s;
+      border-radius: 28px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    }
+    input:checked + .slider {
+      background-color: #74ebd5;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 18px 6px;
+        max-width: 98vw;
+      }
+      h1 { font-size: 1.3em;}
+      .option { font-size: 15px;}
+    }
+        .correct-answer {
+      background-color: #4CAF50 !important;
+      color: white !important;
+    }
+    .wrong-answer {
+      background-color: #f44336 !important;
+      color: white !important;
+    }
+    .selected {
+      background: #a0c4ff !important;
+      font-weight: bold;
+      color: #0077ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>EXAM HELP</h1>
+    
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <p id="timer"></p>
+
+    <button id="restartBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
+    <button id="retakeBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
+    <button id="startBtn" onclick="askNumberOfQuestions()">Start Quiz</button>
+    <div id="feedback-toggle">
+      <span>Immediate Feedback</span>
+      <label class="switch">
+        <input type="checkbox" id="feedbackSwitch">
+        <span class="slider"></span>
+      </label>
+      <span>Answers at the end</span>
+    </div>
+    <div id="quiz-container"></div>
+    <p id="questionCount" style="text-align: right;"></p>
+    <div id="navigation">
+      <button id="prevBtn" onclick="prevQuestion()" disabled>Previous</button>
+      <button id="submitBtn" onclick="confirmSubmit()" style="display: none;">Submit</button>
+      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    </div>
+    <!-- <div id="question-navigation"></div> -->
+    <p id="result"></p>
+    <div id="summary"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
