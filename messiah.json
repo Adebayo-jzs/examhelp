@@ -519,6 +519,274 @@
       ],
       "correct": "Father, Son, and Holy Spirit"
     }
+  ],
+  "chapter4": [
+    {
+      "question": "Who was the Old Testament prophet that foretold the birth of Jesus?",
+      "options": ["Jeremiah", "Isaiah", "Ezekiel", "Daniel"],
+      "correct": "Isaiah"
+    },
+    {
+      "question": "In Isaiah's prophecy, which confederation posed a threat to Judah?",
+      "options": ["Syria and Ephraim", "Egypt and Babylon", "Moab and Ammon", "Assyria and Persia"],
+      "correct": "Syria and Ephraim"
+    },
+    {
+      "question": "Who was the king of Judah during the crisis mentioned in Isaiah's prophecy?",
+      "options": ["Hezekiah", "Ahaz", "Uzziah", "Manasseh"],
+      "correct": "Ahaz"
+    },
+    {
+      "question": "What sign did Isaiah say would be given by the Lord?",
+      "options": ["A rainbow", "A pillar of fire", "A virgin will bear a son", "A great flood"],
+      "correct": "A virgin will bear a son"
+    },
+    {
+      "question": "The birth of Jesus was first announced to which group of people?",
+      "options": ["Kings", "Priests", "Shepherds", "Fishermen"],
+      "correct": "Shepherds"
+    },
+    {
+      "question": "Where was Mary living when she received the announcement of Jesus' birth?",
+      "options": ["Jerusalem", "Bethlehem", "Nazareth", "Jericho"],
+      "correct": "Nazareth"
+    },
+    {
+      "question": "What Roman decree brought Mary and Joseph to Bethlehem?",
+      "options": ["A census for taxation", "A religious festival", "A royal wedding", "A military draft"],
+      "correct": "A census for taxation"
+    },
+    {
+      "question": "Who was ruling Judea at the time of Jesus' birth?",
+      "options": ["Caesar Augustus", "Pontius Pilate", "Herod the Great", "Julius Caesar"],
+      "correct": "Herod the Great"
+    },
+    {
+      "question": "What significant event did Isaiah 7:14 predict?",
+      "options": ["The crucifixion of Jesus", "The resurrection of Jesus", "The virgin birth of Jesus", "The ascension of Jesus"],
+      "correct": "The virgin birth of Jesus"
+    },
+    {
+      "question": "Who was Elizabeth in relation to Mary?",
+      "options": ["Her sister", "Her cousin", "Her aunt", "Her friend"],
+      "correct": "Her cousin"
+    },
+    {
+      "question": "How did Herod react to the news of Jesus' birth?",
+      "options": ["He welcomed it", "He ignored it", "He ordered the killing of children", "He celebrated it"],
+      "correct": "He ordered the killing of children"
+    },
+    {
+      "question": "What gifts did the Wise Men bring to Jesus?",
+      "options": ["Gold, Silver, Myrrh", "Gold, Frankincense, Myrrh", "Silver, Frankincense, Myrrh", "Gold, Frankincense, Spices"],
+      "correct": "Gold, Frankincense, Myrrh"
+    },
+    {
+      "question": "How did the Wise Men learn of Jesus' birth?",
+      "options": ["Through an angelic vision", "By following a star", "Through scriptures", "By a prophetic dream"],
+      "correct": "By following a star"
+    },
+    {
+      "question": "What prophecy did the birth of Jesus fulfill according to Micah 5:2?",
+      "options": ["The Messiah would be born in Jerusalem", "The Messiah would be born in Bethlehem", "The Messiah would be born in Nazareth", "The Messiah would be born in Egypt"],
+      "correct": "The Messiah would be born in Bethlehem"
+    },
+    {
+      "question": "Who announced Jesus' birth to the shepherds?",
+      "options": ["John the Baptist", "An angel", "The Wise Men", "Mary"],
+      "correct": "An angel"
+    },
+    {
+      "question": "What was the main reason Mary and Joseph went to Bethlehem?",
+      "options": ["To attend a wedding", "To visit relatives", "To register for the census", "To escape Herod"],
+      "correct": "To register for the census"
+    },
+    {
+      "question": "Who gave the decree for the census?",
+      "options": ["Herod the Great", "Caesar Augustus", "Quirinius", "Pontius Pilate"],
+      "correct": "Caesar Augustus"
+    },
+    {
+      "question": "Who were the first to spread the news of Jesus' birth?",
+      "options": ["The priests", "The shepherds", "The Wise Men", "The Pharisees"],
+      "correct": "The shepherds"
+    },
+    {
+      "question": "What was the profession of Jesus according to the text?",
+      "options": ["Shepherd", "Carpenter", "Fisherman", "Priest"],
+      "correct": "Carpenter"
+    },
+    {
+      "question": "Who was Jesus' first human teacher?",
+      "options": ["Joseph", "Simeon", "Mary", "Elizabeth"],
+      "correct": "Joseph"
+    },
+    {
+      "question": "What title is given to Jesus that means 'God with us'?",
+      "options": ["Emmanuel", "Messiah", "Savior", "King"],
+      "correct": "Emmanuel"
+    },
+    {
+      "question": "Who recognized Jesus as the Messiah when He was presented at the temple?",
+      "options": ["Simeon", "Anna", "Both Simeon and Anna", "John the Baptist"],
+      "correct": "Both Simeon and Anna"
+    },
+    {
+      "question": "What was the name of the prophetess who spoke about Jesus at the temple?",
+      "options": ["Ruth", "Esther", "Anna", "Deborah"],
+      "correct": "Anna"
+    },
+    {
+      "question": "Where did Mary and Joseph flee to escape Herod's decree?",
+      "options": ["Nazareth", "Egypt", "Jerusalem", "Damascus"],
+      "correct": "Egypt"
+    },
+    {
+      "question": "What did the shepherds do after visiting Jesus?",
+      "options": ["Went to the temple", "Returned to their fields", "Built a shrine", "Told everyone they met"],
+      "correct": "Told everyone they met"
+    }
+  ],
+  "chapter5": [
+    {
+      "question": "What is the meaning of the Greek term 'baptizo'?",
+      "options": ["Pour", "Sprinkle", "Immerse", "Cleanse"],
+      "correct": "Immerse"
+    },
+    {
+      "question": "What does baptism symbolize according to Christian belief?",
+      "options": ["Jesus' death, burial, and resurrection", "Jesus' life and teachings", "Jesus' miracles", "Jesus' return"],
+      "correct": "Jesus' death, burial, and resurrection"
+    },
+    {
+      "question": "What type of ritual was practiced by the Essenes at Qumran?",
+      "options": ["Pouring", "Sprinkling", "Immersing", "Anointing"],
+      "correct": "Immersing"
+    },
+    {
+      "question": "What was John the Baptist’s primary message?",
+      "options": ["Love one another", "Repentance", "Charity", "Faith"],
+      "correct": "Repentance"
+    },
+    {
+      "question": "Who did John the Baptist call to be baptized?",
+      "options": ["Only Gentiles", "Only Jews", "Both Jews and Gentiles", "Only children"],
+      "correct": "Both Jews and Gentiles"
+    },
+    {
+      "question": "What significant act did Jesus perform at the beginning of His public ministry?",
+      "options": ["His baptism", "His first miracle", "His first sermon", "His first prayer"],
+      "correct": "His baptism"
+    },
+    {
+      "question": "What was John’s initial reaction to baptizing Jesus?",
+      "options": ["He was eager", "He was puzzled", "He refused", "He was indifferent"],
+      "correct": "He was puzzled"
+    },
+    {
+      "question": "How did Jesus respond to John’s hesitation to baptize Him?",
+      "options": [
+        "He insisted it was necessary to fulfill all righteousness",
+        "He asked John to pray instead",
+        "He chose someone else to baptize Him",
+        "He postponed the baptism"
+      ],
+      "correct": "He insisted it was necessary to fulfill all righteousness"
+    },
+    {
+      "question": "What was the significance of Jesus' baptism according to Ellen White?",
+      "options": [
+        "It confirmed John's ministry",
+        "It was unnecessary",
+        "It was symbolic only",
+        "It marked the end of John's ministry"
+      ],
+      "correct": "It confirmed John's ministry"
+    },
+    {
+      "question": "What major theological concept was demonstrated during Jesus' baptism?",
+      "options": ["The resurrection", "The ascension", "The Trinitarian nature of God", "The crucifixion"],
+      "correct": "The Trinitarian nature of God"
+    },
+    {
+      "question": "What descended on Jesus during His baptism?",
+      "options": ["A dove", "A raven", "A cloud", "A light"],
+      "correct": "A dove"
+    },
+    {
+      "question": "What did the voice from heaven say at Jesus’ baptism?",
+      "options": [
+        "This is my servant",
+        "This is my beloved Son, in whom I am well pleased",
+        "This is my prophet",
+        "This is the Messiah"
+      ],
+      "correct": "This is my beloved Son, in whom I am well pleased"
+    },
+    {
+      "question": "What does Jesus' baptism also signify besides His identification with sinners?",
+      "options": ["His anointing", "His crucifixion", "His temptation", "His resurrection"],
+      "correct": "His anointing"
+    },
+    {
+      "question": "In what year was Jesus baptized according to the prophecy of Daniel?",
+      "options": ["AD 25", "AD 26", "AD 27", "AD 28"],
+      "correct": "AD 27"
+    },
+    {
+      "question": "What historical event coincides with the prophecy given in Daniel 9:23-27?",
+      "options": ["The rebuilding of Jerusalem", "The fall of Jerusalem", "The reign of King Herod", "The exile to Babylon"],
+      "correct": "The rebuilding of Jerusalem"
+    },
+    {
+      "question": "How long was Jesus' public ministry after His baptism?",
+      "options": ["Two years", "Three years", "Three and a half years", "Four years"],
+      "correct": "Three and a half years"
+    },
+    {
+      "question": "What significant event marked the middle of the last prophetic week?",
+      "options": ["Jesus' resurrection", "Jesus' crucifixion", "Jesus' ascension", "The Last Supper"],
+      "correct": "Jesus' crucifixion"
+    },
+    {
+      "question": "Who was stoned marking the end of the prophecy timeline?",
+      "options": ["Stephen", "Peter", "Paul", "James"],
+      "correct": "Stephen"
+    },
+    {
+      "question": "What does immersion in baptism symbolize?",
+      "options": ["Cleansing", "Death and burial", "Anointing", "Blessing"],
+      "correct": "Death and burial"
+    },
+    {
+      "question": "Which is not a prerequisite to baptism?",
+      "options": ["Faith", "Instruction", "Repentance", "Wealth"],
+      "correct": "Wealth"
+    },
+    {
+      "question": "What does today's baptism symbolize according to Christian belief?",
+      "options": ["Acceptance of the church", "Acceptance of Christ", "Cleansing only", "Repentance only"],
+      "correct": "Acceptance of Christ"
+    },
+    {
+      "question": "What is necessary for baptism according to Mark 16:16?",
+      "options": ["Belief", "Repentance", "Wealth", "Knowledge"],
+      "correct": "Belief"
+    },
+    {
+      "question": "What significant event occurred at Pentecost related to baptism?",
+      "options": ["The first sermon", "The outpouring of the Holy Spirit", "Mass conversions", "The Last Supper"],
+      "correct": "The outpouring of the Holy Spirit"
+    },
+    {
+      "question": "What is invalid without the reception of the Holy Spirit?",
+      "options": ["Preaching", "Prayer", "Baptism", "Worship"],
+      "correct": "Baptism"
+    },
+    {
+      "question": "What does the act of coming up from the water symbolize in baptism?",
+      "options": ["Cleansing from sin", "Resurrection to new life", "Acceptance into the church", "Receiving the Holy Spirit"],
+      "correct": "Resurrection to new life"
+    }
   ]
-  
 }
