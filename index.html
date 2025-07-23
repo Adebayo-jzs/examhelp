@@ -16,11 +16,6 @@
       align-items: center;
       justify-content: center;
     }
-    @media (max-width:600px) {
-      body{
-        padding: 20px;
-      }
-    }
     .container {
       background: linear-gradient(135deg, #fff 60%, #e3f0ff 100%);
       box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
@@ -33,6 +28,7 @@
       position: relative;
       animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
     }
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.97);}
       to { opacity: 1; transform: scale(1);}
@@ -57,9 +53,22 @@
       background-color: #ACB6E5;
       width: fit-content;
     }
-    button {
+    @media (max-width:600px) {
+      body{
+        padding: 10px;
+      }
+      
+    }
+    button.chapter-tab{
       margin: 10px 6px;
-      padding: 12px 28px;
+
+    }
+    #navigation{
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 12px 20px;
       border: none;
       background: linear-gradient(90deg, #0077ff 60%, #74ebd5 100%);
       color: white;
