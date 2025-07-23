@@ -1,0 +1,524 @@
+{
+  "chapter1": [
+    {
+      "question": "During which period did the Inter-testamental Period occur?",
+      "options": [
+        "Between Exodus and Deuteronomy",
+        "Between Malachi and Matthew",
+        "Between Acts and Romans",
+        "Between Genesis and Leviticus"
+      ],
+      "correct": "Between Malachi and Matthew"
+    },
+    {
+      "question": "How long was the Inter-testamental Period?",
+      "options": ["200 years", "300 years", "400 years", "500 years"],
+      "correct": "400 years"
+    },
+    {
+      "question": "What term is used to describe the period between the Old and New Testaments?",
+      "options": ["Intertestamental Period", "Pre-Christian Era", "Inter-Prophetic Period", "Historical Gap"],
+      "correct": "Intertestamental Period"
+    },
+    {
+      "question": "When was the canonization of the New Testament concluded?",
+      "options": ["AD 397", "AD 200", "AD 100", "AD 500"],
+      "correct": "AD 397"
+    },
+    {
+      "question": "What event marked the beginning of the New Testament period?",
+      "options": ["The birth of Jesus", "The death of Jesus", "The resurrection of Jesus", "The ascension of Jesus"],
+      "correct": "The birth of Jesus"
+    },
+    {
+      "question": "What event marked the end of the New Testament period?",
+      "options": ["The birth of Jesus", "The death of Jesus", "The resurrection of Jesus", "The ascension of Jesus"],
+      "correct": "The ascension of Jesus"
+    },
+    {
+      "question": "Which ruler was appointed to oversee Palestine in AD 26-36?",
+      "options": ["Herod the Great", "Pontius Pilate", "Herod Antipas", "Herod Archelaus"],
+      "correct": "Pontius Pilate"
+    },
+    {
+      "question": "Which ruler ordered the death of all the baby boys in Bethlehem after the visit of the wise men?",
+      "options": ["Herod the Great", "Herod Antipas", "Herod Archelaus", "Herod Philip"],
+      "correct": "Herod the Great"
+    },
+    {
+      "question": "Who was known as the ruler of Galilee and Perea during Jesus' lifetime?",
+      "options": ["Herod the Great", "Herod Antipas", "Herod Archelaus", "Herod Philip"],
+      "correct": "Herod Antipas"
+    },
+    {
+      "question": "Who reigned over the southern parts of Palestine between BC 4-AD 6?",
+      "options": ["Herod the Great", "Herod Antipas", "Herod Archelaus", "Herod Philip"],
+      "correct": "Herod Archelaus"
+    },
+    {
+      "question": "Who was responsible for the destruction of the temple in AD 70?",
+      "options": ["Herod the Great", "Herod Antipas", "Pontius Pilate", "Romans"],
+      "correct": "Romans"
+    },
+    {
+      "question": "What is the name of the high priest mentioned in connection with Jesus' trial?",
+      "options": ["Annas", "Caiaphas", "Aaron", "Eli"],
+      "correct": "Caiaphas"
+    },
+    {
+      "question": "Which Jewish group adhered strictly to the Law of Moses and had a great zeal for their religion?",
+      "options": ["Sadducees", "Essenes", "Pharisees", "Zealots"],
+      "correct": "Pharisees"
+    },
+    {
+      "question": "Who was known for their rejection of newer traditions and belief in the Torah?",
+      "options": ["Essenes", "Sadducees", "Pharisees", "Herodians"],
+      "correct": "Sadducees"
+    },
+    {
+      "question": "What is the term used to describe the Jewish group that lived a communal lifestyle near the Dead Sea?",
+      "options": ["Pharisees", "Sadducees", "Essenes", "Zealots"],
+      "correct": "Essenes"
+    },
+    {
+      "question": "Which group among the Jews was strongly opposed to Roman rule?",
+      "options": ["Pharisees", "Sadducees", "Essenes", "Zealots"],
+      "correct": "Zealots"
+    },
+    {
+      "question": "Which group among the Jews did not believe in life after death or in angels and spirits?",
+      "options": ["Pharisees", "Sadducees", "Essenes", "Zealots"],
+      "correct": "Sadducees"
+    },
+    {
+      "question": "What were the Essenes known for preserving?",
+      "options": ["Artifacts", "Manuscripts", "Statues", "Pottery"],
+      "correct": "Manuscripts"
+    },
+    {
+      "question": "Which geographical region was Jesus primarily active in during his ministry?",
+      "options": ["Judea", "Galilee", "Samaria", "Decapolis"],
+      "correct": "Galilee"
+    },
+    {
+      "question": "In which region did Jesus grow up and live?",
+      "options": ["Judea", "Samaria", "Galilee", "Decapolis"],
+      "correct": "Galilee"
+    },
+    {
+      "question": "Which chapter of Matthew's Gospel records the visit of the wise men from the East?",
+      "options": ["Matthew 1", "Matthew 2", "Matthew 3", "Matthew 4"],
+      "correct": "Matthew 2"
+    },
+    {
+      "question": "Which verse in Matthew's Gospel records Herod ordering the death of the baby boys in Bethlehem?",
+      "options": ["Matthew 1:25", "Matthew 2:19", "Matthew 2:16", "Matthew 2:12"],
+      "correct": "Matthew 2:16"
+    },
+    {
+      "question": "In which chapter of Luke's Gospel is the birth of Jesus mentioned?",
+      "options": ["Luke 1", "Luke 2", "Luke 3", "Luke 4"],
+      "correct": "Luke 2"
+    },
+    {
+      "question": "What is the term used for the collection of books recognized as authoritative Scripture?",
+      "options": ["Canon", "Gospel", "Torah", "Testament"],
+      "correct": "Canon"
+    },
+    {
+      "question": "What was the primary language spoken by most Jews during the time of Jesus?",
+      "options": ["Hebrew", "Greek", "Aramaic", "Latin"],
+      "correct": "Aramaic"
+    }
+  ],
+  "chapter2": [
+    {
+      "question": "What is the definition of incarnation?",
+      "options": [
+        "God creating the world",
+        "God becoming human flesh",
+        "God speaking to prophets",
+        "God revealing Himself in dreams"
+      ],
+      "correct": "God becoming human flesh"
+    },
+    {
+      "question": "According to 1 Timothy 3:16, how is the mystery of godliness described?",
+      "options": [
+        "God was manifest in the flesh",
+        "God created the heavens",
+        "God gave laws to Moses",
+        "God parted the Red Sea"
+      ],
+      "correct": "God was manifest in the flesh"
+    },
+    {
+      "question": "Who is the ultimate author of the Bible?",
+      "options": ["Moses", "Paul", "God", "John"],
+      "correct": "God"
+    },
+    {
+      "question": "Which two Bible verses indicate the inspiration of the Scriptures?",
+      "options": [
+        "Genesis 1:1 and John 3:16",
+        "Psalms 23:1 and Romans 8:28",
+        "2 Peter 1:21 and 2 Timothy 3:16",
+        "Matthew 5:3 and Luke 6:20"
+      ],
+      "correct": "2 Peter 1:21 and 2 Timothy 3:16"
+    },
+    {
+      "question": "How does Apostle John describe the incarnation of Christ in John 1:14?",
+      "options": [
+        "The Word became a prophet",
+        "The Word became a spirit",
+        "The Word became flesh",
+        "The Word became a vision"
+      ],
+      "correct": "The Word became flesh"
+    },
+    {
+      "question": "What did Jesus mean when He said, 'I and my Father are one'?",
+      "options": [
+        "They have the same purpose",
+        "They are one in essence and nature",
+        "They are similar beings",
+        "They are two different gods"
+      ],
+      "correct": "They are one in essence and nature"
+    },
+    {
+      "question": "Who requested Jesus to show them the Father in John 14:8-9?",
+      "options": ["Peter", "John", "Philip", "Andrew"],
+      "correct": "Philip"
+    },
+    {
+      "question": "What caused the fall of man according to the text?",
+      "options": [
+        "Lack of knowledge",
+        "Disobedience to God's command",
+        "Natural disasters",
+        "Influence of other nations"
+      ],
+      "correct": "Disobedience to God's command"
+    },
+    {
+      "question": "Which beings rebelled and were driven from heaven as noted in Isaiah 14:12-15 and Ezekiel 28:11-19?",
+      "options": ["Humans", "Animals", "Lucifer and his angels", "The stars"],
+      "correct": "Lucifer and his angels"
+    },
+    {
+      "question": "How did Lucifer deceive Eve?",
+      "options": [
+        "By using a medium, the serpent",
+        "By appearing as an angel",
+        "By changing the fruit",
+        "By writing a false command"
+      ],
+      "correct": "By using a medium, the serpent"
+    },
+    {
+      "question": "What is the ultimate solution to the fallen state of the world?",
+      "options": [
+        "Human wisdom and strength",
+        "Technological advancements",
+        "God's plan of redemption through Jesus Christ",
+        "Philosophical insights"
+      ],
+      "correct": "God's plan of redemption through Jesus Christ"
+    },
+    {
+      "question": "When was the plan of redemption in place according to Ellen G. White?",
+      "options": [
+        "After the fall of Adam",
+        "Before the fall of man",
+        "During the time of Moses",
+        "At the birth of Jesus"
+      ],
+      "correct": "Before the fall of man"
+    },
+    {
+      "question": "Why was the incarnation of Christ necessary?",
+      "options": [
+        "To demonstrate God's power",
+        "To establish a new religion",
+        "To handle the problem of sin",
+        "To fulfill Jewish prophecies"
+      ],
+      "correct": "To handle the problem of sin"
+    },
+    {
+      "question": "What role does Jesus play in paying the penalty for sin?",
+      "options": [
+        "He acts as a mediator",
+        "He performs miracles",
+        "He becomes our substitute",
+        "He gives new commandments"
+      ],
+      "correct": "He becomes our substitute"
+    },
+    {
+      "question": "What does Hebrews 4:15 say about Jesus' sinlessness?",
+      "options": [
+        "He was never tempted",
+        "He was tempted in all points yet without sin",
+        "He occasionally sinned",
+        "He was immune to sin"
+      ],
+      "correct": "He was tempted in all points yet without sin"
+    },
+    {
+      "question": "What are the specific roles of the Trinity in the plan of redemption?",
+      "options": [
+        "They perform the same roles",
+        "They compete with each other",
+        "Each has a unique role: God the Father gives, God the Son yields, and God the Holy Spirit impresses",
+        "They remain passive"
+      ],
+      "correct": "Each has a unique role: God the Father gives, God the Son yields, and God the Holy Spirit impresses"
+    },
+    {
+      "question": "According to John 3:16, what did God the Father give for the redemption of humanity?",
+      "options": [
+        "His commandments",
+        "His only Son",
+        "His angels",
+        "His blessings"
+      ],
+      "correct": "His only Son"
+    },
+    {
+      "question": "How did Jesus Christ yield Himself in the plan of redemption according to Philippians 2:6-8?",
+      "options": [
+        "By performing miracles",
+        "By teaching parables",
+        "By humbling Himself and becoming obedient unto death",
+        "By writing scriptures"
+      ],
+      "correct": "By humbling Himself and becoming obedient unto death"
+    },
+    {
+      "question": "What does the term 'Emmanuel' mean?",
+      "options": ["God saves", "God with us", "God is love", "God is eternal"],
+      "correct": "God with us"
+    },
+    {
+      "question": "What did God promise in the protoevangelium in Genesis 3:15?",
+      "options": [
+        "Eternal life",
+        "The coming of a Savior",
+        "Wealth and prosperity",
+        "Freedom from labor"
+      ],
+      "correct": "The coming of a Savior"
+    },
+    {
+      "question": "According to John 14:6, what is Jesus' role in accessing the Father?",
+      "options": [
+        "He is one of many ways",
+        "He is the only way, truth, and life",
+        "He is a teacher of the way",
+        "He is an intermediary"
+      ],
+      "correct": "He is the only way, truth, and life"
+    },
+    {
+      "question": "According to Romans 5:8, how does God demonstrate His love for us?",
+      "options": [
+        "By sending prophets",
+        "By Christ dying for us while we were still sinners",
+        "By providing the law",
+        "By performing miracles"
+      ],
+      "correct": "By Christ dying for us while we were still sinners"
+    },
+    {
+      "question": "According to 1 John 2:2, how is Jesus' atoning sacrifice described?",
+      "options": [
+        "As limited to Israel",
+        "As the atonement for the sins of the whole world",
+        "As a temporary measure",
+        "As a symbol of justice"
+      ],
+      "correct": "As the atonement for the sins of the whole world"
+    },
+    {
+      "question": "What does Ephesians 2:8-9 describe about salvation?",
+      "options": [
+        "As a result of good works",
+        "By grace through faith, not from ourselves, it is the gift of God",
+        "As a reward for the righteous",
+        "As a combination of faith and works"
+      ],
+      "correct": "By grace through faith, not from ourselves, it is the gift of God"
+    },
+    {
+      "question": "What does Romans 6:23 say about the wages of sin and the gift of God?",
+      "options": [
+        "Sin has no consequences",
+        "The wages of sin is death, but the gift of God is eternal life in Christ Jesus",
+        "Sin leads to wealth",
+        "The gift of God is temporary"
+      ],
+      "correct": "The wages of sin is death, but the gift of God is eternal life in Christ Jesus"
+    }
+  ],
+  "chapter3": [
+    {
+      "question": "What is the original Greek term for 'baptize'?",
+      "options": ["Baptisma", "Baptizo", "Baptis", "Baptom"],
+      "correct": "Baptizo"
+    },
+    {
+      "question": "What does the term 'baptizo' mean?",
+      "options": ["To sprinkle", "To pour", "To immerse", "To wash"],
+      "correct": "To immerse"
+    },
+    {
+      "question": "Baptism symbolizes identification with which three aspects of Jesus?",
+      "options": [
+        "His birth, death, and resurrection",
+        "His death, burial, and resurrection",
+        "His teachings, miracles, and resurrection",
+        "His life, death, and ascension"
+      ],
+      "correct": "His death, burial, and resurrection"
+    },
+    {
+      "question": "Who instituted the ritual cleansing for the purification of gentile converts to Judaism?",
+      "options": ["Pharisees", "Sadducees", "Essenes", "Jews"],
+      "correct": "Pharisees"
+    },
+    {
+      "question": "Where did the Essenes practice immersion?",
+      "options": ["Jerusalem", "Qumran", "Nazareth", "Bethlehem"],
+      "correct": "Qumran"
+    },
+    {
+      "question": "Who recognized Jesus' purity of character at His baptism?",
+      "options": ["Peter", "Paul", "John the Baptist", "Mary"],
+      "correct": "John the Baptist"
+    },
+    {
+      "question": "What did John the Baptist feel about baptizing Jesus?",
+      "options": ["Excited", "Honored", "Puzzled", "Indifferent"],
+      "correct": "Puzzled"
+    },
+    {
+      "question": "The voice from heaven at Jesus' baptism declared Jesus as what?",
+      "options": ["The Prophet", "The King", "The Beloved Son", "The Savior"],
+      "correct": "The Beloved Son"
+    },
+    {
+      "question": "The descent of the Spirit in the form of a dove at Jesus' baptism symbolizes what?",
+      "options": ["Peace", "The Holy Spirit", "Purity", "Love"],
+      "correct": "The Holy Spirit"
+    },
+    {
+      "question": "Jesus' baptism fulfilled the prophecy given by which prophet?",
+      "options": ["Isaiah", "Jeremiah", "Daniel", "Ezekiel"],
+      "correct": "Isaiah"
+    },
+    {
+      "question": "In which year did the decree to rebuild Jerusalem occur, marking the start of the 490-year prophecy?",
+      "options": ["457 BC", "536 BC", "605 BC", "490 BC"],
+      "correct": "457 BC"
+    },
+    {
+      "question": "How many prophetic weeks led to the coming of the Anointed One according to Daniel's prophecy?",
+      "options": ["52 weeks", "62 weeks", "70 weeks", "69 weeks"],
+      "correct": "69 weeks"
+    },
+    {
+      "question": "The fifteenth year of the reign of Tiberius marks which event in Jesus' life?",
+      "options": ["His birth", "His baptism", "His crucifixion", "His ascension"],
+      "correct": "His baptism"
+    },
+    {
+      "question": "What significant event took place in AD 34?",
+      "options": ["Jesus' resurrection", "Stoning of Stephen", "Paul's conversion", "Pentecost"],
+      "correct": "Stoning of Stephen"
+    },
+    {
+      "question": "What descended upon Jesus at His baptism?",
+      "options": ["Fire", "A dove", "Lightning", "A crown"],
+      "correct": "A dove"
+    },
+    {
+      "question": "What did the voice from heaven say at Jesus' baptism?",
+      "options": [
+        "This is my beloved Son",
+        "Repent and be baptized",
+        "Follow me",
+        "You are forgiven"
+      ],
+      "correct": "This is my beloved Son"
+    },
+    {
+      "question": "Baptism by immersion symbolizes what?",
+      "options": ["Purification", "Sprinkling", "Death and resurrection", "Enlightenment"],
+      "correct": "Death and resurrection"
+    },
+    {
+      "question": "Evidence from early Christian art supports which mode of baptism?",
+      "options": ["Pouring", "Sprinkling", "Immersion", "Anointing"],
+      "correct": "Immersion"
+    },
+    {
+      "question": "Which of the following was NOT a prerequisite for baptism?",
+      "options": ["Faith", "Instruction", "Wealth", "Repentance"],
+      "correct": "Wealth"
+    },
+    {
+      "question": "What was the purpose of John's baptism?",
+      "options": [
+        "To anoint kings",
+        "To cleanse from disease",
+        "To prepare for the Messiah",
+        "To perform miracles"
+      ],
+      "correct": "To prepare for the Messiah"
+    },
+    {
+      "question": "Who can be baptized according to Christian doctrine?",
+      "options": [
+        "Only infants",
+        "Only adults",
+        "Those who have faith, instruction, and repentance",
+        "Only Jews"
+      ],
+      "correct": "Those who have faith, instruction, and repentance"
+    },
+    {
+      "question": "What happened immediately after Jesus was baptized?",
+      "options": [
+        "He began teaching",
+        "He was tempted in the wilderness",
+        "He performed miracles",
+        "He went to the temple"
+      ],
+      "correct": "He was tempted in the wilderness"
+    },
+    {
+      "question": "Which book of the Bible mentions the voice from heaven at Jesus' baptism?",
+      "options": ["Matthew", "John", "Acts", "Revelation"],
+      "correct": "Matthew"
+    },
+    {
+      "question": "Who was the first martyr in the Christian church, whose death marked a significant shift in evangelism?",
+      "options": ["James", "Stephen", "Peter", "John"],
+      "correct": "Stephen"
+    },
+    {
+      "question": "The threefold name used in Christian baptism is...",
+      "options": [
+        "Father, Son, and Holy Spirit",
+        "Abraham, Isaac, and Jacob",
+        "Peter, Paul, and John",
+        "King, Prophet, and Priest"
+      ],
+      "correct": "Father, Son, and Holy Spirit"
+    }
+  ]
+  
+}

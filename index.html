@@ -8,7 +8,8 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      /* background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%); */
+      background-color: #ACB6E5;
       margin: 0;
       padding: 0;
       min-height: 100vh;
@@ -44,21 +45,6 @@
       text-align: center;
       letter-spacing: 1px;
     }
-    #progress-container {
-      width: 100%;
-      background: #e3e3e3;
-      height: 14px;
-      border-radius: 10px;
-      margin-bottom: 24px;
-      overflow: hidden;
-      display: none;
-    }
-    #progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #0077ff 60%, #74ebd5 100%);
-      transition: width 0.4s cubic-bezier(.4,0,.2,1);
-    }
     #timer {
       text-align: right;
       font-weight: 500;
@@ -84,6 +70,13 @@
     button:hover {
       background: linear-gradient(90deg, #0052cc 60%, #74ebd5 100%);
       box-shadow: 0 4px 16px rgba(44,62,80,0.12);
+    }
+    .course-tab.active, .chapter-tab.active {
+      background: linear-gradient(90deg, #74ebd5 60%, #0077ff 100%);
+      color: #0077ff;
+      border: 2px solid #0077ff;
+      font-weight: bold;
+      box-shadow: 0 4px 16px rgba(44,62,80,0.15);
     }
     #question-navigation {
       margin-top: 16px;
@@ -254,16 +247,29 @@
 <body>
   <div class="container">
     <h1>EXAM HELP</h1>
-    
-    <div id="progress-container">
-      <div id="progress-bar"></div>
+    <!-- Tabs for course selection -->
+    <div id="course-tabs" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 18px;">
+      <button class="course-tab active" onclick="selectCourse('health')">Health Principles</button>
+      <button class="course-tab" onclick="selectCourse('messiah')">Christ the Messiah</button>
+    </div>
+    <!-- Tabs for chapter selection -->
+    <div id="chapter-tabs" style="display: none; grid-template-columns: 1fr 1fr; justify-content: center; gap: 12px; margin-bottom: 18px;">
+      <button class="chapter-tab active" onclick="selectChapter('chapter1')">Chapter 1</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter2')">Chapter 2</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter3')">Chapter 3</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter4')">Chapter 4</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter5')">Chapter 5</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter6')">Chapter 6</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter7')">Chapter 7</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter8')">Chapter 8</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter10')">Chapter 10</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter11')">Chapter 11</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter12')">Chapter 12</button>
+      <button class="chapter-tab" onclick="selectChapter('chapter13')">Chapter 13</button>
+      <!-- Add more chapters as needed -->
     </div>
 
     <p id="timer"></p>
-
-    <button id="restartBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
-    <button id="retakeBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
-    <button id="startBtn" onclick="askNumberOfQuestions()">Start Quiz</button>
     <div id="feedback-toggle">
       <span>Immediate Feedback</span>
       <label class="switch">
@@ -272,6 +278,10 @@
       </label>
       <span>Answers at the end</span>
     </div>
+    <button id="restartBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
+    <button id="retakeBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
+    <button id="startBtn" onclick="askNumberOfQuestions()">Start Quiz</button>
+    
     <div id="quiz-container"></div>
     <p id="questionCount" style="text-align: right;"></p>
     <div id="navigation">
@@ -283,6 +293,6 @@
     <p id="result"></p>
     <div id="summary"></div>
   </div>
-  <script src="script.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
