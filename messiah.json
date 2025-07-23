@@ -788,5 +788,387 @@
       "options": ["Cleansing from sin", "Resurrection to new life", "Acceptance into the church", "Receiving the Holy Spirit"],
       "correct": "Resurrection to new life"
     }
+  ],
+  "chapter6": [
+    {
+      "question": "What is the pervading presence of temptation according to the text?",
+      "options": ["It can be wished away", "It is encountered everywhere", "It only affects the weak", "It is limited to certain places"],
+      "correct": "It is encountered everywhere"
+    },
+    {
+      "question": "According to Apostle James, when are individuals tempted?",
+      "options": ["When they are strong in faith", "When they resist evil desires", "When they are dragged away by evil desires", "When they are surrounded by supportive people"],
+      "correct": "When they are dragged away by evil desires"
+    },
+    {
+      "question": "Who reflected on James 2 in the 19th century?",
+      "options": ["Apostle Paul", "Charles H. Spurgeon", "Buttrick", "Moses"],
+      "correct": "Charles H. Spurgeon"
+    },
+    {
+      "question": "What did Spurgeon warn about regarding temptation?",
+      "options": ["Beware of no one", "Beware of everyone", "Beware of everyone except yourself", "Beware of yourself more than anyone else"],
+      "correct": "Beware of yourself more than anyone else"
+    },
+    {
+      "question": "What is the goal of the chapter according to the text?",
+      "options": ["To list all the temptations Jesus faced", "To examine the temptation of Christ and draw lessons", "To prove that Jesus was immune to temptation", "To discuss the nature of sin and temptation"],
+      "correct": "To examine the temptation of Christ and draw lessons"
+    },
+    {
+      "question": "How long did Jesus fast before being tempted?",
+      "options": ["4 days and 4 nights", "30 days and 30 nights", "40 days and 40 nights", "50 days and 50 nights"],
+      "correct": "40 days and 40 nights"
+    },
+    {
+      "question": "Why did Satan choose to tempt Jesus at that particular moment?",
+      "options": ["Jesus was weak and vulnerable", "Jesus was surrounded by his disciples", "Jesus was in a crowded marketplace", "Jesus was performing miracles"],
+      "correct": "Jesus was weak and vulnerable"
+    },
+    {
+      "question": "What did Satan ask Jesus to do in the first temptation?",
+      "options": ["Turn stones into bread", "Jump off the pinnacle of the temple", "Worship him and he would give him all the kingdoms of the world", "None of the above"],
+      "correct": "Turn stones into bread"
+    },
+    {
+      "question": "How did Jesus respond to Satan's first temptation?",
+      "options": ["He turned stones into bread", "He rebuked Satan and quoted Scripture", "He accepted Satan's offer", "He ignored Satan's temptation"],
+      "correct": "He rebuked Satan and quoted Scripture"
+    },
+    {
+      "question": "What does the text say about the power of the Holy Spirit?",
+      "options": ["It can be manipulated for personal gain", "It empowers believers to overcome temptation", "It is only available to a select few", "It is unreliable in times of temptation"],
+      "correct": "It empowers believers to overcome temptation"
+    },
+    {
+      "question": "Who wrote the account of the temptation of Jesus in the Gospels?",
+      "options": ["Matthew and John", "Mark and Luke", "Luke and John", "Matthew and Luke"],
+      "correct": "Matthew and Luke"
+    },
+    {
+      "question": "What did Jesus do before the Devil came to tempt him?",
+      "options": ["He performed miracles", "He fasted and prayed", "He preached to crowds", "He healed the sick"],
+      "correct": "He fasted and prayed"
+    },
+    {
+      "question": "How many possibilities does the text mention for how the story of the temptation of Jesus got recorded?",
+      "options": ["One", "Two", "Three", "Four"],
+      "correct": "Three"
+    },
+    {
+      "question": "What is the first possibility mentioned for how the story got recorded?",
+      "options": ["Jesus told his disciples to record it", "The Gospel writers were inspired by the Holy Spirit", "Jesus wrote it himself", "It was a common rumor among the people"],
+      "correct": "The Gospel writers were inspired by the Holy Spirit"
+    },
+    {
+      "question": "According to the text, why is the temptation of Jesus recorded in the Holy Writ?",
+      "options": ["To demonstrate that Jesus was immune to temptation", "To show that nobody is above temptation", "To prove the power of Satan", "To provide entertainment for readers"],
+      "correct": "To show that nobody is above temptation"
+    },
+    {
+      "question": "What was the first temptation Jesus faced?",
+      "options": ["Power and glory", "Appetite", "Wealth and riches", "Doubt and fear"],
+      "correct": "Appetite"
+    },
+    {
+      "question": "How did Satan tempt Jesus regarding appetite?",
+      "options": ["By offering him riches", "By asking him to perform miracles", "By suggesting he turn stones into bread", "By tempting him to worship Satan"],
+      "correct": "By suggesting he turn stones into bread"
+    },
+    {
+      "question": "What did Jesus respond with when tempted regarding appetite?",
+      "options": ["He quoted Scripture", "He accepted the offer", "He ignored Satan", "He ran away from the temptation"],
+      "correct": "He quoted Scripture"
+    },
+    {
+      "question": "What does the text say about the nature of temptation?",
+      "options": ["It always leads to sin", "It is synonymous with sin", "It cannot be overcome", "It is not synonymous with sin"],
+      "correct": "It is not synonymous with sin"
+    },
+    {
+      "question": "How did Satan tempt Jesus regarding presumption?",
+      "options": ["By offering him power and glory", "By suggesting he jump off the pinnacle of the temple", "By promising him wealth and riches", "By tempting him to doubt God's promises"],
+      "correct": "By suggesting he jump off the pinnacle of the temple"
+    },
+    {
+      "question": "What did Satan quote to support his temptation regarding presumption?",
+      "options": ["The Ten Commandments", "The Beatitudes", "The Psalms", "The Lord's Prayer"],
+      "correct": "The Psalms"
+    },
+    {
+      "question": "What did Jesus respond with when tempted regarding presumption?",
+      "options": ["He accepted the offer", "He rebuked Satan and quoted Scripture", "He doubted God's promises", "He ignored Satan's temptation"],
+      "correct": "He rebuked Satan and quoted Scripture"
+    },
+    {
+      "question": "How did Satan tempt Jesus regarding compromise?",
+      "options": ["By offering him power and glory", "By suggesting he jump off the pinnacle of the temple", "By promising him wealth and riches", "By tempting him to worship Satan"],
+      "correct": "By tempting him to worship Satan"
+    },
+    {
+      "question": "What did Satan promise Jesus if he compromised?",
+      "options": ["Power and authority over all the kingdoms of the world", "Eternal life", "Wealth and riches", "Fame and popularity"],
+      "correct": "Power and authority over all the kingdoms of the world"
+    },
+    {
+      "question": "What did Jesus say in response to Satan's offer regarding compromise?",
+      "options": ["You shall worship the Lord your God, and him only you shall serve", "I will consider your offer", "I will worship you and accept your offer", "Let me think about it"],
+      "correct": "You shall worship the Lord your God, and him only you shall serve"
+    }
+  ],
+  "chapter7": [
+    {
+      "question": "How many times is the expression 'Kingdom of God' mentioned in the Synoptic tradition, according to Ayegboyin?",
+      "options": ["15 times in Mark", "39 times in Luke", "46 times in Matthew", "All of the above"],
+      "correct": "All of the above"
+    },
+    {
+      "question": "In the Old Testament, what is the primary meaning of the Hebrew root 'mlk'?",
+      "options": ["To rule", "To serve", "To create", "To worship"],
+      "correct": "To rule"
+    },
+    {
+      "question": "According to Daniel 2:44, what will happen to the world kingdoms?",
+      "options": ["They will rule forever", "They will be destroyed by the Kingdom of God", "They will unite with the Kingdom of God", "They will conquer the Kingdom of God"],
+      "correct": "They will be destroyed by the Kingdom of God"
+    },
+    {
+      "question": "How did the Jews perceive the Kingdom of God during the lifetime of Jesus?",
+      "options": ["As a spiritual concept only", "As a political entity with Jerusalem as its center", "As a future hope without any present significance", "As a personal experience for each individual"],
+      "correct": "As a political entity with Jerusalem as its center"
+    },
+    {
+      "question": "What did Jesus teach about the Kingdom of God during His ministry?",
+      "options": ["It is only a future blessing", "It is a present reality experienced through repentance", "It is confined to the borders of Israel", "It can only be entered by Jews"],
+      "correct": "It is a present reality experienced through repentance"
+    },
+    {
+      "question": "What did John the Baptist associate with the nearness of the Kingdom of God?",
+      "options": ["Repentance", "Sacrifice", "Rituals", "Fasting"],
+      "correct": "Repentance"
+    },
+    {
+      "question": "According to Jesus, who qualifies for citizenship in the Kingdom of God?",
+      "options": ["Those of a certain nationality", "Those who accept Christ and express faith in Him", "Those with political power", "Those with material wealth"],
+      "correct": "Those who accept Christ and express faith in Him"
+    },
+    {
+      "question": "What does Realized Eschatology refer to?",
+      "options": ["The future consummation of the Kingdom of God", "The present reality of the Kingdom of God", "The spiritual dimension of the Kingdom of God", "The earthly aspect of the Kingdom of God"],
+      "correct": "The present reality of the Kingdom of God"
+    },
+    {
+      "question": "How did Jesus demonstrate the presence of the Kingdom of God through His ministry?",
+      "options": ["By establishing political power", "By performing miracles and healing the sick", "By accumulating wealth", "By promoting social inequality"],
+      "correct": "By performing miracles and healing the sick"
+    },
+    {
+      "question": "What are the principles for qualification and entrance into the Kingdom of God according to Jesus?",
+      "options": ["Political power and dominance", "Spiritual rebirth and acceptance of Christ", "Material wealth and social status", "None of the above"],
+      "correct": "Spiritual rebirth and acceptance of Christ"
+    },
+    {
+      "question": "Which covenant is the Davidic Messianic Kingdom centrally based in?",
+      "options": ["Mosaic Covenant", "Abrahamic Covenant", "Noahic Covenant", "Sinaitic Covenant"],
+      "correct": "Abrahamic Covenant"
+    },
+    {
+      "question": "What is the central theme of the teachings of Jesus Christ in the Synoptic Gospels?",
+      "options": ["The love of God", "The Kingdom of Heaven/God", "The miracles of Jesus", "The end times"],
+      "correct": "The Kingdom of Heaven/God"
+    },
+    {
+      "question": "In the Old Testament, what did the establishment of God's kingdom begin with?",
+      "options": ["The Exodus", "The Covenant with Abraham", "Creation", "The Fall of Man"],
+      "correct": "The Covenant with Abraham"
+    },
+    {
+      "question": "How is the concept of the kingdom of God presented in the New Testament?",
+      "options": ["As a future hope only", "As a historical event", "As both a present reality and a future hope", "As a symbolic idea"],
+      "correct": "As both a present reality and a future hope"
+    },
+    {
+      "question": "Which book of the Old Testament is rich with kingdom matters and visions?",
+      "options": ["Genesis", "Exodus", "Isaiah", "Daniel"],
+      "correct": "Daniel"
+    },
+    {
+      "question": "What does Daniel's vision of the 'Son of Man' (Daniel 7:14) describe?",
+      "options": ["A temporary kingdom", "A destroyed kingdom", "An everlasting dominion", "A human kingdom"],
+      "correct": "An everlasting dominion"
+    },
+    {
+      "question": "According to the Old Testament, who was regarded as the true King of Israel?",
+      "options": ["King Saul", "King David", "God (Yahweh)", "The High Priest"],
+      "correct": "God (Yahweh)"
+    },
+    {
+      "question": "How did the Jewish state govern its people from the Exodus to the conquest of Canaan?",
+      "options": ["By democratic principles", "By laws derived directly from heaven", "By the authority of the High Priest", "By the military might of the judges"],
+      "correct": "By laws derived directly from heaven"
+    },
+    {
+      "question": "How did Jesus' teachings on the Kingdom of God differ from Jewish expectations?",
+      "options": ["Jesus taught it was only a future kingdom", "Jesus emphasized its spiritual nature and universal availability", "Jesus limited it to the Jewish people", "Jesus denied its existence"],
+      "correct": "Jesus emphasized its spiritual nature and universal availability"
+    },
+    {
+      "question": "According to Jesus, what is required for entrance into the Kingdom of God?",
+      "options": ["Wealth", "Military strength", "Repentance and faith", "High social status"],
+      "correct": "Repentance and faith"
+    },
+    {
+      "question": "How did Jesus describe the Kingdom of God in Luke 17:21?",
+      "options": ["As a distant dream", "As something in the future", "As being 'in your midst'", "As a symbolic idea"],
+      "correct": "As being 'in your midst'"
+    },
+    {
+      "question": "What does Jesus' healing ministry signify about the Kingdom of God?",
+      "options": ["It is a future hope", "It is limited to physical healing", "It demonstrates God's power and presence", "It is only for the Jewish people"],
+      "correct": "It demonstrates God's power and presence"
+    },
+    {
+      "question": "What did Jesus commission His disciples to do after His resurrection?",
+      "options": ["Build physical kingdoms", "Preach the gospel of the Kingdom to the world", "Establish political dominance", "Accumulate wealth"],
+      "correct": "Preach the gospel of the Kingdom to the world"
+    },
+    {
+      "question": "What marks the final consummation of the Kingdom of God?",
+      "options": ["Jesus' first coming", "The destruction of Jerusalem", "Jesus' Second Coming", "The death of the apostles"],
+      "correct": "Jesus' Second Coming"
+    },
+    {
+      "question": "How did Jesus indicate the future nature of the Kingdom during the Last Supper?",
+      "options": ["By performing miracles", "By saying He would drink the fruit of the vine anew in His Father's kingdom", "By giving a political speech", "By predicting the destruction of the temple"],
+      "correct": "By saying He would drink the fruit of the vine anew in His Father's kingdom"
+    }
+  ],
+  "chapter8": [
+    {
+      "question": "Who is considered the pioneer and perfecter of the Christian faith, mission, and ministry?",
+      "options": ["Apostle Paul", "John the Baptist", "Jesus Christ", "Peter"],
+      "correct": "Jesus Christ"
+    },
+    {
+      "question": "What was Jesus' primary purpose for mission and ministry?",
+      "options": ["To create a new religion", "To establish a political kingdom", "To create discipleship communities", "To gain personal fame"],
+      "correct": "To create discipleship communities"
+    },
+    {
+      "question": "Which of the following best describes Jesus' mission approach?",
+      "options": ["People based and impersonal", "People based and personal", "Impersonal and programmatic", "Secretive and programmatic"],
+      "correct": "People based and personal"
+    },
+    {
+      "question": "What example shows Jesus' personal mission approach?",
+      "options": ["Healing the blind man", "Raising Lazarus", "Attending to the man possessed by demonic spirits", "Turning water into wine"],
+      "correct": "Attending to the man possessed by demonic spirits"
+    },
+    {
+      "question": "According to David Bosch, how should Jesus' life and ministry be seen?",
+      "options": ["Within a universal context", "Within a contemporary context", "Within a concrete historical context", "Within a mystical context"],
+      "correct": "Within a concrete historical context"
+    },
+    {
+      "question": "What was Jesus' response to Jewish customs and traditions that contradicted God's precepts?",
+      "options": ["He adhered to them strictly", "He ignored them completely", "He became countercultural", "He adapted them to fit his teachings"],
+      "correct": "He became countercultural"
+    },
+    {
+      "question": "Which incident illustrates Jesus' countercultural approach to the Sabbath?",
+      "options": ["Healing the blind man", "Allowing his disciples to pluck and eat on the Sabbath", "Raising Lazarus", "Turning water into wine"],
+      "correct": "Allowing his disciples to pluck and eat on the Sabbath"
+    },
+    {
+      "question": "How did Jesus adapt his message to different contexts?",
+      "options": ["By using the same message for everyone", "By varying his message based on the audience's context", "By focusing only on the Jewish audience", "By avoiding certain groups of people"],
+      "correct": "By varying his message based on the audience's context"
+    },
+    {
+      "question": "Which example demonstrates Jesus' crosscultural mission approach?",
+      "options": ["Preaching in synagogues", "Healing the blind man", "Crossing to the Gentile region of Gadarenes", "Turning water into wine"],
+      "correct": "Crossing to the Gentile region of Gadarenes"
+    },
+    {
+      "question": "What was Jesus' mission in relation to different religious groups?",
+      "options": ["Exclusively reformatory among Jews", "Exclusively among pagans", "Interreligious, including Jews and pagans", "Exclusively among nonbelievers"],
+      "correct": "Interreligious, including Jews and pagans"
+    },
+    {
+      "question": "How did Jesus demonstrate his strategic mission approach?",
+      "options": ["By focusing solely on miracles", "By having a master plan for his mission", "By randomly choosing his disciples", "By avoiding nonJewish regions"],
+      "correct": "By having a master plan for his mission"
+    },
+    {
+      "question": "What illustrates Jesus' strategic rejection of the thirteenth disciple?",
+      "options": ["The healing of the blind man", "Sending the healed demoniac back to his people", "The Sermon on the Mount", "Turning water into wine"],
+      "correct": "Sending the healed demoniac back to his people"
+    },
+    {
+      "question": "What structure did Jesus build for his mission?",
+      "options": ["A hierarchical structure based on wealth", "A concentric circle structure", "A flat organizational structure", "A secretive underground structure"],
+      "correct": "A concentric circle structure"
+    },
+    {
+      "question": "Who were part of Jesus' inner circle within the 12 disciples?",
+      "options": ["Peter, Andrew, and Philip", "Peter, James, and John", "John, James, and Judas", "Matthew, Thomas, and Simon"],
+      "correct": "Peter, James, and John"
+    },
+    {
+      "question": "What characterized Jesus' mission as a way of life?",
+      "options": ["It was a parttime activity", "It was a structured program", "It was the reason for his being", "It was an occasional event"],
+      "correct": "It was the reason for his being"
+    },
+    {
+      "question": "What was the focus of Jesus' teachings on the Sermon on the Mount?",
+      "options": ["Kingdom values", "Ritualistic practices", "Economic policies", "Political strategies"],
+      "correct": "Kingdom values"
+    },
+    {
+      "question": "What characterized Jesus' response to the physical needs of people?",
+      "options": ["He ignored them", "He met their needs to teach spiritual lessons", "He used them for publicity", "He delegated them to his disciples"],
+      "correct": "He met their needs to teach spiritual lessons"
+    },
+    {
+      "question": "What was Jesus' eschatological focus in his mission?",
+      "options": ["Establishing a political kingdom", "Focusing on the end times and the kingdom of God", "Avoiding discussions on the afterlife", "Emphasizing economic development"],
+      "correct": "Focusing on the end times and the kingdom of God"
+    },
+    {
+      "question": "What was the central motif of Jesus' preaching according to the text?",
+      "options": ["Personal wealth", "Social justice", "The reign of God and the kingdom of God", "Political revolution"],
+      "correct": "The reign of God and the kingdom of God"
+    },
+    {
+      "question": "How did Jesus' parables serve his mission and teachings?",
+      "options": ["By confusing his listeners", "By using ordinary stories to convey profound spiritual truths", "By strictly adhering to Jewish traditions", "By avoiding controversial topics"],
+      "correct": "By using ordinary stories to convey profound spiritual truths"
+    },
+    {
+      "question": "What distinguished Jesus' parables from conventional teachings?",
+      "options": ["They were highly philosophical", "They were downtoearth and relatable", "They were abstract and mystical", "They were aimed at a specific elite group"],
+      "correct": "They were downtoearth and relatable"
+    },
+    {
+      "question": "How did Jesus demonstrate authority in his teachings?",
+      "options": ["By quoting other prophets extensively", "By speaking on his own authority", "By referring to the Roman authorities", "By avoiding controversial topics"],
+      "correct": "By speaking on his own authority"
+    },
+    {
+      "question": "What principle did Ellen G. White emphasize about Jesus' mission method?",
+      "options": ["Secrecy and exclusivity", "Personal involvement and sympathy", "Political activism", "Economic strategies"],
+      "correct": "Personal involvement and sympathy"
+    },
+    {
+      "question": "What was the first step in Ellen G. White's summary of Jesus' mission methods?",
+      "options": ["Preaching the gospel", "Mingling with people", "Performing miracles", "Avoiding public interactions"],
+      "correct": "Mingling with people"
+    },
+    {
+      "question": "What was the ultimate step in Ellen G. White's summary of Jesus' mission methods?",
+      "options": ["Performing miracles", "Winning people's confidence", "Bidding them to follow Jesus", "Preaching about economic policies"],
+      "correct": "Bidding them to follow Jesus"
+    }
   ]
+
 }

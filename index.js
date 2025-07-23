@@ -292,7 +292,7 @@ function startTimer() {
   secondsSpent = 0;
   timerInterval = setInterval(() => {
     secondsSpent++;
-    document.getElementById("timer").innerText = `Time Spent: ${formatTime(secondsSpent)}`;
+    document.getElementById("timer").innerText = `🕛 ${formatTime(secondsSpent)}`;
   }, 1000);
 }
 
