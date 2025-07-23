@@ -1169,6 +1169,468 @@
       "options": ["Performing miracles", "Winning people's confidence", "Bidding them to follow Jesus", "Preaching about economic policies"],
       "correct": "Bidding them to follow Jesus"
     }
+  ],
+  "chapter10": [
+    {
+      "question": "What is another name for the Sermon on the Mount?",
+      "options": ["The Great Rule of Life", "The Prophetic Discourse", "The Royal Declaration", "The Divine Directive"],
+      "correct": "The Great Rule of Life"
+    },
+    {
+      "question": "What did Jesus primarily address in the Sermon on the Mount according to Matthew 5:17-29?",
+      "options": ["Moral codes for Christians", "Philosophical debates", "Political strategies", "Economic policies"],
+      "correct": "Moral codes for Christians"
+    },
+    {
+      "question": "Which Old Testament event or document is the Sermon on the Mount often linked to?",
+      "options": ["The Exodus", "The Psalms of David", "The Book of Isaiah", "The Ten Commandments"],
+      "correct": "The Ten Commandments"
+    },
+    {
+      "question": "What is the overarching theme of the Sermon on the Mount?",
+      "options": ["Spiritual warfare", "Kingdom principles", "Social justice", "Personal prosperity"],
+      "correct": "Kingdom principles"
+    },
+    {
+      "question": "Which of the following is NOT a section of the Sermon on the Mount?",
+      "options": ["The Beatitudes", "The Ten Commandments", "The Lord's Prayer", "The Golden Rule"],
+      "correct": "The Ten Commandments"
+    },
+    {
+      "question": "In the Beatitudes, what does 'poor in spirit' refer to?",
+      "options": ["Material poverty", "Spiritual humility", "Physical weakness", "Social exclusion"],
+      "correct": "Spiritual humility"
+    },
+    {
+      "question": "What does Jesus say about anger in Matthew 5:21-26?",
+      "options": ["It should be expressed openly", "It should be suppressed", "It is equivalent to murder", "It is a sign of righteousness"],
+      "correct": "It is equivalent to murder"
+    },
+    {
+      "question": "According to Matthew 5:27-30, how does Jesus relate lust to adultery?",
+      "options": ["They are morally neutral", "They are natural desires", "They are sinful actions", "They are cultural constructs"],
+      "correct": "They are sinful actions"
+    },
+    {
+      "question": "What is Jesus' stance on divorce according to Matthew 5:31-32?",
+      "options": ["It is permissible for any reason", "It should be avoided at all costs", "It is only acceptable in extreme circumstances", "It is condemned as adultery"],
+      "correct": "It is condemned as adultery"
+    },
+    {
+      "question": "How does Jesus instruct his followers regarding swearing and oath-taking in Matthew 5:33-37?",
+      "options": ["Avoid making any oaths", "Make oaths only in God's name", "Make oaths to secure personal gain", "Make oaths only in public settings"],
+      "correct": "Avoid making any oaths"
+    },
+    {
+      "question": "What does Jesus advise regarding retaliation and resistance in Matthew 5:38-42?",
+      "options": ["Respond with equal force", "Avoid all conflicts", "Turn the other cheek", "Seek legal justice"],
+      "correct": "Turn the other cheek"
+    },
+    {
+      "question": "According to Matthew 5:43-48, how does Jesus define loving your enemies?",
+      "options": ["Treating them with suspicion", "Ignoring their existence", "Praying for their well-being", "Seeking revenge on them"],
+      "correct": "Praying for their well-being"
+    },
+    {
+      "question": "In Matthew 6:1-18, what three acts of righteousness does Jesus emphasize?",
+      "options": ["Singing, dancing, and feasting", "Almsgiving, prayer, and fasting", "Writing, reading, and preaching", "Teaching, mentoring, and leading"],
+      "correct": "Almsgiving, prayer, and fasting"
+    },
+    {
+      "question": "What does Jesus teach about treasures and wealth in Matthew 6:19-34?",
+      "options": ["Accumulate as much as possible", "Seek first the kingdom of God", "Give away all possessions", "Invest in earthly pleasures"],
+      "correct": "Seek first the kingdom of God"
+    },
+    {
+      "question": "How does Jesus caution against judging others in Matthew 7:1-12?",
+      "options": ["Use harsh criticism", "Be impartial and fair", "Avoid all interactions", "Trust personal instincts"],
+      "correct": "Be impartial and fair"
+    },
+    {
+      "question": "What does Jesus say about the wide and narrow gates in Matthew 7:13-14?",
+      "options": ["Few find the narrow gate", "Many enter through the wide gate", "Both gates lead to destruction", "Both gates lead to eternal life"],
+      "correct": "Few find the narrow gate"
+    }
+    ],
+  "chapter11": [
+    {
+      "question": "What did Jesus spend his three and a half years of ministry doing?",
+      "options": ["Healing, teaching, and preaching", "Writing, reading, and meditating", "Traveling, farming, and fishing", "Building, painting, and sculpting"],
+      "correct": "Healing, teaching, and preaching"
+    },
+    {
+      "question": "According to Acts 10:38, with what was Jesus anointed?",
+      "options": ["Oil", "Water", "The Holy Ghost and power", "Incense"],
+      "correct": "The Holy Ghost and power"
+    },
+    {
+      "question": "Who were the human agents that opposed Jesus during His ministry?",
+      "options": ["Disciples and apostles", "Pharisees, Sadducees, elders", "Romans and Greeks", "Tax collectors and sinners"],
+      "correct": "Pharisees, Sadducees, elders"
+    },
+    {
+      "question": "What should meditation upon the scene of Jesus' suffering lead to?",
+      "options": ["Guilt and shame", "Joy and happiness", "Self-denial and sacrifice for others", "Wealth and prosperity"],
+      "correct": "Self-denial and sacrifice for others"
+    },
+    {
+      "question": "In the New Testament, what does the word 'triumph' relate to?",
+      "options": ["Victory over nature", "Victory over the power of sin", "Victory in battles", "Victory in sports"],
+      "correct": "Victory over the power of sin"
+    },
+    {
+      "question": "Which prophet predicted the triumphant entry of the Messiah into Jerusalem?",
+      "options": ["Isaiah", "Jeremiah", "Zechariah", "Daniel"],
+      "correct": "Zechariah"
+    },
+    {
+      "question": "How did Christ usually respond to attempts to crown Him as King of Israel?",
+      "options": ["He accepted them", "He encouraged them", "He ignored them", "He shunned them"],
+      "correct": "He shunned them"
+    },
+    {
+      "question": "What was the main purpose of Jesus' triumphal entry into Jerusalem?",
+      "options": ["To entertain the people", "To gather money", "To present Himself publicly as the Redeemer", "To celebrate a victory"],
+      "correct": "To present Himself publicly as the Redeemer"
+    },
+    {
+      "question": "What did the crowd do during Jesus' triumphal entry?",
+      "options": ["They rejected Him", "They hailed Him as Messiah and King", "They ignored Him", "They criticized Him"],
+      "correct": "They hailed Him as Messiah and King"
+    },
+    {
+      "question": "What did Jesus say would happen if the crowd was silenced during the triumphal entry?",
+      "options": ["The earth would shake", "The stones would cry out", "The sky would darken", "The wind would howl"],
+      "correct": "The stones would cry out"
+    },
+    {
+      "question": "What emotion did Jesus express over Jerusalem during the triumphant procession?",
+      "options": ["Joy", "Indifference", "Sorrow", "Anger"],
+      "correct": "Sorrow"
+    },
+    {
+      "question": "Why did Jesus weep over Jerusalem?",
+      "options": ["For its beauty", "For its historical significance", "For its continual refusal to accept salvation", "For its wealth"],
+      "correct": "For its continual refusal to accept salvation"
+    },
+    {
+      "question": "What event followed the triumphal entry of Jesus into Jerusalem?",
+      "options": ["The crucifixion", "The resurrection", "The last supper", "The cleansing of the temple"],
+      "correct": "The cleansing of the temple"
+    },
+    {
+      "question": "What did the Lord's Supper symbolize?",
+      "options": ["A regular meal", "A royal banquet", "Remembrance of Jesus' sacrifice", "A Jewish feast"],
+      "correct": "Remembrance of Jesus' sacrifice"
+    },
+    {
+      "question": "What lesson did Jesus teach by washing the disciples' feet?",
+      "options": ["The importance of cleanliness", "The role of a servant and humility", "The significance of wealth", "The necessity of hierarchy"],
+      "correct": "The role of a servant and humility"
+    },
+    {
+      "question": "What did Jesus use to wash the disciples' feet?",
+      "options": ["A golden bowl", "A silver pitcher", "A basin and towel", "A ceramic pot"],
+      "correct": "A basin and towel"
+    },
+    {
+      "question": "What are the threefold significances of the ordinance of footwashing?",
+      "options": ["Cleansing from sin, renewed consecration, Christian fellowship", "Wealth, power, fame", "Health, prosperity, success", "Strength, endurance, victory"],
+      "correct": "Cleansing from sin, renewed consecration, Christian fellowship"
+    },
+    {
+      "question": "What does the bread and wine in the Lord's Supper symbolize?",
+      "options": ["Physical nourishment", "Jesus' body and blood", "Wealth and prosperity", "Victory and power"],
+      "correct": "Jesus' body and blood"
+    },
+    {
+      "question": "What did Jesus' act of washing the disciples' feet typify?",
+      "options": ["Power and authority", "Spirit of Christian fellowship", "Wealth and abundance", "Judgment and wrath"],
+      "correct": "Spirit of Christian fellowship"
+    },
+    {
+      "question": "What character trait did Jesus display at the Upper Room?",
+      "options": ["Humility", "Power", "Wealth"],
+      "correct": "Humility"
+    },
+    {
+      "question": "What did Jesus demonstrate in His final days on earth?",
+      "options": ["Pride", "Servant-leadership", "Superiority"],
+      "correct": "Servant-leadership"
+    },
+    {
+      "question": "What did Jesus describe His mission on earth as?",
+      "options": ["To be served", "To serve and redeem", "To rule with authority"],
+      "correct": "To serve and redeem"
+    },
+    {
+      "question": "Where did Jesus show unwavering submission to God?",
+      "options": ["Upper Room", "Garden of Gethsemane", "Mount of Olives"],
+      "correct": "Garden of Gethsemane"
+    },
+    {
+      "question": "What does Apostle Paul urge believers to emulate in Philippians 2:5-8?",
+      "options": ["Wealth and prosperity", "Humility and obedience", "Power and control"],
+      "correct": "Humility and obedience"
+    },
+    {
+      "question": "What is the significance of the Upper Room in Jesus' ministry?",
+      "options": ["It was where He gathered with His disciples for fellowship", "It was where He displayed servant-leadership", "It was where He performed miracles"],
+      "correct": "It was where He displayed servant-leadership"
+    }
+  ],
+  "chapter12": [
+    {
+      "question": "What is the title of Chapter Twelve?",
+      "options": ["From Gethsemane to the Cross", "The Life of Jesus", "The Crucifixion", "The Resurrection"],
+      "correct": "From Gethsemane to the Cross"
+    },
+    {
+      "question": "What caught the attention and imagination of those who described the events from Gethsemane to the cross?",
+      "options": ["The miracles of Jesus", "The momentous events", "The teachings of Jesus", "The parables of Jesus"],
+      "correct": "The momentous events"
+    },
+    {
+      "question": "In whose presence did Jesus live all His life on earth?",
+      "options": ["His disciples", "His family", "His Father", "His followers"],
+      "correct": "His Father"
+    },
+    {
+      "question": "Who constantly guided and supported Jesus on earth?",
+      "options": ["His disciples", "The Spirit of God", "His family", "The angels"],
+      "correct": "The Spirit of God"
+    },
+    {
+      "question": "Who conspired to kill Jesus during this period?",
+      "options": ["The Roman soldiers", "The chief priest, scribes, and elders of the people", "His disciples", "The Pharisees"],
+      "correct": "The chief priest, scribes, and elders of the people"
+    },
+    {
+      "question": "Who sold Jesus to the high priest?",
+      "options": ["Peter", "Judas Iscariot", "John", "James"],
+      "correct": "Judas Iscariot"
+    },
+    {
+      "question": "What feast did Jesus take during this period?",
+      "options": ["The Passover feast", "The Feast of Tabernacles", "The Feast of Unleavened Bread", "The Feast of Weeks"],
+      "correct": "The Passover feast"
+    },
+    {
+      "question": "Where did Jesus invite His disciples to pray?",
+      "options": ["The temple", "The garden of Gethsemane", "The Mount of Olives", "The synagogue"],
+      "correct": "The garden of Gethsemane"
+    },
+    {
+      "question": "What is the meaning of Gethsemane?",
+      "options": ["Olive press", "Garden of prayer", "Place of rest", "Holy place"],
+      "correct": "Olive press"
+    },
+    {
+      "question": "What did Jesus say His soul was overwhelmed with in Gethsemane?",
+      "options": ["Joy", "Sorrow to the point of death", "Fear", "Anger"],
+      "correct": "Sorrow to the point of death"
+    },
+    {
+      "question": "What did Jesus pray for in the garden of Gethsemane?",
+      "options": ["To avoid His death", "For the cup to pass from Him, but for God's will to be done", "To gain more disciples", "To perform more miracles"],
+      "correct": "For the cup to pass from Him, but for God's will to be done"
+    },
+    {
+      "question": "How intense was Jesus' agony in the garden of Gethsemane?",
+      "options": ["He cried loudly", "His sweat turned to something like blood", "He fell asleep", "He ran away"],
+      "correct": "His sweat turned to something like blood"
+    },
+    {
+      "question": "Who was Jesus taken to first after His arrest?",
+      "options": ["Annas", "Caiaphas", "Pilate", "Herod"],
+      "correct": "Annas"
+    },
+    {
+      "question": "Who found no fault in Jesus during His trial?",
+      "options": ["Pilate and Herod", "The chief priest", "The Roman soldiers", "Judas Iscariot"],
+      "correct": "Pilate and Herod"
+    },
+    {
+      "question": "Who betrayed Jesus with a kiss?",
+      "options": ["Peter", "Judas Iscariot", "John", "James"],
+      "correct": "Judas Iscariot"
+    },
+    {
+      "question": "What did Peter do out of anger to prevent Jesus' arrest?",
+      "options": ["Cut off the ear of the high priest's servant", "Fought the Roman soldiers", "Ran away", "Prayed"],
+      "correct": "Cut off the ear of the high priest's servant"
+    },
+    {
+      "question": "What did Jesus do after Peter cut off the servant’s ear?",
+      "options": ["Reprimanded Peter and healed the servant's ear", "Praised Peter for his bravery", "Ignored the incident", "Fled the scene"],
+      "correct": "Reprimanded Peter and healed the servant's ear"
+    },
+    {
+      "question": "Where was Jesus crucified?",
+      "options": ["Golgotha", "Mount of Olives", "Gethsemane", "Nazareth"],
+      "correct": "Golgotha"
+    },
+    {
+      "question": "What does Golgotha mean?",
+      "options": ["Place of the Skull", "Holy place", "Garden of prayer", "Place of rest"],
+      "correct": "Place of the Skull"
+    },
+    {
+      "question": "What were Jesus' last words on the cross according to the book of John?",
+      "options": ["It is finished.", "Father, forgive them.", "I am thirsty.", "My God, my God, why have you forsaken me?"],
+      "correct": "It is finished."
+    },
+    {
+      "question": "Who provided the tomb where Jesus was buried?",
+      "options": ["Joseph of Arimathea", "Nicodemus", "Simon of Cyrene", "Peter"],
+      "correct": "Joseph of Arimathea"
+    },
+    {
+      "question": "Who was the first person to see Jesus after His resurrection?",
+      "options": ["Mary Magdalene", "Peter", "John", "James"],
+      "correct": "Mary Magdalene"
+    },
+    {
+      "question": "What did the angel tell the women at the tomb?",
+      "options": ["He is not here; he has risen.", "He is still sleeping.", "He has gone to Galilee.", "He is in heaven."],
+      "correct": "He is not here; he has risen."
+    },
+    {
+      "question": "What did Jesus promise to send to His disciples after His ascension?",
+      "options": ["The Holy Spirit", "Angels", "Riches", "Armies"],
+      "correct": "The Holy Spirit"
+    },
+    {
+      "question": "What event marks the birth of the Christian church?",
+      "options": ["Pentecost", "Resurrection", "Crucifixion", "Ascension"],
+      "correct": "Pentecost"
+    }
+  ],
+  "chapter13": [
+    {
+      "question": "Who was the first person Jesus appeared to after his resurrection?",
+      "options": ["Mary Magdalene", "Peter", "John", "Thomas"],
+      "correct": "Mary Magdalene"
+    },
+    {
+      "question": "How many post-resurrection appearances of Jesus are recorded in Scripture?",
+      "options": ["5", "7", "10", "12"],
+      "correct": "7"
+    },
+    {
+      "question": "According to Matthew, where did Jesus instruct his disciples to go to meet him after his resurrection?",
+      "options": ["Jerusalem", "Galilee", "Bethany", "Emmaus"],
+      "correct": "Galilee"
+    },
+    {
+      "question": "Which disciple famously doubted Jesus' resurrection until he saw him personally?",
+      "options": ["John", "Thomas", "Peter", "Andrew"],
+      "correct": "Thomas"
+    },
+    {
+      "question": "How did Jesus prove to his disciples that he was not a ghost?",
+      "options": ["By eating food in their presence", "By appearing in a bright light", "By speaking in multiple languages", "By performing miracles"],
+      "correct": "By eating food in their presence"
+    },
+    {
+      "question": "According to Luke, who recognized Jesus while he was on the road to Emmaus?",
+      "options": ["Peter", "Cleopas", "Mary Magdalene", "John"],
+      "correct": "Cleopas"
+    },
+    {
+      "question": "How did Jesus reveal his identity to Thomas after his resurrection?",
+      "options": ["By appearing in a vision", "By speaking from a distance", "By showing his wounds", "By performing a miracle"],
+      "correct": "By showing his wounds"
+    },
+    {
+      "question": "How many disciples were present when Jesus appeared to them by the Sea of Galilee?",
+      "options": ["5", "7", "10", "12"],
+      "correct": "7"
+    },
+    {
+      "question": "Where did Jesus ascend to heaven from, according to Acts?",
+      "options": ["Mount Sinai", "Mount Olives", "Mount Carmel", "Mount Zion"],
+      "correct": "Mount Olives"
+    },
+    {
+      "question": "How many days did Jesus remain on earth after his resurrection, according to Acts?",
+      "options": ["30 days", "40 days", "50 days", "60 days"],
+      "correct": "40 days"
+    },
+    {
+      "question": "How many times did Jesus appear to his disciples in Jerusalem after his resurrection?",
+      "options": ["Once", "Twice", "Three times", "Four times"],
+      "correct": "Three times"
+    },
+    {
+      "question": "How did the Sanhedrin respond to the news of Jesus' resurrection, according to Matthew?",
+      "options": ["They rejoiced", "They denied it", "They spread rumors", "They ignored it"],
+      "correct": "They spread rumors"
+    },
+    {
+      "question": "How did Jesus demonstrate his physical resurrection to his disciples, according to Luke?",
+      "options": ["By walking through walls", "By showing his hands and feet", "By disappearing suddenly", "By speaking in tongues"],
+      "correct": "By showing his hands and feet"
+    },
+    {
+      "question": "How many times did Jesus appear to his disciples in Galilee after his resurrection?",
+      "options": ["Once", "Twice", "Three times", "Four times"],
+      "correct": "Three times"
+    },
+    {
+      "question": "Who was among the disciples who saw Jesus ascend to heaven?",
+      "options": ["Peter", "Thomas", "John", "Matthew"],
+      "correct": "Peter"
+    },
+    {
+      "question": "How did Jesus commission his disciples before ascending to heaven?",
+      "options": ["He commanded them to write letters", "He instructed them to build churches", "He told them to spread the gospel", "He asked them to perform miracles"],
+      "correct": "He told them to spread the gospel"
+    },
+    {
+      "question": "What was the reaction of the disciples when they first heard about Jesus' resurrection from the women?",
+      "options": ["They believed immediately", "They doubted the news", "They ignored the news", "They were confused"],
+      "correct": "They doubted the news"
+    },
+    {
+      "question": "How did Jesus prove his identity to the disciples in the locked room, according to John?",
+      "options": ["By performing a miracle", "By showing his wounds", "By disappearing suddenly", "By speaking in multiple languages"],
+      "correct": "By showing his wounds"
+    },
+    {
+      "question": "How many disciples were present when Jesus appeared to them by the Sea of Tiberias?",
+      "options": ["5", "7", "10", "12"],
+      "correct": "7"
+    },
+    {
+      "question": "What did Jesus tell Thomas who doubted His resurrection?",
+      "options": ["Blessed are those who have not seen and yet have believed.", "Do you still not believe?", "Touch my wounds.", "I am alive."],
+      "correct": "Blessed are those who have not seen and yet have believed."
+    },
+    {
+      "question": "Where did Jesus tell His disciples to wait for the Holy Spirit?",
+      "options": ["Jerusalem", "Galilee", "Nazareth", "Bethany"],
+      "correct": "Jerusalem"
+    },
+    {
+      "question": "What event marks the birth of the Christian church?",
+      "options": ["Pentecost", "Resurrection", "Crucifixion", "Ascension"],
+      "correct": "Pentecost"
+    },
+    {
+      "question": "What miraculous event occurred on the day of Pentecost?",
+      "options": ["Disciples spoke in tongues", "Jesus appeared again", "Disciples performed healings", "Angels descended"],
+      "correct": "Disciples spoke in tongues"
+    },
+    {
+      "question": "Who was chosen to replace Judas Iscariot as a disciple?",
+      "options": ["Matthias", "Paul", "Barnabas", "Silas"],
+      "correct": "Matthias"
+    },
+    {
+      "question": "Who was the first martyr of the Christian church?",
+      "options": ["Stephen", "Peter", "James", "Paul"],
+      "correct": "Stephen"
+    }
   ]
-
 }
