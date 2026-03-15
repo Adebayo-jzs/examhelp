@@ -1,0 +1,1004 @@
+{
+  "quiz_title": " Philosophy & Logic Quiz",
+  "total_questions": 120,
+  "categories": [
+    {
+      "id": "categorical_propositions",
+      "name": "Categorical Propositions",
+      "questions": [
+        {
+          "id": "cp_01",
+          "question": "What type of categorical proposition is this? \"All birds are animals.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 0,
+          "answer_text": "Universal Affirmative"
+        },
+        {
+          "id": "cp_02",
+          "question": "What type of categorical proposition is this? \"No fish are mammals.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 1,
+          "answer_text": "Universal Negative"
+        },
+        {
+          "id": "cp_03",
+          "question": "What type of categorical proposition is this? \"Some students are not lazy.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 3,
+          "answer_text": "Particular Negative"
+        },
+        {
+          "id": "cp_04",
+          "question": "What type of categorical proposition is this? \"Some trees are tall.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 2,
+          "answer_text": "Particular Affirmative"
+        },
+        {
+          "id": "cp_05",
+          "question": "Which of the following represents a universal affirmative proposition?",
+          "options": ["Some dogs are friendly.", "All cars are vehicles.", "No birds are reptiles.", "Some students are not diligent."],
+          "answer": 1,
+          "answer_text": "All cars are vehicles."
+        },
+        {
+          "id": "cp_06",
+          "question": "Which of the following represents a universal negative proposition?",
+          "options": ["All fish live in water.", "Some birds cannot fly.", "No insects are mammals.", "Some dogs are not brown."],
+          "answer": 2,
+          "answer_text": "No insects are mammals."
+        },
+        {
+          "id": "cp_07",
+          "question": "Which of the following represents a particular affirmative proposition?",
+          "options": ["Some cars are electric.", "No cats are reptiles.", "All whales are mammals.", "Some birds are not sparrows."],
+          "answer": 0,
+          "answer_text": "Some cars are electric."
+        },
+        {
+          "id": "cp_08",
+          "question": "Convert the proposition \"All squares are rectangles.\"",
+          "options": ["Some rectangles are squares.", "No rectangles are squares.", "Some squares are not rectangles.", "Some rectangles are not squares."],
+          "answer": 0,
+          "answer_text": "Some rectangles are squares."
+        },
+        {
+          "id": "cp_09",
+          "question": "Convert the proposition \"No mammals are cold-blooded.\"",
+          "options": ["Some cold-blooded creatures are mammals.", "No cold-blooded creatures are mammals.", "Some mammals are cold-blooded.", "All cold-blooded creatures are mammals."],
+          "answer": 1,
+          "answer_text": "No cold-blooded creatures are mammals."
+        },
+        {
+          "id": "cp_10",
+          "question": "Convert the proposition \"Some birds are not carnivorous.\"",
+          "options": ["Some carnivorous creatures are birds.", "No birds are carnivorous.", "Some non-carnivorous creatures are birds.", "Conversion is not valid."],
+          "answer": 3,
+          "answer_text": "Conversion is not valid."
+        },
+        {
+          "id": "cp_11",
+          "question": "Obvert the proposition \"All reptiles are vertebrates.\"",
+          "options": ["Some reptiles are vertebrates.", "No reptiles are invertebrates.", "Some vertebrates are reptiles.", "Some vertebrates are not reptiles."],
+          "answer": 1,
+          "answer_text": "No reptiles are invertebrates."
+        },
+        {
+          "id": "cp_12",
+          "question": "Obvert the proposition \"Some trees are not deciduous.\"",
+          "options": ["Some trees are evergreen.", "No trees are deciduous.", "Some trees are non-deciduous.", "All trees are deciduous."],
+          "answer": 2,
+          "answer_text": "Some trees are non-deciduous."
+        },
+        {
+          "id": "cp_13",
+          "question": "What is the contradictory of \"All dogs are friendly.\"?",
+          "options": ["Some dogs are friendly.", "No dogs are friendly.", "Some dogs are not friendly.", "All dogs are unfriendly."],
+          "answer": 2,
+          "answer_text": "Some dogs are not friendly."
+        },
+        {
+          "id": "cp_14",
+          "question": "What is the contrary of \"No fruits are sour.\"?",
+          "options": ["Some fruits are not sour.", "Some fruits are sour.", "All fruits are sour.", "Some non-fruits are sour."],
+          "answer": 2,
+          "answer_text": "All fruits are sour."
+        },
+        {
+          "id": "cp_15",
+          "question": "If the universal affirmative proposition \"All whales are marine animals.\" is false, what can we conclude?",
+          "options": ["No whales are marine animals.", "Some whales are marine animals.", "Some whales are not marine animals.", "All whales are not marine animals."],
+          "answer": 2,
+          "answer_text": "Some whales are not marine animals."
+        },
+        {
+          "id": "cp_16",
+          "question": "If \"No mammals lay eggs.\" is true, what is its subcontrary?",
+          "options": ["Some mammals lay eggs.", "Some mammals do not lay eggs.", "All mammals lay eggs.", "Some mammals are reptiles."],
+          "answer": 1,
+          "answer_text": "Some mammals do not lay eggs."
+        },
+        {
+          "id": "cp_17",
+          "question": "Convert the proposition \"Some birds are migratory.\"",
+          "options": ["Some migratory creatures are birds.", "All migratory creatures are birds.", "No migratory creatures are birds.", "Some migratory creatures are not birds."],
+          "answer": 0,
+          "answer_text": "Some migratory creatures are birds."
+        },
+        {
+          "id": "cp_18",
+          "question": "Convert the proposition \"No snakes have legs.\"",
+          "options": ["Some creatures with legs are snakes.", "No legged creatures are snakes.", "Some snakes have legs.", "All snakes have legs."],
+          "answer": 1,
+          "answer_text": "No legged creatures are snakes."
+        },
+        {
+          "id": "cp_19",
+          "question": "If \"All humans are rational\" is true, what can we infer about \"Some humans are rational\"?",
+          "options": ["It must be true.", "It must be false.", "It is independent.", "It is contradictory."],
+          "answer": 0,
+          "answer_text": "It must be true."
+        },
+        {
+          "id": "cp_20",
+          "question": "What is the correct obversion of \"Some cars are sports cars.\"?",
+          "options": ["Some cars are not sports cars.", "No cars are sports cars.", "Some cars are non-sports cars.", "Some non-cars are sports cars."],
+          "answer": 2,
+          "answer_text": "Some cars are non-sports cars."
+        },
+        {
+          "id": "cp_21",
+          "question": "Convert the proposition \"Some cats are not wild animals.\"",
+          "options": ["Some wild animals are not cats.", "Some non-wild animals are cats.", "Conversion is not valid.", "No wild animals are cats."],
+          "answer": 2,
+          "answer_text": "Conversion is not valid."
+        },
+        {
+          "id": "cp_22",
+          "question": "If \"All birds have feathers\" is false, what can be inferred?",
+          "options": ["Some birds do not have feathers.", "No birds have feathers.", "Some birds have feathers.", "Some birds are mammals."],
+          "answer": 0,
+          "answer_text": "Some birds do not have feathers."
+        },
+        {
+          "id": "cp_23",
+          "question": "Convert the proposition \"No trees are animals.\"",
+          "options": ["Some animals are not trees.", "No animals are trees.", "Some trees are animals.", "All animals are trees."],
+          "answer": 1,
+          "answer_text": "No animals are trees."
+        },
+        {
+          "id": "cp_24",
+          "question": "If \"Some planets are habitable\" is false, what does it imply?",
+          "options": ["No planets are habitable.", "All planets are habitable.", "Some planets are not habitable.", "Some planets are stars."],
+          "answer": 0,
+          "answer_text": "No planets are habitable."
+        },
+        {
+          "id": "cp_25",
+          "question": "If \"Some mammals are not carnivorous\" is false, what can we conclude?",
+          "options": ["All mammals are carnivorous.", "Some mammals are carnivorous.", "No mammals are carnivorous.", "Some non-mammals are carnivorous."],
+          "answer": 0,
+          "answer_text": "All mammals are carnivorous."
+        },
+        {
+          "id": "cp_26",
+          "question": "What type of categorical proposition is this? \"Some books are fiction.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 2,
+          "answer_text": "Particular Affirmative"
+        },
+        {
+          "id": "cp_27",
+          "question": "What type of categorical proposition is this? \"No reptiles have fur.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 1,
+          "answer_text": "Universal Negative"
+        },
+        {
+          "id": "cp_28",
+          "question": "What type of categorical proposition is this? \"All students are not lazy.\"",
+          "options": ["Universal Affirmative", "Universal Negative", "Particular Affirmative", "Particular Negative"],
+          "answer": 0,
+          "answer_text": "Universal Affirmative"
+        },
+        {
+          "id": "cp_29",
+          "question": "Which of the following is an example of a particular negative proposition?",
+          "options": ["No fish are amphibians.", "Some birds are not carnivores.", "Some mammals are herbivores.", "All teachers are educated."],
+          "answer": 1,
+          "answer_text": "Some birds are not carnivores."
+        },
+        {
+          "id": "cp_30",
+          "question": "Convert the proposition \"All triangles have three sides.\"",
+          "options": ["Some three-sided shapes are triangles.", "No triangles have three sides.", "Some triangles do not have three sides.", "Some triangles are three-sided shapes."],
+          "answer": 0,
+          "answer_text": "Some three-sided shapes are triangles."
+        },
+        {
+          "id": "cp_31",
+          "question": "Convert the proposition \"No cats are reptiles.\"",
+          "options": ["Some reptiles are cats.", "Some cats are reptiles.", "No reptiles are cats.", "Some reptiles are not cats."],
+          "answer": 2,
+          "answer_text": "No reptiles are cats."
+        },
+        {
+          "id": "cp_32",
+          "question": "Convert the proposition \"Some birds are not flightless.\"",
+          "options": ["Some flightless creatures are birds.", "Some birds are flightless.", "Some non-flightless creatures are birds.", "Conversion is not valid."],
+          "answer": 3,
+          "answer_text": "Conversion is not valid."
+        },
+        {
+          "id": "cp_33",
+          "question": "Obvert the proposition \"All snakes are reptiles.\"",
+          "options": ["No snakes are non-reptiles.", "Some reptiles are snakes.", "No reptiles are snakes.", "Some snakes are reptiles."],
+          "answer": 0,
+          "answer_text": "No snakes are non-reptiles."
+        },
+        {
+          "id": "cp_34",
+          "question": "Obvert the proposition \"Some musicians are not classical artists.\"",
+          "options": ["Some musicians are classical artists.", "No musicians are classical artists.", "Some musicians are non-classical artists.", "Some non-musicians are classical artists."],
+          "answer": 2,
+          "answer_text": "Some musicians are non-classical artists."
+        },
+        {
+          "id": "cp_35",
+          "question": "What is the contradictory of \"Some animals are not mammals.\"?",
+          "options": ["Some animals are mammals.", "No animals are mammals.", "All animals are mammals.", "Some animals are not reptiles."],
+          "answer": 2,
+          "answer_text": "All animals are mammals."
+        },
+        {
+          "id": "cp_36",
+          "question": "What is the contrary of \"No humans are perfect.\"?",
+          "options": ["Some humans are not perfect.", "Some humans are perfect.", "All humans are perfect.", "No perfect beings are human."],
+          "answer": 2,
+          "answer_text": "All humans are perfect."
+        },
+        {
+          "id": "cp_37",
+          "question": "If the universal affirmative proposition \"All computers have processors.\" is false, what can we conclude?",
+          "options": ["Some computers do not have processors.", "No computers have processors.", "Some computers have processors.", "All computers are outdated."],
+          "answer": 0,
+          "answer_text": "Some computers do not have processors."
+        },
+        {
+          "id": "cp_38",
+          "question": "If \"No fish have lungs.\" is true, what is its subcontrary?",
+          "options": ["Some fish have lungs.", "Some fish do not have lungs.", "All fish have lungs.", "No fish breathe oxygen."],
+          "answer": 1,
+          "answer_text": "Some fish do not have lungs."
+        },
+        {
+          "id": "cp_39",
+          "question": "Convert the proposition \"Some scientists are Nobel laureates.\"",
+          "options": ["Some Nobel laureates are scientists.", "All Nobel laureates are scientists.", "No Nobel laureates are scientists.", "Some scientists are not Nobel laureates."],
+          "answer": 0,
+          "answer_text": "Some Nobel laureates are scientists."
+        },
+        {
+          "id": "cp_40",
+          "question": "Convert the proposition \"No birds are insects.\"",
+          "options": ["Some insects are not birds.", "No insects are birds.", "Some birds are insects.", "All insects are birds."],
+          "answer": 1,
+          "answer_text": "No insects are birds."
+        },
+        {
+          "id": "cp_41",
+          "question": "Convert the proposition \"Some flowers are not roses.\"",
+          "options": ["Some roses are flowers.", "Some non-roses are flowers.", "No flowers are roses.", "Conversion is not valid."],
+          "answer": 3,
+          "answer_text": "Conversion is not valid."
+        },
+        {
+          "id": "cp_42",
+          "question": "If \"All astronauts are scientists\" is true, what can we infer about \"Some astronauts are scientists\"?",
+          "options": ["It must be true.", "It must be false.", "It is independent.", "It is contradictory."],
+          "answer": 0,
+          "answer_text": "It must be true."
+        },
+        {
+          "id": "cp_43",
+          "question": "What is the correct obversion of \"Some musicians are composers.\"?",
+          "options": ["Some musicians are not composers.", "No musicians are composers.", "Some musicians are non-composers.", "Some composers are not musicians."],
+          "answer": 2,
+          "answer_text": "Some musicians are non-composers."
+        },
+        {
+          "id": "cp_44",
+          "question": "Convert the proposition \"Some mammals are not marsupials.\"",
+          "options": ["Some marsupials are not mammals.", "Some non-marsupials are mammals.", "Conversion is not valid.", "No marsupials are mammals."],
+          "answer": 2,
+          "answer_text": "Conversion is not valid."
+        },
+        {
+          "id": "cp_45",
+          "question": "If \"All snakes are reptiles\" is false, what does it imply?",
+          "options": ["Some snakes are not reptiles.", "No snakes are reptiles.", "Some snakes are reptiles.", "Some reptiles are not snakes."],
+          "answer": 0,
+          "answer_text": "Some snakes are not reptiles."
+        },
+        {
+          "id": "cp_46",
+          "question": "Convert the proposition \"No dolphins are fish.\"",
+          "options": ["Some fish are not dolphins.", "No fish are dolphins.", "Some dolphins are fish.", "All fish are dolphins."],
+          "answer": 1,
+          "answer_text": "No fish are dolphins."
+        },
+        {
+          "id": "cp_47",
+          "question": "If \"Some planets have moons\" is false, what does it imply?",
+          "options": ["No planets have moons.", "All planets have moons.", "Some planets do not have moons.", "Some moons are planets."],
+          "answer": 0,
+          "answer_text": "No planets have moons."
+        },
+        {
+          "id": "cp_48",
+          "question": "If \"Some birds are not carnivorous\" is false, what can we conclude?",
+          "options": ["All birds are carnivorous.", "Some birds are carnivorous.", "No birds are carnivorous.", "Some birds are herbivorous."],
+          "answer": 0,
+          "answer_text": "All birds are carnivorous."
+        },
+        {
+          "id": "cp_50",
+          "question": "If the proposition \"No mathematicians are poets\" is true, what can be inferred about \"Some mathematicians are poets\"?",
+          "options": ["It is true.", "It is false.", "It is undetermined.", "It contradicts the original statement."],
+          "answer": 1,
+          "answer_text": "It is false."
+        },
+        {
+          "id": "cp_51",
+          "question": "Which of the following best represents the obversion of \"Some animals are reptiles\"?",
+          "options": ["Some animals are non-reptiles.", "No animals are non-reptiles.", "Some animals are not non-reptiles.", "No animals are reptiles."],
+          "answer": 2,
+          "answer_text": "Some animals are not non-reptiles."
+        },
+        {
+          "id": "cp_52",
+          "question": "What is the subcontrary of \"Some mammals are not carnivores\"?",
+          "options": ["Some mammals are carnivores.", "No mammals are carnivores.", "All mammals are carnivores.", "Some mammals are herbivores."],
+          "answer": 0,
+          "answer_text": "Some mammals are carnivores."
+        },
+        {
+          "id": "cp_53",
+          "question": "If the statement \"All teachers are literate\" is false, what must be true?",
+          "options": ["Some teachers are not literate.", "No teachers are literate.", "Some teachers are literate.", "All teachers are not literate."],
+          "answer": 0,
+          "answer_text": "Some teachers are not literate."
+        },
+        {
+          "id": "cp_54",
+          "question": "Convert the proposition \"All whales are mammals\" correctly.",
+          "options": ["Some mammals are whales.", "No mammals are whales.", "Some whales are not mammals.", "Some mammals are not whales."],
+          "answer": 0,
+          "answer_text": "Some mammals are whales."
+        },
+        {
+          "id": "cp_55",
+          "question": "If \"Some birds can fly\" is false, what must be true?",
+          "options": ["No birds can fly.", "Some birds cannot fly.", "All birds can fly.", "Some birds are mammals."],
+          "answer": 0,
+          "answer_text": "No birds can fly."
+        },
+        {
+          "id": "cp_56",
+          "question": "If \"No lawyers are criminals\" is true, which of the following is its correct conversion?",
+          "options": ["Some criminals are lawyers.", "No criminals are lawyers.", "Some lawyers are criminals.", "All criminals are not lawyers."],
+          "answer": 1,
+          "answer_text": "No criminals are lawyers."
+        },
+        {
+          "id": "cp_57",
+          "question": "If \"Some insects are not dangerous\" is false, what must be true?",
+          "options": ["All insects are dangerous.", "Some insects are dangerous.", "No insects are dangerous.", "Some insects are not harmless."],
+          "answer": 0,
+          "answer_text": "All insects are dangerous."
+        },
+        {
+          "id": "cp_58",
+          "question": "What is the contrapositive of \"If it rains, the ground gets wet\"?",
+          "options": ["If the ground is wet, then it has rained.", "If the ground is not wet, then it has not rained.", "If it does not rain, then the ground is not wet.", "If the ground is wet, then it will rain."],
+          "answer": 1,
+          "answer_text": "If the ground is not wet, then it has not rained."
+        },
+        {
+          "id": "cp_59",
+          "question": "Which of the following propositions contradicts \"All dogs are friendly\"?",
+          "options": ["Some dogs are friendly.", "No dogs are friendly.", "Some dogs are not friendly.", "Some dogs are aggressive."],
+          "answer": 2,
+          "answer_text": "Some dogs are not friendly."
+        },
+        {
+          "id": "cp_60",
+          "question": "Which of the following is an example of a particular affirmative proposition?",
+          "options": ["Some fruits are citrus.", "No fruits are citrus.", "All fruits are citrus.", "Some citrus are not fruits."],
+          "answer": 0,
+          "answer_text": "Some fruits are citrus."
+        },
+        {
+          "id": "cp_61",
+          "question": "If \"All engineers are problem-solvers\" is true, which of the following is its correct conversion?",
+          "options": ["Some problem-solvers are engineers.", "No problem-solvers are engineers.", "Some engineers are not problem-solvers.", "Some engineers are mathematicians."],
+          "answer": 0,
+          "answer_text": "Some problem-solvers are engineers."
+        },
+        {
+          "id": "cp_62",
+          "question": "If \"Some animals are not mammals\" is false, what can we conclude?",
+          "options": ["All animals are mammals.", "No animals are mammals.", "Some animals are mammals.", "Some mammals are animals."],
+          "answer": 0,
+          "answer_text": "All animals are mammals."
+        },
+        {
+          "id": "cp_63",
+          "question": "Convert the proposition \"No doctors are illiterate\" correctly.",
+          "options": ["Some illiterate people are doctors.", "No illiterate people are doctors.", "Some doctors are not illiterate.", "No doctors are literate."],
+          "answer": 1,
+          "answer_text": "No illiterate people are doctors."
+        },
+        {
+          "id": "cp_64",
+          "question": "If \"All metals conduct electricity\" is true, what must be true?",
+          "options": ["Some metals conduct electricity.", "Some metals do not conduct electricity.", "No metals conduct electricity.", "All metals are insulators."],
+          "answer": 0,
+          "answer_text": "Some metals conduct electricity."
+        },
+        {
+          "id": "cp_65",
+          "question": "What is the obversion of \"No cats are reptiles\"?",
+          "options": ["No reptiles are cats.", "All cats are reptiles.", "All cats are non-reptiles.", "Some reptiles are cats."],
+          "answer": 2,
+          "answer_text": "All cats are non-reptiles."
+        },
+        {
+          "id": "cp_66",
+          "question": "What is the correct contrapositive of \"If someone is a thief, then they are dishonest\"?",
+          "options": ["If someone is not dishonest, then they are not a thief.", "If someone is dishonest, then they are not a thief.", "If someone is a thief, then they are honest.", "If someone is not a thief, then they are dishonest."],
+          "answer": 0,
+          "answer_text": "If someone is not dishonest, then they are not a thief."
+        }
+      ]
+    },
+    {
+      "id": "logic_relevance",
+      "name": "Logic and Its Relevance",
+      "questions": [
+        {
+          "id": "lr_01",
+          "question": "The three laws of thought include all of the following EXCEPT:",
+          "options": ["The Law of Identity", "The Law of Contradiction", "The Law of Rationality", "The Law of the Excluded Middle"],
+          "answer": 2,
+          "answer_text": "The Law of Rationality"
+        },
+        {
+          "id": "lr_02",
+          "question": "Which of the following best defines a valid argument?",
+          "options": ["An argument where the premises and conclusion are all true", "An argument where the premises logically lead to the conclusion", "An argument that uses persuasive language", "An argument that is widely accepted"],
+          "answer": 1,
+          "answer_text": "An argument where the premises logically lead to the conclusion"
+        },
+        {
+          "id": "lr_03",
+          "question": "Which type of logic focuses on the structure of reasoning rather than the truth of the premises?",
+          "options": ["Material logic", "Informal logic", "Formal logic", "Inductive logic"],
+          "answer": 2,
+          "answer_text": "Formal logic"
+        },
+        {
+          "id": "lr_04",
+          "question": "What is the key feature of a deductive argument?",
+          "options": ["It moves from specific cases to general principles", "Its conclusion is only probable, not certain", "If the premises are true, the conclusion must be true", "It relies on examples and observation"],
+          "answer": 2,
+          "answer_text": "If the premises are true, the conclusion must be true"
+        },
+        {
+          "id": "lr_05",
+          "question": "What distinguishes material logic from formal logic?",
+          "options": ["Material logic focuses on the truth of premises, while formal logic focuses on structure", "Formal logic is concerned with argument content, while material logic checks validity", "Material logic uses mathematical formulas, while formal logic does not", "There is no difference between the two"],
+          "answer": 0,
+          "answer_text": "Material logic focuses on the truth of premises, while formal logic focuses on structure"
+        },
+        {
+          "id": "lr_06",
+          "question": "If an argument is valid but has false premises, what can be said about it?",
+          "options": ["It is sound", "It is unsound", "It is neither valid nor invalid", "The conclusion must also be false"],
+          "answer": 1,
+          "answer_text": "It is unsound"
+        },
+        {
+          "id": "lr_07",
+          "question": "The statement \"If it is raining, then the ground is wet\" is an example of:",
+          "options": ["A negationless logic statement", "A prepositional logic statement", "A compound statement", "A material logic statement"],
+          "answer": 2,
+          "answer_text": "A compound statement"
+        },
+        {
+          "id": "lr_08",
+          "question": "What makes an argument sound?",
+          "options": ["The premises and conclusion are both true, regardless of validity", "The argument is widely accepted", "The argument is valid, and all premises are true", "The premises are persuasive"],
+          "answer": 2,
+          "answer_text": "The argument is valid, and all premises are true"
+        },
+        {
+          "id": "lr_09",
+          "question": "What is the purpose of informal logic?",
+          "options": ["To analyze the structure of arguments without considering their truth", "To study reasoning in everyday language and practical situations", "To ensure that all arguments follow strict rules of inference", "To examine only mathematical and symbolic reasoning"],
+          "answer": 1,
+          "answer_text": "To study reasoning in everyday language and practical situations"
+        },
+        {
+          "id": "lr_10",
+          "question": "The Law of the Excluded Middle states that:",
+          "options": ["Every statement must be either true or false, with no middle ground", "Two contradictory statements can both be true under certain conditions", "The structure of an argument is more important than its content", "A statement can be both true and false at the same time"],
+          "answer": 0,
+          "answer_text": "Every statement must be either true or false, with no middle ground"
+        },
+        {
+          "id": "lr_app_01",
+          "question": "\"All mammals are warm-blooded. Whales are mammals. Therefore, whales are warm-blooded.\" Which option correctly identifies the conclusion?",
+          "options": ["All mammals are warm-blooded.", "Whales are mammals.", "Whales are warm-blooded.", "Both A and B."],
+          "answer": 2,
+          "answer_text": "Whales are warm-blooded."
+        },
+        {
+          "id": "lr_app_02",
+          "question": "\"In order to pass the test, you must study hard. John did not study hard. Therefore, John will not pass the test.\" What is the conclusion?",
+          "options": ["You must study hard to pass the test.", "John did not study hard.", "John will not pass the test.", "Both A and B support the conclusion."],
+          "answer": 2,
+          "answer_text": "John will not pass the test."
+        },
+        {
+          "id": "lr_app_03",
+          "question": "\"All fruits have seeds. An apple is a fruit. Therefore, an apple has seeds.\" Identify the premises and the conclusion.",
+          "options": ["Premises: All fruits have seeds; Apple is a fruit. Conclusion: Apple has seeds.", "Premise: Apple has seeds; Conclusion: All fruits have seeds.", "Premise: Apple has seeds; Conclusion: Apple is a fruit.", "Premises: All fruits have seeds; Apple has seeds. Conclusion: Apple is a fruit."],
+          "answer": 0,
+          "answer_text": "Premises: All fruits have seeds; Apple is a fruit. Conclusion: Apple has seeds."
+        },
+        {
+          "id": "lr_app_04",
+          "question": "\"Every student in the class passed the exam. Mary is a student in the class. Therefore, Mary passed the exam.\" Which part is the conclusion?",
+          "options": ["Every student in the class passed the exam.", "Mary is a student in the class.", "Mary passed the exam.", "Both A and B."],
+          "answer": 2,
+          "answer_text": "Mary passed the exam."
+        },
+        {
+          "id": "lr_app_05",
+          "question": "\"To win the game, you must practice regularly. Tom practices regularly. Therefore, Tom will win the game.\" What are the premises and what is the conclusion?",
+          "options": ["Premises: You must practice regularly; Tom practices regularly. Conclusion: Tom will win the game.", "Premise: Tom will win the game. Conclusion: Tom practices regularly.", "Premises: Tom practices regularly; Tom will win the game. Conclusion: You must practice regularly.", "Premise: To win the game, you must practice regularly. Conclusion: Tom practices regularly."],
+          "answer": 0,
+          "answer_text": "Premises: You must practice regularly; Tom practices regularly. Conclusion: Tom will win the game."
+        },
+        {
+          "id": "lr_app_06",
+          "question": "\"If it is raining, then the picnic will be canceled. It is raining. Therefore, the picnic will be canceled.\" Identify the conclusion.",
+          "options": ["If it is raining, then the picnic will be canceled.", "It is raining.", "The picnic will be canceled.", "Both A and B."],
+          "answer": 2,
+          "answer_text": "The picnic will be canceled."
+        },
+        {
+          "id": "lr_app_07",
+          "question": "\"All dogs bark. Rex is a dog. Therefore, Rex barks.\" Which option shows the premises and the conclusion?",
+          "options": ["Premise: All dogs bark. Conclusion: Rex is a dog.", "Premises: All dogs bark; Rex is a dog. Conclusion: Rex barks.", "Premise: Rex barks. Conclusion: All dogs bark and Rex is a dog.", "Premise: Rex is a dog. Conclusion: All dogs bark."],
+          "answer": 1,
+          "answer_text": "Premises: All dogs bark; Rex is a dog. Conclusion: Rex barks."
+        },
+        {
+          "id": "lr_app_08",
+          "question": "\"Studying daily improves your grades. Lisa studies daily. Therefore, Lisa's grades improve.\" What is the conclusion?",
+          "options": ["Studying daily improves your grades.", "Lisa studies daily.", "Lisa's grades improve.", "Both A and B."],
+          "answer": 2,
+          "answer_text": "Lisa's grades improve."
+        },
+        {
+          "id": "lr_app_09",
+          "question": "\"If you water plants, they grow. The garden was watered. Therefore, the plants grew.\" Select the correct identification:",
+          "options": ["Premise: If you water plants, they grow; Garden was watered. Conclusion: Plants grew.", "Premise: Plants grew; Conclusion: Garden was watered.", "Premise: Garden was watered; Conclusion: If you water plants, they grow.", "Premise: If you water plants, they grow; Conclusion: Garden was watered."],
+          "answer": 0,
+          "answer_text": "Premise: If you water plants, they grow; Garden was watered. Conclusion: Plants grew."
+        },
+        {
+          "id": "lr_app_10",
+          "question": "\"Everyone who studies passes the exam. Alex did not study. Therefore, Alex will not pass the exam.\" Identify the conclusion.",
+          "options": ["Everyone who studies passes the exam.", "Alex did not study.", "Alex will not pass the exam.", "The argument has no clear conclusion."],
+          "answer": 2,
+          "answer_text": "Alex will not pass the exam."
+        },
+        {
+          "id": "lr_app_11",
+          "question": "\"All birds can fly. A penguin is a bird. Therefore, a penguin can fly.\" Is this argument:",
+          "options": ["Sound", "Valid but unsound", "Invalid", "Neither"],
+          "answer": 1,
+          "answer_text": "Valid but unsound (The structure is valid, but the first premise is false.)"
+        },
+        {
+          "id": "lr_app_12",
+          "question": "\"All mammals have hearts. A whale is a mammal. Therefore, a whale has a heart.\" This argument is:",
+          "options": ["Valid but unsound", "Invalid", "Sound", "Neither"],
+          "answer": 2,
+          "answer_text": "Sound (Both premises and the conclusion are true, and the structure is valid.)"
+        },
+        {
+          "id": "lr_app_13",
+          "question": "\"If it is snowing, then it is cold outside. It is snowing. Therefore, it is cold outside.\" This argument is:",
+          "options": ["Sound", "Valid but unsound", "Invalid", "Unsound due to false premises"],
+          "answer": 0,
+          "answer_text": "Sound (The argument is valid and, assuming the premises are true, it is sound.)"
+        },
+        {
+          "id": "lr_app_14",
+          "question": "\"If you study hard, you will get good grades. You did not study hard. Therefore, you will not get good grades.\" This argument is:",
+          "options": ["Sound", "Valid but unsound", "Invalid", "Sound if the conclusion is true"],
+          "answer": 2,
+          "answer_text": "Invalid (This is an example of denying the antecedent.)"
+        },
+        {
+          "id": "lr_app_15",
+          "question": "\"All cars have engines. My bicycle has an engine. Therefore, my bicycle is a car.\" This argument is:",
+          "options": ["Sound", "Unsound", "Invalid", "Both unsound and invalid"],
+          "answer": 3,
+          "answer_text": "Both unsound and invalid (The argument is invalid; the premises are also untrue regarding bicycles.)"
+        },
+        {
+          "id": "lr_app_16",
+          "question": "\"Every student in the club is an honor student. Sarah is a student in the club. Therefore, Sarah is an honor student.\" The argument is:",
+          "options": ["Valid and sound", "Valid but unsound", "Invalid", "Neither valid nor unsound"],
+          "answer": 0,
+          "answer_text": "Valid and sound (Assuming the premises are true, the structure is valid.)"
+        },
+        {
+          "id": "lr_app_17",
+          "question": "\"If a person is a doctor, then they have a medical degree. John has a medical degree. Therefore, John is a doctor.\" This argument is:",
+          "options": ["Sound", "Valid but unsound", "Invalid", "Sound if John practices medicine"],
+          "answer": 2,
+          "answer_text": "Invalid (This is an example of affirming the consequent.)"
+        },
+        {
+          "id": "lr_app_18",
+          "question": "\"All computers run on electricity. My laptop is a computer. Therefore, my laptop runs on electricity.\" This argument is:",
+          "options": ["Sound", "Valid but unsound", "Invalid", "Sound only if my laptop is plugged in"],
+          "answer": 0,
+          "answer_text": "Sound (The structure is valid and the premises are true.)"
+        },
+        {
+          "id": "lr_app_19",
+          "question": "\"Only mammals have fur. A dolphin is a mammal. Therefore, a dolphin has fur.\" This argument is:",
+          "options": ["Valid and sound", "Valid but unsound", "Invalid", "Neither"],
+          "answer": 2,
+          "answer_text": "Invalid (The argument incorrectly assumes that being a mammal implies having fur.)"
+        },
+        {
+          "id": "lr_app_20",
+          "question": "\"If you exercise regularly, you will be healthy. You exercise regularly. Therefore, you are healthy.\" This argument is:",
+          "options": ["Valid and sound", "Valid but unsound", "Invalid", "Sound only if no other factors affect health"],
+          "answer": 1,
+          "answer_text": "Valid but unsound (The premise is not necessarily true because other factors influence health.)"
+        },
+        {
+          "id": "lr_app_21",
+          "question": "\"All fish can fly. Goldie is a fish. Therefore, Goldie can fly.\" Which premise is problematic?",
+          "options": ["\"All fish can fly\"", "\"Goldie is a fish\"", "\"Goldie can fly\"", "None of the above"],
+          "answer": 0,
+          "answer_text": "\"All fish can fly\" (The premise about fish flying is untrue.)"
+        },
+        {
+          "id": "lr_app_22",
+          "question": "\"Every bird lays eggs. Penguins are birds. Therefore, penguins lay eggs.\" Which premise might be challenged if we consider an exception?",
+          "options": ["\"Every bird lays eggs\"", "\"Penguins are birds\"", "\"Penguins lay eggs\"", "Both A and C"],
+          "answer": 0,
+          "answer_text": "\"Every bird lays eggs\" (this premise can be scrutinized for exceptional cases.)"
+        },
+        {
+          "id": "lr_app_23",
+          "question": "Premise 1: All planets are round. Premise 2: Earth is a planet. Which premise could be disputed in certain philosophical discussions?",
+          "options": ["Premise 1", "Premise 2", "Both premises", "Neither premise"],
+          "answer": 0,
+          "answer_text": "Premise 1 (Discussions about planetary shapes like oblate spheroid might dispute 'round' as oversimplified.)"
+        },
+        {
+          "id": "lr_app_24",
+          "question": "\"All vehicles have four wheels. My motorcycle is a vehicle. Therefore, my motorcycle has four wheels.\" Which premise is untrue?",
+          "options": ["\"All vehicles have four wheels\"", "\"My motorcycle is a vehicle\"", "\"My motorcycle has four wheels\"", "None of the above"],
+          "answer": 0,
+          "answer_text": "\"All vehicles have four wheels\" (Motorcycles are vehicles but typically have two wheels.)"
+        },
+        {
+          "id": "lr_app_25",
+          "question": "\"Every computer program is written in a high-level language.\" If some programs are in assembly language, which premise may be false?",
+          "options": ["\"Every computer program is written in a high-level language\"", "\"This software is a computer program\"", "\"This software is written in a high-level language\"", "None of the above"],
+          "answer": 0,
+          "answer_text": "\"Every computer program is written in a high-level language\""
+        },
+        {
+          "id": "lr_app_26",
+          "question": "\"If a person is a millionaire, then they are happy. John is not happy. Therefore, John is not a millionaire.\" Which premise is likely questionable?",
+          "options": ["\"If a person is a millionaire, then they are happy\"", "\"John is not happy\"", "\"John is not a millionaire\"", "All premises are equally true"],
+          "answer": 0,
+          "answer_text": "\"If a person is a millionaire, then they are happy\" (The idea that all millionaires are happy is a generalization.)"
+        },
+        {
+          "id": "lr_app_27",
+          "question": "\"All fruits are sweet. Lemons are fruits. Therefore, lemons are sweet.\" Which premise is problematic?",
+          "options": ["\"All fruits are sweet\"", "\"Lemons are fruits\"", "\"Lemons are sweet\"", "None of the above"],
+          "answer": 0,
+          "answer_text": "\"All fruits are sweet\" (Not all fruits are sweet; lemons are sour.)"
+        },
+        {
+          "id": "lr_app_28",
+          "question": "\"If a car is new, then it runs smoothly. This car is new. Therefore, it runs smoothly.\" If the car has a manufacturing defect, which element is misleading?",
+          "options": ["\"If a car is new, then it runs smoothly\"", "\"This car is new\"", "\"It runs smoothly\"", "Both A and B"],
+          "answer": 0,
+          "answer_text": "\"If a car is new, then it runs smoothly\" (The conditional is misleading if not all new cars run smoothly.)"
+        },
+        {
+          "id": "lr_app_29",
+          "question": "\"Every student who studies passes the exam. Emily is a student. Emily passed the exam.\" Which premise might be considered unverified?",
+          "options": ["\"Every student who studies passes the exam\"", "\"Emily is a student\"", "\"Emily passed the exam\"", "None of the above"],
+          "answer": 0,
+          "answer_text": "\"Every student who studies passes the exam\" (This universal statement can be challenged in real-life situations.)"
+        },
+        {
+          "id": "lr_app_30",
+          "question": "\"If it rains, the streets get wet. The streets are wet. Therefore, it rained.\" Which premise or assumption is problematic?",
+          "options": ["\"If it rains, the streets get wet\"", "\"The streets are wet\"", "\"Therefore, it rained\"", "The argument wrongly assumes no other cause for wet streets."],
+          "answer": 3,
+          "answer_text": "The argument wrongly assumes no other cause for wet streets (ignores causes like street cleaning or a sprinkler.)"
+        },
+        {
+          "id": "lr_ind_01",
+          "question": "Identify the inductive argument:",
+          "options": ["If it rains, the ground gets wet. It rained. Therefore, the ground is wet.", "All squares have four sides. A rectangle is a square. Therefore, a rectangle has four sides.", "Most dogs bark when they see strangers. My neighbor's dog is barking. Therefore, it probably sees a stranger.", "If an animal is a bird, it must lay eggs. A parrot is a bird. Therefore, it lays eggs."],
+          "answer": 2,
+          "answer_text": "Most dogs bark... (The conclusion is based on probability rather than certainty.)"
+        },
+        {
+          "id": "lr_ind_02",
+          "question": "Which argument is deductive?",
+          "options": ["The last five times I drank coffee, I felt more awake. Therefore, drinking coffee always makes people more awake.", "Every prime number greater than 2 is odd. 13 is a prime number greater than 2. Therefore, 13 is odd.", "All swans I've seen are white. Therefore, all swans must be white.", "The majority of past presidents have been male. Therefore, the next president will likely be male."],
+          "answer": 1,
+          "answer_text": "Every prime number greater than 2 is odd... (It follows strict logical necessity.)"
+        },
+        {
+          "id": "lr_ind_03",
+          "question": "Identify the inductive argument:",
+          "options": ["If it is raining, then the streets will be wet. It is raining. Therefore, the streets are wet.", "Every action has an equal and opposite reaction. A rocket engine pushes down, so the rocket moves up.", "All cars I have ever seen have four wheels. Therefore, all cars must have four wheels.", "Every bachelor is an unmarried man. John is a bachelor. Therefore, John is unmarried."],
+          "answer": 2,
+          "answer_text": "All cars I have ever seen have four wheels... (Based on observations but not necessarily always true.)"
+        },
+        {
+          "id": "lr_ind_04",
+          "question": "Which of the following is deductive?",
+          "options": ["Most cats are independent. My friend has a cat. Therefore, my friend's cat is probably independent.", "Every person who studies hard passes the exam. Mary studied hard. Therefore, Mary passed the exam.", "The past five winters have been colder than average. Therefore, next winter will likely be colder.", "90% of the students in this school have smartphones. John is a student here, so he probably has a smartphone."],
+          "answer": 1,
+          "answer_text": "Every person who studies hard passes the exam... (It follows a strict logical rule.)"
+        },
+        {
+          "id": "lr_ind_05",
+          "question": "Which argument is inductive?",
+          "options": ["No triangles have four sides. Shape X is a triangle. Therefore, shape X does not have four sides.", "All people born in Canada are Canadian citizens. Sarah was born in Canada. Therefore, Sarah is a Canadian citizen.", "Every swan I have seen is white. Therefore, the next swan I see will probably be white.", "If an animal is a fish, then it breathes through gills. A shark is a fish. Therefore, it breathes through gills."],
+          "answer": 2,
+          "answer_text": "Every swan I have seen is white... (Based on observations and probability.)"
+        },
+        {
+          "id": "lr_ind_06",
+          "question": "What makes an argument deductive?",
+          "options": ["It draws conclusions based on probability and past experience.", "It guarantees the truth of the conclusion if the premises are true.", "It makes a generalization based on specific observations.", "It assumes that the past will always predict the future."],
+          "answer": 1,
+          "answer_text": "It guarantees the truth of the conclusion if the premises are true."
+        },
+        {
+          "id": "lr_ind_07",
+          "question": "Which of these is an example of inductive reasoning?",
+          "options": ["All birds have feathers. A robin is a bird. Therefore, a robin has feathers.", "No human can survive without oxygen. John is a human. Therefore, John needs oxygen to live.", "My grandfather smoked and lived to 95. Therefore, smoking does not always cause early death.", "If today is Tuesday, then tomorrow is Wednesday. Today is Tuesday. Therefore, tomorrow is Wednesday."],
+          "answer": 2,
+          "answer_text": "My grandfather smoked and lived to 95... (Makes a probable generalization, not a strict logical necessity.)"
+        },
+        {
+          "id": "lr_ind_08",
+          "question": "A deductive argument is one in which:",
+          "options": ["The conclusion follows with certainty if the premises are true.", "The conclusion is always true, even if the premises are false.", "The conclusion is only probable, not certain.", "The argument is based entirely on past observations."],
+          "answer": 0,
+          "answer_text": "The conclusion follows with certainty if the premises are true."
+        },
+        {
+          "id": "lr_ind_09",
+          "question": "Which of the following best represents inductive reasoning?",
+          "options": ["All men are mortal. Socrates is a man. Therefore, Socrates is mortal.", "The last five times I went jogging, I felt great afterward. Therefore, jogging always makes people feel great.", "If a shape is a square, then it has four equal sides. Shape X is a square. Therefore, it has four equal sides.", "If a student studies, they pass the test. Mike studied. Therefore, he passed the test."],
+          "answer": 1,
+          "answer_text": "The last five times I went jogging... (The conclusion is based on repeated observations, but not necessarily true for all cases.)"
+        }
+      ]
+    },
+    {
+      "id": "branches_philosophy",
+      "name": "Major Branches of Philosophy",
+      "questions": [
+        {
+          "id": "bp_01",
+          "question": "Which branch of philosophy deals with the study of knowledge—its nature, sources, and validity?",
+          "options": ["Metaphysics", "Epistemology", "Axiology", "Logic"],
+          "answer": 1,
+          "answer_text": "Epistemology"
+        },
+        {
+          "id": "bp_02",
+          "question": "Which statement best captures René Descartes's view of metaphysics?",
+          "options": ["It is the study of values and moral judgments.", "It is primarily concerned with linguistic analysis and the structure of arguments.", "It is considered the \"first philosophy,\" dealing with the fundamental nature of reality and existence.", "It is purely concerned with political structures and human relationships."],
+          "answer": 2,
+          "answer_text": "It is considered the \"first philosophy,\" dealing with the fundamental nature of reality and existence."
+        },
+        {
+          "id": "bp_03",
+          "question": "Which of the following is NOT one of the traditionally recognized major branches of philosophy?",
+          "options": ["Epistemology", "Metaphysics", "Axiology (Ethics and Aesthetics)", "Anthropology"],
+          "answer": 3,
+          "answer_text": "Anthropology"
+        },
+        {
+          "id": "bp_04",
+          "question": "In the context of epistemology, which source of knowledge involves divine undertones and communication from God?",
+          "options": ["Authority", "Revelation", "Empiricism", "Rationalism"],
+          "answer": 1,
+          "answer_text": "Revelation"
+        },
+        {
+          "id": "bp_05",
+          "question": "According to the text, logic is primarily concerned with which of the following?",
+          "options": ["The study of moral values and judgments", "The methods and principles used in distinguishing correct from incorrect reasoning", "The study of the origin, nature, and development of the universe", "The study of the aesthetic values in art and nature"],
+          "answer": 1,
+          "answer_text": "The methods and principles used in distinguishing correct from incorrect reasoning"
+        },
+        {
+          "id": "bp_06",
+          "question": "Axiology, one of the major branches of philosophy, is subdivided mainly into:",
+          "options": ["Ethics and Metaphysics", "Epistemology and Logic", "Ethics and Aesthetics", "Anthropology and Cosmology"],
+          "answer": 2,
+          "answer_text": "Ethics and Aesthetics"
+        },
+        {
+          "id": "bp_07",
+          "question": "Which philosopher warned that \"If the world's ethical standards fail to rise to the advance of our technological revolution, we shall perish\"?",
+          "options": ["Aristotle", "Counts (1962)", "Copi (1982)", "Knight (1990)"],
+          "answer": 1,
+          "answer_text": "Counts (1962)"
+        },
+        {
+          "id": "bp_08",
+          "question": "What does the text describe as the \"king\" of all disciplines, which leads to the highest degree in many fields (Ph.D.)?",
+          "options": ["Theology", "Mathematics", "Philosophy", "Anthropology"],
+          "answer": 2,
+          "answer_text": "Philosophy"
+        },
+        {
+          "id": "bp_09",
+          "question": "Which branch of philosophy studies \"the nature of reality,\" dealing with questions such as the origin of the universe, the nature of existence, and the mind-body relationship?",
+          "options": ["Axiology", "Metaphysics", "Logic", "Epistemology"],
+          "answer": 1,
+          "answer_text": "Metaphysics"
+        },
+        {
+          "id": "bp_10",
+          "question": "According to the text, which of the following is NOT typically a direct source of knowledge mentioned?",
+          "options": ["Rationalism (reasoning)", "Empiricism (sense perception)", "Tradition (passed down without questioning)", "Intuition (immediate understanding without reasoning)"],
+          "answer": 2,
+          "answer_text": "Tradition (passed down without questioning)"
+        },
+        {
+          "id": "bp_11",
+          "question": "Which branch of philosophy is primarily focused on the formal principles of reasoning, argument structure, and the evaluation of inferences?",
+          "options": ["Metaphysics", "Epistemology", "Logic", "Axiology"],
+          "answer": 2,
+          "answer_text": "Logic"
+        },
+        {
+          "id": "bp_12",
+          "question": "Which sub-branch of axiology is concerned with determining the criteria for what is considered beautiful or artistically valuable?",
+          "options": ["Ethics", "Aesthetics", "Metaphysics", "Epistemology"],
+          "answer": 1,
+          "answer_text": "Aesthetics"
+        },
+        {
+          "id": "bp_13",
+          "question": "Which philosophical method, famously associated with René Descartes, involves doubting all beliefs until reaching an undeniable foundation?",
+          "options": ["Empiricism", "Induction", "Methodological skepticism", "Pragmatism"],
+          "answer": 2,
+          "answer_text": "Methodological skepticism"
+        },
+        {
+          "id": "bp_14",
+          "question": "The statement \"I think, therefore I am\" is most closely associated with which philosopher?",
+          "options": ["Aristotle", "René Descartes", "Immanuel Kant", "Socrates"],
+          "answer": 1,
+          "answer_text": "René Descartes"
+        },
+        {
+          "id": "bp_15",
+          "question": "Which of the following sources of knowledge is based on direct sensory experience?",
+          "options": ["Rationalism", "Empiricism", "Revelation", "Intuition"],
+          "answer": 1,
+          "answer_text": "Empiricism"
+        },
+        {
+          "id": "bp_16",
+          "question": "In the context of the text, which branch of philosophy would include the study of moral dilemmas and questions about right and wrong?",
+          "options": ["Epistemology", "Axiology", "Metaphysics", "Logic"],
+          "answer": 1,
+          "answer_text": "Axiology"
+        },
+        {
+          "id": "bp_17",
+          "question": "Which of the following best describes the relationship between philosophy and other academic disciplines?",
+          "options": ["Philosophy is a specialized field with no connection to other disciplines.", "Philosophy is the \"mother of the sciences,\" forming the foundation for various academic fields and the Ph.D. degree.", "Philosophy only concerns abstract ideas with no practical application.", "Philosophy primarily deals with historical analysis rather than scientific inquiry."],
+          "answer": 1,
+          "answer_text": "Philosophy is the \"mother of the sciences,\" forming the foundation for various academic fields and the Ph.D. degree."
+        },
+        {
+          "id": "bp_18",
+          "question": "Which source of knowledge is associated with gaining insight without a deliberate, conscious process?",
+          "options": ["Authority", "Intuition", "Empiricism", "Rationalism"],
+          "answer": 1,
+          "answer_text": "Intuition"
+        },
+        {
+          "id": "bp_19",
+          "question": "Which major branch of philosophy deals with questions about the nature of existence, reality, and the universe?",
+          "options": ["Epistemology", "Axiology", "Metaphysics", "Logic"],
+          "answer": 2,
+          "answer_text": "Metaphysics"
+        },
+        {
+          "id": "bp_21",
+          "question": "Which branch of philosophy is primarily concerned with studying the nature and existence of the universe (cosmology), and from which major branch is it deduced?",
+          "options": ["Epistemology, deduced from Logic", "Cosmology, deduced from Axiology", "Cosmology, deduced from Metaphysics", "Ethics, deduced from Epistemology"],
+          "answer": 2,
+          "answer_text": "Cosmology, deduced from Metaphysics"
+        },
+        {
+          "id": "bp_22",
+          "question": "Which branch of philosophy deals with the systematic study of valid reasoning and argument structure, and what is its primary purpose?",
+          "options": ["Logic; to distinguish correct from incorrect reasoning", "Epistemology; to analyze the sources of knowledge", "Metaphysics; to explore the nature of being", "Axiology; to evaluate ethical values"],
+          "answer": 0,
+          "answer_text": "Logic; to distinguish correct from incorrect reasoning"
+        },
+        {
+          "id": "bp_23",
+          "question": "The study of moral values, ethical dilemmas, and aesthetic judgments is grouped under which branch of philosophy?",
+          "options": ["Metaphysics; to understand the nature of existence", "Epistemology; to question the basis of knowledge", "Axiology; to assess what is valuable and good", "Logic; to analyze argument structure"],
+          "answer": 2,
+          "answer_text": "Axiology; to assess what is valuable and good"
+        },
+        {
+          "id": "bp_24",
+          "question": "Which branch of philosophy is dedicated to understanding the nature, sources, and limits of human knowledge?",
+          "options": ["Epistemology; it investigates sense perception, reason, intuition, and revelation", "Metaphysics; it investigates the origin of the universe", "Logic; it investigates the structure of arguments", "Axiology; it investigates moral and aesthetic values"],
+          "answer": 0,
+          "answer_text": "Epistemology; it investigates sense perception, reason, intuition, and revelation"
+        },
+        {
+          "id": "bp_25",
+          "question": "Which branch of philosophy lays the groundwork for scientific inquiry and is sometimes referred to as the \"mother of the sciences\"?",
+          "options": ["Ethics", "Logic", "Metaphysics", "Philosophy as a whole (with emphasis on Metaphysics)"],
+          "answer": 3,
+          "answer_text": "Philosophy as a whole (with emphasis on Metaphysics)"
+        },
+        {
+          "id": "bp_26",
+          "question": "In the context of evaluating arguments, which branch of philosophy helps to identify fallacies and ensure logical consistency?",
+          "options": ["Epistemology; to test the reliability of sensory data", "Logic; to distinguish between valid and invalid reasoning", "Metaphysics; to explain the nature of reality", "Axiology; to define what is ethically right"],
+          "answer": 1,
+          "answer_text": "Logic; to distinguish between valid and invalid reasoning"
+        },
+        {
+          "id": "bp_27",
+          "question": "Which branch of philosophy is directly concerned with questions about existence and being, and how does it relate to the study of the cosmos?",
+          "options": ["Epistemology; it relates by explaining how we come to know cosmic phenomena", "Axiology; it relates by judging the beauty of the cosmos", "Metaphysics; it relates by addressing the fundamental principles that govern existence, including the cosmos", "Logic; it relates by structuring the arguments about cosmic theories"],
+          "answer": 2,
+          "answer_text": "Metaphysics; it relates by addressing the fundamental principles that govern existence, including the cosmos"
+        }
+      ]
+    }
+  ]
+}

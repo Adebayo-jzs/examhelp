@@ -1,311 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EXAM HELP</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color:  #ACB6E5 ;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      background: linear-gradient(135deg, #fff 60%, #e3f0ff 100%);
-      box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
-      border-radius: 20px;
-      padding: 40px 32px !important;
-      max-width: 480px;
-      width: 100%;
-      margin: auto;
-      transition: box-shadow 0.3s;
-      position: relative;
-      animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.97);}
-      to { opacity: 1; transform: scale(1);}
-    }
-    h1 {
-      margin-bottom: 24px;
-      color: #0077ff;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    #timer {
-      text-align: right;
-      font-weight: 700;
-      font-size: 15px;
-      margin-bottom: 12px;
-      color: black;
-      display: none;
-      padding: 5px;
-      border-radius: 4px;
-      margin-left: auto;
-      background-color: #ACB6E5;
-      width: fit-content;
-    }
-    @media (max-width:600px) {
-      body{
-        padding: 10px;
-      }
-      
-    }
-    button.chapter-tab{
-      margin: 10px 6px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Philosophy & Logic Quiz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f4f0;color:#1a1a1a;min-height:100vh;padding:2rem 1rem}
+.container{max-width:720px;margin:0 auto}
+.brand{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-bottom:12px}
+h1{font-size:28px;font-weight:500;margin-bottom:6px}
+.tagline{font-size:15px;color:#888;margin-bottom:2.5rem}
+.section-label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:#aaa;margin-bottom:10px}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
+.cat-card{padding:14px 16px;border-radius:10px;border:1.5px solid #e0e0e0;cursor:pointer;background:#fff;transition:all .15s;text-align:left}
+.cat-card:hover{border-color:#bbb}
+.cat-card.selected{border-color:#1a6ef5;background:#f0f5ff}
+.cat-card .cn{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:2px}
+.cat-card .cc{font-size:12px;color:#aaa}
+.cat-card.selected .cn{color:#1a6ef5}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
+.mode-card{padding:14px 16px;border-radius:10px;border:1.5px solid #e0e0e0;cursor:pointer;background:#fff;transition:all .15s;text-align:left}
+.mode-card:hover{border-color:#bbb}
+.mode-card.selected{border-color:#1a6ef5;background:#f0f5ff}
+.mode-card .mn{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:3px}
+.mode-card.selected .mn{color:#1a6ef5}
+.mode-card .md{font-size:12px;color:#aaa;line-height:1.4}
 
-    }
-    #navigation{
-      display: flex;
-      justify-content: space-between;
-    }
-    button {
-      padding: 12px 20px;
-      border: none;
-      background: linear-gradient(90deg, #0077ff 60%, #74ebd5 100%);
-      color: white;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      font-family: inherit;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    button:hover {
-      background: linear-gradient(90deg, #0052cc 60%, #74ebd5 100%);
-      box-shadow: 0 4px 16px rgba(44,62,80,0.12);
-    }
-    .course-tab.active, .chapter-tab.active {
-      background: linear-gradient(90deg, #74ebd5 60%, #0077ff 100%);
-      color: #0077ff;
-      border: 2px solid #0077ff;
-      font-weight: bold;
-      box-shadow: 0 4px 16px rgba(44,62,80,0.15);
-    }
-    #question-navigation {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px;
-    }
-    #question-navigation button {
-      width: 38px;
-      margin: 3px;
-      background-color: #f0f0f0;
-      color: #0077ff;
-      border-radius: 8px;
-      font-weight: 600;
-      border: 1px solid #e3e3e3;
-      transition: background 0.3s, color 0.3s;
-    }
-    #question-navigation button.active {
-      background-color: #0077ff;
-      color: white;
-      font-weight: bold;
-    }
-    #question-navigation button.select{
-      background-color: #74ebd5;
-      color: #0077ff;
-      font-weight: bold;
-    }
-    #result {
-      font-size: 22px;
-      margin-top: 18px;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-    }
-    .summary {
-      background: #f9f9f9;
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: left;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.06);
-    }
-    .correct { color: #4CAF50; font-weight: 600;}
-    .incorrect { color: #f44336; font-weight: 600;}
-    .summary-item {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-    #prevBtn, #nextBtn{
-      display: none;
-    }
-    .correct-answer {
-      background-color: #4CAF50 !important;
-      color: white !important;
-    }
-    .wrong-answer {
-      background-color: #f44336 !important;
-      color: white !important;
-    }
-    .show-correct {
-      border: 2px solid #4CAF50 !important;
-      background-color: #a5d6a7 !important;
-    }
-    .option {
-      background: #f0f0f0;
-      margin: 10px 0;
-      padding: 14px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-size: 16px;
-      font-weight: 500;
-      box-shadow: 0 1px 4px rgba(44,62,80,0.04);
-    }
-    .option:hover {
-      background: #e3f0ff;
-    }
-    .selected {
-      background: #a0c4ff !important;
-      font-weight: bold;
-      color: #0077ff;
-    }
-    /* Switch styles */
-    /* #feedback-toggle {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 15px;
-      user-select: none;
-    } */
-     #feedback-toggle {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 15px;
-      -webkit-user-select: none; /* For iOS Safari */
-      -moz-user-select: none;    /* For Firefox */
-      -ms-user-select: none;     /* For IE10+ */
-      user-select: none;
-}
+/* Q COUNT SELECTOR */
+.qcount-row{display:flex;align-items:center;gap:10px;margin-bottom:2rem;flex-wrap:wrap}
+.qcount-btn{padding:8px 18px;border-radius:20px;border:1.5px solid #e0e0e0;cursor:pointer;font-size:14px;font-weight:500;background:#fff;color:#888;transition:all .15s}
+.qcount-btn:hover{border-color:#bbb;color:#1a1a1a}
+.qcount-btn.selected{border-color:#1a6ef5;background:#f0f5ff;color:#1a6ef5}
+.qcount-custom{display:flex;align-items:center;gap:8px;flex:1;min-width:160px}
+.qcount-custom input{width:80px;padding:8px 12px;border-radius:20px;border:1.5px solid #e0e0e0;font-size:14px;font-weight:500;color:#1a1a1a;background:#fff;text-align:center;outline:none}
+.qcount-custom input:focus{border-color:#1a6ef5}
+.qcount-custom input.selected-input{border-color:#1a6ef5;background:#f0f5ff;color:#1a6ef5}
+.qcount-max{font-size:12px;color:#bbb}
 
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 54px;
-      height: 28px;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: #0077ff;
-      transition: .4s;
-      border-radius: 28px;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 22px;
-      width: 22px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.10);
-    }
-    input:checked + .slider {
-      background-color: #74ebd5;
-    }
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 18px 6px;
-        max-width: 98vw;
-      }
-      h1 { font-size: 1.3em;}
-      .option { font-size: 15px;}
-    }
-        .correct-answer {
-      background-color: #4CAF50 !important;
-      color: white !important;
-    }
-    .wrong-answer {
-      background-color: #f44336 !important;
-      color: white !important;
-    }
-    .selected {
-      background: #a0c4ff !important;
-      font-weight: bold;
-      color: #0077ff;
-    }
-  </style>
+.start-btn{width:100%;padding:14px;border-radius:10px;border:none;background:#1a6ef5;color:#fff;font-size:15px;font-weight:500;cursor:pointer;transition:background .15s}
+.start-btn:hover{background:#1560d8}
+.start-btn:disabled{background:#ccc;cursor:default}
+
+/* QUIZ */
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:8px;flex-wrap:wrap}
+.timer{font-size:14px;font-weight:500;color:#1a1a1a;background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:5px 14px;display:flex;align-items:center;gap:6px}
+.tdot{width:7px;height:7px;border-radius:50%;background:#1a6ef5;animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.score-badge{font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px;background:#e8f4e8;color:#2a7a2a}
+.progress-bar{height:4px;background:#e0e0e0;border-radius:2px;margin-bottom:1.25rem;overflow:hidden}
+.progress-fill{height:100%;background:#1a6ef5;border-radius:2px;transition:width .3s}
+.question-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+.q-cat{font-size:11px;color:#bbb;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.q-text{font-size:15px;font-weight:500;line-height:1.55;margin-bottom:1rem}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:10px 14px;border-radius:8px;border:1px solid #e8e8e8;cursor:pointer;font-size:14px;color:#1a1a1a;background:#fafafa;transition:all .15s;text-align:left;line-height:1.4;width:100%}
+.opt:hover:not(.disabled){background:#fff;border-color:#bbb}
+.opt.pending{background:#eef3ff;border-color:#1a6ef5}
+.opt.correct{background:#e8f4e8;border-color:#5ab85a;color:#1a5a1a}
+.opt.wrong{background:#fde8e8;border-color:#e05a5a;color:#5a1a1a}
+.opt.disabled{cursor:default}
+.feedback{margin-top:10px;padding:8px 12px;border-radius:8px;font-size:13px;line-height:1.5}
+.feedback.correct{background:#e8f4e8;color:#1a5a1a}
+.feedback.wrong{background:#fde8e8;color:#5a1a1a}
+.feedback.pending{background:#eef3ff;color:#1a4ab5}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.btn{padding:8px 18px;border-radius:8px;border:1px solid #ddd;cursor:pointer;font-size:14px;background:#fff;color:#1a1a1a;transition:all .15s}
+.btn:hover{background:#f5f5f5}
+.btn.primary{background:#1a6ef5;color:#fff;border-color:transparent}
+.btn.primary:hover{background:#1560d8}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.ghost{border-color:transparent;color:#bbb}
+.btn.ghost:hover{color:#888;background:transparent}
+.meta-bar{font-size:13px;color:#aaa;margin-bottom:8px}
+
+/* RESULTS */
+.results{text-align:center;padding:2rem 1rem}
+.big-score{font-size:58px;font-weight:500;line-height:1;margin-bottom:6px}
+.sub{font-size:15px;color:#888;margin-bottom:4px}
+.time-taken{font-size:13px;color:#aaa;margin-bottom:1.5rem}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem}
+.stat{background:#f5f4f0;border-radius:8px;padding:1rem}
+.stat-n{font-size:24px;font-weight:500}
+.stat-l{font-size:12px;color:#888;margin-top:2px}
+.rbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+/* REVIEW */
+.review-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.25rem;margin-bottom:10px}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>EXAM HELP</h1>
-    <!-- Tabs for course selection -->
-    <div id="course-tabs" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 18px;">
-      <button class="course-tab active" onclick="selectCourse('health')">Health Principles</button>
-      <button class="course-tab" onclick="selectCourse('messiah')">Christ the Messiah</button>
+<div class="container" id="app"></div>
+<script>
+const QS=[
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"All birds are animals.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:0},
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"No fish are mammals.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:1},
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"Some students are not lazy.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:3},
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"Some trees are tall.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:2},
+  {cat:"Categorical Propositions",q:"Which represents a universal affirmative proposition?",opts:["Some dogs are friendly.","All cars are vehicles.","No birds are reptiles.","Some students are not diligent."],a:1},
+  {cat:"Categorical Propositions",q:"Which represents a universal negative proposition?",opts:["All fish live in water.","Some birds cannot fly.","No insects are mammals.","Some dogs are not brown."],a:2},
+  {cat:"Categorical Propositions",q:"Which represents a particular affirmative proposition?",opts:["Some cars are electric.","No cats are reptiles.","All whales are mammals.","Some birds are not sparrows."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"All squares are rectangles.\"",opts:["Some rectangles are squares.","No rectangles are squares.","Some squares are not rectangles.","Some rectangles are not squares."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No mammals are cold-blooded.\"",opts:["Some cold-blooded creatures are mammals.","No cold-blooded creatures are mammals.","Some mammals are cold-blooded.","All cold-blooded creatures are mammals."],a:1},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some birds are not carnivorous.\"",opts:["Some carnivorous creatures are birds.","No birds are carnivorous.","Some non-carnivorous creatures are birds.","Conversion is not valid."],a:3},
+  {cat:"Categorical Propositions",q:"Obvert the proposition \"All reptiles are vertebrates.\"",opts:["Some reptiles are vertebrates.","No reptiles are invertebrates.","Some vertebrates are reptiles.","Some vertebrates are not reptiles."],a:1},
+  {cat:"Categorical Propositions",q:"Obvert the proposition \"Some trees are not deciduous.\"",opts:["Some trees are evergreen.","No trees are deciduous.","Some trees are non-deciduous.","All trees are deciduous."],a:2},
+  {cat:"Categorical Propositions",q:"What is the contradictory of \"All dogs are friendly\"?",opts:["Some dogs are friendly.","No dogs are friendly.","Some dogs are not friendly.","All dogs are unfriendly."],a:2},
+  {cat:"Categorical Propositions",q:"What is the contrary of \"No fruits are sour\"?",opts:["Some fruits are not sour.","Some fruits are sour.","All fruits are sour.","Some non-fruits are sour."],a:2},
+  {cat:"Categorical Propositions",q:"If \"All whales are marine animals\" is false, what can we conclude?",opts:["No whales are marine animals.","Some whales are marine animals.","Some whales are not marine animals.","All whales are not marine animals."],a:2},
+  {cat:"Categorical Propositions",q:"If \"No mammals lay eggs\" is true, what is its subcontrary?",opts:["Some mammals lay eggs.","Some mammals do not lay eggs.","All mammals lay eggs.","Some mammals are reptiles."],a:1},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some birds are migratory.\"",opts:["Some migratory creatures are birds.","All migratory creatures are birds.","No migratory creatures are birds.","Some migratory creatures are not birds."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No snakes have legs.\"",opts:["Some creatures with legs are snakes.","No legged creatures are snakes.","Some snakes have legs.","All snakes have legs."],a:1},
+  {cat:"Categorical Propositions",q:"If \"All humans are rational\" is true, what can we infer about \"Some humans are rational\"?",opts:["It must be true.","It must be false.","It is independent.","It is contradictory."],a:0},
+  {cat:"Categorical Propositions",q:"What is the correct obversion of \"Some cars are sports cars\"?",opts:["Some cars are not sports cars.","No cars are sports cars.","Some cars are non-sports cars.","Some non-cars are sports cars."],a:2},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some cats are not wild animals.\"",opts:["Some wild animals are not cats.","Some non-wild animals are cats.","Conversion is not valid.","No wild animals are cats."],a:2},
+  {cat:"Categorical Propositions",q:"If \"All birds have feathers\" is false, what can be inferred?",opts:["Some birds do not have feathers.","No birds have feathers.","Some birds have feathers.","Some birds are mammals."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No trees are animals.\"",opts:["Some animals are not trees.","No animals are trees.","Some trees are animals.","All animals are trees."],a:1},
+  {cat:"Categorical Propositions",q:"If \"Some planets are habitable\" is false, what does it imply?",opts:["No planets are habitable.","All planets are habitable.","Some planets are not habitable.","Some planets are stars."],a:0},
+  {cat:"Categorical Propositions",q:"If \"Some mammals are not carnivorous\" is false, what can we conclude?",opts:["All mammals are carnivorous.","Some mammals are carnivorous.","No mammals are carnivorous.","Some non-mammals are carnivorous."],a:0},
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"Some books are fiction.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:2},
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"No reptiles have fur.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:1},
+  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"All students are not lazy.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:0},
+  {cat:"Categorical Propositions",q:"Which is an example of a particular negative proposition?",opts:["No fish are amphibians.","Some birds are not carnivores.","Some mammals are herbivores.","All teachers are educated."],a:1},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"All triangles have three sides.\"",opts:["Some three-sided shapes are triangles.","No triangles have three sides.","Some triangles do not have three sides.","Some triangles are three-sided shapes."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No cats are reptiles.\"",opts:["Some reptiles are cats.","Some cats are reptiles.","No reptiles are cats.","Some reptiles are not cats."],a:2},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some birds are not flightless.\"",opts:["Some flightless creatures are birds.","Some birds are flightless.","Some non-flightless creatures are birds.","Conversion is not valid."],a:3},
+  {cat:"Categorical Propositions",q:"Obvert the proposition \"All snakes are reptiles.\"",opts:["No snakes are non-reptiles.","Some reptiles are snakes.","No reptiles are snakes.","Some snakes are reptiles."],a:0},
+  {cat:"Categorical Propositions",q:"Obvert the proposition \"Some musicians are not classical artists.\"",opts:["Some musicians are classical artists.","No musicians are classical artists.","Some musicians are non-classical artists.","Some non-musicians are classical artists."],a:2},
+  {cat:"Categorical Propositions",q:"What is the contradictory of \"Some animals are not mammals\"?",opts:["Some animals are mammals.","No animals are mammals.","All animals are mammals.","Some animals are not reptiles."],a:2},
+  {cat:"Categorical Propositions",q:"What is the contrary of \"No humans are perfect\"?",opts:["Some humans are not perfect.","Some humans are perfect.","All humans are perfect.","No perfect beings are human."],a:2},
+  {cat:"Categorical Propositions",q:"If \"All computers have processors\" is false, what can we conclude?",opts:["Some computers do not have processors.","No computers have processors.","Some computers have processors.","All computers are outdated."],a:0},
+  {cat:"Categorical Propositions",q:"If \"No fish have lungs\" is true, what is its subcontrary?",opts:["Some fish have lungs.","Some fish do not have lungs.","All fish have lungs.","No fish breathe oxygen."],a:1},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some scientists are Nobel laureates.\"",opts:["Some Nobel laureates are scientists.","All Nobel laureates are scientists.","No Nobel laureates are scientists.","Some scientists are not Nobel laureates."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No birds are insects.\"",opts:["Some insects are not birds.","No insects are birds.","Some birds are insects.","All insects are birds."],a:1},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some flowers are not roses.\"",opts:["Some roses are flowers.","Some non-roses are flowers.","No flowers are roses.","Conversion is not valid."],a:3},
+  {cat:"Categorical Propositions",q:"If \"All astronauts are scientists\" is true, what can we infer about \"Some astronauts are scientists\"?",opts:["It must be true.","It must be false.","It is independent.","It is contradictory."],a:0},
+  {cat:"Categorical Propositions",q:"What is the correct obversion of \"Some musicians are composers\"?",opts:["Some musicians are not composers.","No musicians are composers.","Some musicians are non-composers.","Some composers are not musicians."],a:2},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"Some mammals are not marsupials.\"",opts:["Some marsupials are not mammals.","Some non-marsupials are mammals.","Conversion is not valid.","No marsupials are mammals."],a:2},
+  {cat:"Categorical Propositions",q:"If \"All snakes are reptiles\" is false, what does it imply?",opts:["Some snakes are not reptiles.","No snakes are reptiles.","Some snakes are reptiles.","Some reptiles are not snakes."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No dolphins are fish.\"",opts:["Some fish are not dolphins.","No fish are dolphins.","Some dolphins are fish.","All fish are dolphins."],a:1},
+  {cat:"Categorical Propositions",q:"If \"Some planets have moons\" is false, what does it imply?",opts:["No planets have moons.","All planets have moons.","Some planets do not have moons.","Some moons are planets."],a:0},
+  {cat:"Categorical Propositions",q:"If \"Some birds are not carnivorous\" is false, what can we conclude?",opts:["All birds are carnivorous.","Some birds are carnivorous.","No birds are carnivorous.","Some birds are herbivorous."],a:0},
+  {cat:"Categorical Propositions",q:"If \"No mathematicians are poets\" is true, what can be inferred about \"Some mathematicians are poets\"?",opts:["It is true.","It is false.","It is undetermined.","It contradicts the original statement."],a:1},
+  {cat:"Categorical Propositions",q:"Which best represents the obversion of \"Some animals are reptiles\"?",opts:["Some animals are non-reptiles.","No animals are non-reptiles.","Some animals are not non-reptiles.","No animals are reptiles."],a:2},
+  {cat:"Categorical Propositions",q:"What is the subcontrary of \"Some mammals are not carnivores\"?",opts:["Some mammals are carnivores.","No mammals are carnivores.","All mammals are carnivores.","Some mammals are herbivores."],a:0},
+  {cat:"Categorical Propositions",q:"If \"All teachers are literate\" is false, what must be true?",opts:["Some teachers are not literate.","No teachers are literate.","Some teachers are literate.","All teachers are not literate."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"All whales are mammals\" correctly.",opts:["Some mammals are whales.","No mammals are whales.","Some whales are not mammals.","Some mammals are not whales."],a:0},
+  {cat:"Categorical Propositions",q:"If \"Some birds can fly\" is false, what must be true?",opts:["No birds can fly.","Some birds cannot fly.","All birds can fly.","Some birds are mammals."],a:0},
+  {cat:"Categorical Propositions",q:"If \"No lawyers are criminals\" is true, which is its correct conversion?",opts:["Some criminals are lawyers.","No criminals are lawyers.","Some lawyers are criminals.","All criminals are not lawyers."],a:1},
+  {cat:"Categorical Propositions",q:"If \"Some insects are not dangerous\" is false, what must be true?",opts:["All insects are dangerous.","Some insects are dangerous.","No insects are dangerous.","Some insects are not harmless."],a:0},
+  {cat:"Categorical Propositions",q:"What is the contrapositive of \"If it rains, the ground gets wet\"?",opts:["If the ground is wet, then it has rained.","If the ground is not wet, then it has not rained.","If it does not rain, then the ground is not wet.","If the ground is wet, then it will rain."],a:1},
+  {cat:"Categorical Propositions",q:"Which proposition contradicts \"All dogs are friendly\"?",opts:["Some dogs are friendly.","No dogs are friendly.","Some dogs are not friendly.","Some dogs are aggressive."],a:2},
+  {cat:"Categorical Propositions",q:"Which is an example of a particular affirmative proposition?",opts:["Some fruits are citrus.","No fruits are citrus.","All fruits are citrus.","Some citrus are not fruits."],a:0},
+  {cat:"Categorical Propositions",q:"If \"All engineers are problem-solvers\" is true, which is its correct conversion?",opts:["Some problem-solvers are engineers.","No problem-solvers are engineers.","Some engineers are not problem-solvers.","Some engineers are mathematicians."],a:0},
+  {cat:"Categorical Propositions",q:"If \"Some animals are not mammals\" is false, what can we conclude?",opts:["All animals are mammals.","No animals are mammals.","Some animals are mammals.","Some mammals are animals."],a:0},
+  {cat:"Categorical Propositions",q:"Convert the proposition \"No doctors are illiterate\" correctly.",opts:["Some illiterate people are doctors.","No illiterate people are doctors.","Some doctors are not illiterate.","No doctors are literate."],a:1},
+  {cat:"Categorical Propositions",q:"If \"All metals conduct electricity\" is true, what must be true?",opts:["Some metals conduct electricity.","Some metals do not conduct electricity.","No metals conduct electricity.","All metals are insulators."],a:0},
+  {cat:"Categorical Propositions",q:"What is the obversion of \"No cats are reptiles\"?",opts:["No reptiles are cats.","All cats are reptiles.","All cats are non-reptiles.","Some reptiles are cats."],a:2},
+  {cat:"Categorical Propositions",q:"What is the correct contrapositive of \"If someone is a thief, then they are dishonest\"?",opts:["If someone is not dishonest, then they are not a thief.","If someone is dishonest, then they are not a thief.","If someone is a thief, then they are honest.","If someone is not a thief, then they are dishonest."],a:0},
+  {cat:"Logic & Arguments",q:"The three laws of thought include all of the following EXCEPT:",opts:["The Law of Identity","The Law of Contradiction","The Law of Rationality","The Law of the Excluded Middle"],a:2},
+  {cat:"Logic & Arguments",q:"Which best defines a valid argument?",opts:["An argument where premises and conclusion are all true","An argument where the premises logically lead to the conclusion","An argument that uses persuasive language","An argument that is widely accepted"],a:1},
+  {cat:"Logic & Arguments",q:"Which type of logic focuses on the structure of reasoning rather than the truth of the premises?",opts:["Material logic","Informal logic","Formal logic","Inductive logic"],a:2},
+  {cat:"Logic & Arguments",q:"What is the key feature of a deductive argument?",opts:["It moves from specific cases to general principles","Its conclusion is only probable, not certain","If the premises are true, the conclusion must be true","It relies on examples and observation"],a:2},
+  {cat:"Logic & Arguments",q:"What distinguishes material logic from formal logic?",opts:["Material logic focuses on the truth of premises, while formal logic focuses on structure","Formal logic is concerned with argument content, while material logic checks validity","Material logic uses mathematical formulas, while formal logic does not","There is no difference between the two"],a:0},
+  {cat:"Logic & Arguments",q:"If an argument is valid but has false premises, what can be said about it?",opts:["It is sound","It is unsound","It is neither valid nor invalid","The conclusion must also be false"],a:1},
+  {cat:"Logic & Arguments",q:"\"If it is raining, then the ground is wet\" is an example of:",opts:["A negationless logic statement","A prepositional logic statement","A compound statement","A material logic statement"],a:2},
+  {cat:"Logic & Arguments",q:"What makes an argument sound?",opts:["The premises and conclusion are both true, regardless of validity","The argument is widely accepted","The argument is valid, and all premises are true","The premises are persuasive"],a:2},
+  {cat:"Logic & Arguments",q:"What is the purpose of informal logic?",opts:["To analyze the structure of arguments without considering their truth","To study reasoning in everyday language and practical situations","To ensure that all arguments follow strict rules of inference","To examine only mathematical and symbolic reasoning"],a:1},
+  {cat:"Logic & Arguments",q:"The Law of the Excluded Middle states that:",opts:["Every statement must be either true or false, with no middle ground","Two contradictory statements can both be true under certain conditions","The structure of an argument is more important than its content","A statement can be both true and false at the same time"],a:0},
+  {cat:"Logic & Arguments",q:"\"All mammals are warm-blooded. Whales are mammals. Therefore, whales are warm-blooded.\" Which is the conclusion?",opts:["All mammals are warm-blooded.","Whales are mammals.","Whales are warm-blooded.","Both A and B."],a:2},
+  {cat:"Logic & Arguments",q:"\"John did not study hard. Therefore, John will not pass the test.\" What is the conclusion?",opts:["You must study hard to pass the test.","John did not study hard.","John will not pass the test.","Both A and B support the conclusion."],a:2},
+  {cat:"Logic & Arguments",q:"\"All fruits have seeds. An apple is a fruit. Therefore, an apple has seeds.\" Identify the premises and conclusion.",opts:["Premises: All fruits have seeds; Apple is a fruit. Conclusion: Apple has seeds.","Premise: Apple has seeds; Conclusion: All fruits have seeds.","Premise: Apple has seeds; Conclusion: Apple is a fruit.","Premises: All fruits have seeds; Apple has seeds. Conclusion: Apple is a fruit."],a:0},
+  {cat:"Logic & Arguments",q:"\"Every student in the class passed the exam. Mary is a student. Therefore, Mary passed the exam.\" Which part is the conclusion?",opts:["Every student in the class passed the exam.","Mary is a student in the class.","Mary passed the exam.","Both A and B."],a:2},
+  {cat:"Logic & Arguments",q:"\"All dogs bark. Rex is a dog. Therefore, Rex barks.\" Which shows the premises and conclusion?",opts:["Premise: All dogs bark. Conclusion: Rex is a dog.","Premises: All dogs bark; Rex is a dog. Conclusion: Rex barks.","Premise: Rex barks. Conclusion: All dogs bark and Rex is a dog.","Premise: Rex is a dog. Conclusion: All dogs bark."],a:1},
+  {cat:"Logic & Arguments",q:"\"Studying daily improves your grades. Lisa studies daily. Therefore, Lisa's grades improve.\" What is the conclusion?",opts:["Studying daily improves your grades.","Lisa studies daily.","Lisa's grades improve.","Both A and B."],a:2},
+  {cat:"Logic & Arguments",q:"\"All birds can fly. A penguin is a bird. Therefore, a penguin can fly.\" Is this argument:",opts:["Sound","Valid but unsound","Invalid","Neither"],a:1},
+  {cat:"Logic & Arguments",q:"\"All mammals have hearts. A whale is a mammal. Therefore, a whale has a heart.\" This argument is:",opts:["Valid but unsound","Invalid","Sound","Neither"],a:2},
+  {cat:"Logic & Arguments",q:"\"If it is snowing, then it is cold outside. It is snowing. Therefore, it is cold outside.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Unsound due to false premises"],a:0},
+  {cat:"Logic & Arguments",q:"\"If you study hard, you will get good grades. You did not study hard. Therefore, you will not get good grades.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Sound if the conclusion is true"],a:2},
+  {cat:"Logic & Arguments",q:"\"All cars have engines. My bicycle has an engine. Therefore, my bicycle is a car.\" This argument is:",opts:["Sound","Unsound","Invalid","Both unsound and invalid"],a:3},
+  {cat:"Logic & Arguments",q:"\"Every student in the club is an honor student. Sarah is in the club. Therefore, Sarah is an honor student.\" The argument is:",opts:["Valid and sound","Valid but unsound","Invalid","Neither valid nor unsound"],a:0},
+  {cat:"Logic & Arguments",q:"\"If a person is a doctor, they have a medical degree. John has a medical degree. Therefore, John is a doctor.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Sound if John practices medicine"],a:2},
+  {cat:"Logic & Arguments",q:"\"All computers run on electricity. My laptop is a computer. Therefore, my laptop runs on electricity.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Sound only if my laptop is plugged in"],a:0},
+  {cat:"Logic & Arguments",q:"\"Only mammals have fur. A dolphin is a mammal. Therefore, a dolphin has fur.\" This argument is:",opts:["Valid and sound","Valid but unsound","Invalid","Neither"],a:2},
+  {cat:"Logic & Arguments",q:"\"If you exercise regularly, you will be healthy. You exercise regularly. Therefore, you are healthy.\" This argument is:",opts:["Valid and sound","Valid but unsound","Invalid","Sound only if no other factors affect health"],a:1},
+  {cat:"Logic & Arguments",q:"\"All fish can fly. Goldie is a fish. Therefore, Goldie can fly.\" Which premise is problematic?",opts:["\"All fish can fly\"","\"Goldie is a fish\"","\"Goldie can fly\"","None of the above"],a:0},
+  {cat:"Logic & Arguments",q:"\"All fruits are sweet. Lemons are fruits. Therefore, lemons are sweet.\" Which premise is problematic?",opts:["\"All fruits are sweet\"","\"Lemons are fruits\"","\"Lemons are sweet\"","None of the above"],a:0},
+  {cat:"Logic & Arguments",q:"\"All vehicles have four wheels. My motorcycle is a vehicle.\" Which premise is untrue?",opts:["\"All vehicles have four wheels\"","\"My motorcycle is a vehicle\"","\"My motorcycle has four wheels\"","None of the above"],a:0},
+  {cat:"Logic & Arguments",q:"\"If a person is a millionaire, then they are happy.\" Which premise is likely questionable?",opts:["\"If a person is a millionaire, then they are happy\"","\"John is not happy\"","\"John is not a millionaire\"","All premises are equally true"],a:0},
+  {cat:"Logic & Arguments",q:"Identify the inductive argument:",opts:["If it rains, the ground gets wet. It rained. Therefore, the ground is wet.","All squares have four sides. A rectangle is a square. Therefore, a rectangle has four sides.","Most dogs bark when they see strangers. My neighbor's dog is barking. Therefore, it probably sees a stranger.","If an animal is a bird, it must lay eggs. A parrot is a bird. Therefore, it lays eggs."],a:2},
+  {cat:"Logic & Arguments",q:"Which argument is deductive?",opts:["The last five times I drank coffee, I felt more awake. Therefore, drinking coffee always makes people more awake.","Every prime number greater than 2 is odd. 13 is a prime number greater than 2. Therefore, 13 is odd.","All swans I've seen are white. Therefore, all swans must be white.","The majority of past presidents have been male. Therefore, the next president will likely be male."],a:1},
+  {cat:"Logic & Arguments",q:"What makes an argument deductive?",opts:["It draws conclusions based on probability and past experience.","It guarantees the truth of the conclusion if the premises are true.","It makes a generalization based on specific observations.","It assumes that the past will always predict the future."],a:1},
+  {cat:"Logic & Arguments",q:"Which of these is an example of inductive reasoning?",opts:["All birds have feathers. A robin is a bird. Therefore, a robin has feathers.","No human can survive without oxygen. John is a human. Therefore, John needs oxygen.","My grandfather smoked and lived to 95. Therefore, smoking does not always cause early death.","If today is Tuesday, then tomorrow is Wednesday. Today is Tuesday. Therefore, tomorrow is Wednesday."],a:2},
+  {cat:"Logic & Arguments",q:"A deductive argument is one in which:",opts:["The conclusion follows with certainty if the premises are true.","The conclusion is always true, even if the premises are false.","The conclusion is only probable, not certain.","The argument is based entirely on past observations."],a:0},
+  {cat:"Logic & Arguments",q:"Which best represents inductive reasoning?",opts:["All men are mortal. Socrates is a man. Therefore, Socrates is mortal.","The last five times I went jogging, I felt great afterward. Therefore, jogging always makes people feel great.","If a shape is a square, then it has four equal sides. Shape X is a square. Therefore, it has four equal sides.","If a student studies, they pass the test. Mike studied. Therefore, he passed the test."],a:1},
+  {cat:"Branches of Philosophy",q:"Which branch of philosophy deals with the study of knowledge—its nature, sources, and validity?",opts:["Metaphysics","Epistemology","Axiology","Logic"],a:1},
+  {cat:"Branches of Philosophy",q:"Which statement best captures Descartes's view of metaphysics?",opts:["It is the study of values and moral judgments.","It is primarily concerned with linguistic analysis and the structure of arguments.","It is considered the \"first philosophy,\" dealing with the fundamental nature of reality and existence.","It is purely concerned with political structures and human relationships."],a:2},
+  {cat:"Branches of Philosophy",q:"Which of the following is NOT one of the traditionally recognized major branches of philosophy?",opts:["Epistemology","Metaphysics","Axiology (Ethics and Aesthetics)","Anthropology"],a:3},
+  {cat:"Branches of Philosophy",q:"In epistemology, which source of knowledge involves divine undertones and communication from God?",opts:["Authority","Revelation","Empiricism","Rationalism"],a:1},
+  {cat:"Branches of Philosophy",q:"Logic is primarily concerned with which of the following?",opts:["The study of moral values and judgments","The methods and principles used in distinguishing correct from incorrect reasoning","The study of the origin, nature, and development of the universe","The study of aesthetic values in art and nature"],a:1},
+  {cat:"Branches of Philosophy",q:"Axiology is subdivided mainly into:",opts:["Ethics and Metaphysics","Epistemology and Logic","Ethics and Aesthetics","Anthropology and Cosmology"],a:2},
+  {cat:"Branches of Philosophy",q:"Which philosopher warned that \"If the world's ethical standards fail to rise to the advance of our technological revolution, we shall perish\"?",opts:["Aristotle","Counts (1962)","Copi (1982)","Knight (1990)"],a:1},
+  {cat:"Branches of Philosophy",q:"What does the text describe as the \"king\" of all disciplines, leading to the highest degree in many fields (Ph.D.)?",opts:["Theology","Mathematics","Philosophy","Anthropology"],a:2},
+  {cat:"Branches of Philosophy",q:"Which branch of philosophy studies \"the nature of reality\"?",opts:["Axiology","Metaphysics","Logic","Epistemology"],a:1},
+  {cat:"Branches of Philosophy",q:"According to the text, which of the following is NOT typically a direct source of knowledge mentioned?",opts:["Rationalism (reasoning)","Empiricism (sense perception)","Tradition (passed down without questioning)","Intuition (immediate understanding without reasoning)"],a:2},
+  {cat:"Branches of Philosophy",q:"Which branch of philosophy is primarily focused on the formal principles of reasoning, argument structure, and evaluation of inferences?",opts:["Metaphysics","Epistemology","Logic","Axiology"],a:2},
+  {cat:"Branches of Philosophy",q:"Which sub-branch of axiology is concerned with criteria for what is considered beautiful or artistically valuable?",opts:["Ethics","Aesthetics","Metaphysics","Epistemology"],a:1},
+  {cat:"Branches of Philosophy",q:"Which philosophical method, associated with Descartes, involves doubting all beliefs until reaching an undeniable foundation?",opts:["Empiricism","Induction","Methodological skepticism","Pragmatism"],a:2},
+  {cat:"Branches of Philosophy",q:"\"I think, therefore I am\" is most closely associated with which philosopher?",opts:["Aristotle","René Descartes","Immanuel Kant","Socrates"],a:1},
+  {cat:"Branches of Philosophy",q:"Which source of knowledge is based on direct sensory experience?",opts:["Rationalism","Empiricism","Revelation","Intuition"],a:1},
+  {cat:"Branches of Philosophy",q:"Which branch of philosophy would include the study of moral dilemmas and questions about right and wrong?",opts:["Epistemology","Axiology","Metaphysics","Logic"],a:1},
+  {cat:"Branches of Philosophy",q:"Which best describes the relationship between philosophy and other academic disciplines?",opts:["Philosophy is a specialized field with no connection to other disciplines.","Philosophy is the \"mother of the sciences,\" forming the foundation for various academic fields and the Ph.D. degree.","Philosophy only concerns abstract ideas with no practical application.","Philosophy primarily deals with historical analysis rather than scientific inquiry."],a:1},
+  {cat:"Branches of Philosophy",q:"Which source of knowledge is associated with gaining insight without a deliberate, conscious process?",opts:["Authority","Intuition","Empiricism","Rationalism"],a:1},
+  {cat:"Branches of Philosophy",q:"Which major branch of philosophy deals with questions about the nature of existence, reality, and the universe?",opts:["Epistemology","Axiology","Metaphysics","Logic"],a:2},
+  {cat:"Branches of Philosophy",q:"Which branch studies cosmology, and from which major branch is it deduced?",opts:["Epistemology, deduced from Logic","Cosmology, deduced from Axiology","Cosmology, deduced from Metaphysics","Ethics, deduced from Epistemology"],a:2},
+  {cat:"Branches of Philosophy",q:"Which branch deals with systematic study of valid reasoning and argument structure?",opts:["Logic; to distinguish correct from incorrect reasoning","Epistemology; to analyze the sources of knowledge","Metaphysics; to explore the nature of being","Axiology; to evaluate ethical values"],a:0},
+  {cat:"Branches of Philosophy",q:"The study of moral values, ethical dilemmas, and aesthetic judgments is grouped under which branch?",opts:["Metaphysics; to understand the nature of existence","Epistemology; to question the basis of knowledge","Axiology; to assess what is valuable and good","Logic; to analyze argument structure"],a:2},
+  {cat:"Branches of Philosophy",q:"Which branch is dedicated to understanding the nature, sources, and limits of human knowledge?",opts:["Epistemology; it investigates sense perception, reason, intuition, and revelation","Metaphysics; it investigates the origin of the universe","Logic; it investigates the structure of arguments","Axiology; it investigates moral and aesthetic values"],a:0},
+  {cat:"Branches of Philosophy",q:"Which branch lays the groundwork for scientific inquiry and is sometimes referred to as the \"mother of the sciences\"?",opts:["Ethics","Logic","Metaphysics","Philosophy as a whole (with emphasis on Metaphysics)"],a:3},
+  {cat:"Branches of Philosophy",q:"In evaluating arguments, which branch helps identify fallacies and ensure logical consistency?",opts:["Epistemology; to test the reliability of sensory data","Logic; to distinguish between valid and invalid reasoning","Metaphysics; to explain the nature of reality","Axiology; to define what is ethically right"],a:1},
+  {cat:"Branches of Philosophy",q:"Which branch is directly concerned with questions about existence and being, and how does it relate to the cosmos?",opts:["Epistemology; it relates by explaining how we come to know cosmic phenomena","Axiology; it relates by judging the beauty of the cosmos","Metaphysics; it relates by addressing the fundamental principles that govern existence, including the cosmos","Logic; it relates by structuring the arguments about cosmic theories"],a:2}
+];
+
+const COUNTS={"All":QS.length,"Categorical Propositions":QS.filter(q=>q.cat==="Categorical Propositions").length,"Logic & Arguments":QS.filter(q=>q.cat==="Logic & Arguments").length,"Branches of Philosophy":QS.filter(q=>q.cat==="Branches of Philosophy").length};
+const PRESETS=[10,20,30,50];
+
+let screen="start",selCat="All",selMode="immediate",selCount=20,customCount="",useCustom=false;
+let filtered=[],order=[],idx=0,score=0,answered={},secs=0,timerID=null,finalTime=0;
+
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function fmt(s){const m=Math.floor(s/60),r=s%60;return m>0?`${m}m ${r}s`:`${r}s`;}
+function tickTimer(){secs++;const el=document.getElementById('td');if(el)el.textContent=fmt(secs);}
+function startTimer(){clearInterval(timerID);secs=0;timerID=setInterval(tickTimer,1000);}
+function stopTimer(){clearInterval(timerID);finalTime=secs;}
+
+function getPool(){return selCat==="All"?[...QS]:QS.filter(q=>q.cat===selCat);}
+function getMaxQ(){return getPool().length;}
+function getEffectiveCount(){
+  const max=getMaxQ();
+  const n=useCustom?parseInt(customCount)||0:selCount;
+  return Math.min(Math.max(1,n),max);
+}
+
+function startQuiz(){
+  const pool=getPool();
+  const n=getEffectiveCount();
+  const shuffled=shuffle(pool.map((_,i)=>i)).slice(0,n);
+  filtered=pool;
+  order=shuffled;
+  idx=0;score=0;answered={};screen="quiz";
+  startTimer();render();
+}
+
+function pick(i){
+  if(answered[idx]!==undefined)return;
+  answered[idx]=i;
+  if(i===filtered[order[idx]].a)score++;
+  render();
+}
+function nav(d){idx=Math.max(0,Math.min(order.length-1,idx+d));render();}
+function finish(){stopTimer();screen="results";render();}
+function goHome(){stopTimer();screen="start";render();}
+function goReview(){screen="review";render();}
+function restartSame(){startQuiz();}
+function selCatFn(c){selCat=c;useCustom=false;render();}
+function selModeFn(m){selMode=m;render();}
+function selCountFn(n){selCount=n;useCustom=false;render();}
+function onCustomInput(v){
+  customCount=v;
+  useCustom=v.trim()!=="";
+  render();
+}
+
+function render(){
+  document.getElementById('app').innerHTML={start:renderStart,quiz:renderQuiz,results:renderResults,review:renderReview}[screen]();
+  if(screen==="start"){
+    const inp=document.getElementById('custom-input');
+    if(inp){inp.value=customCount;inp.addEventListener('input',e=>onCustomInput(e.target.value));}
+  }
+}
+
+function renderStart(){
+  const cats=["All","Categorical Propositions","Logic & Arguments","Branches of Philosophy"];
+  const max=getMaxQ();
+  const effective=getEffectiveCount();
+  const presetBtns=PRESETS.map(n=>{
+    const capped=Math.min(n,max);
+    const disabled=capped<1;
+    const isSelected=!useCustom&&selCount===n;
+    return`<button class="qcount-btn${isSelected?' selected':''}" onclick="selCountFn(${n})" ${disabled?'disabled':''}>${n}</button>`;
+  }).join('');
+
+  return`<div>
+    <div class="brand">MCQs</div>
+    <h1>Philosophy &amp; Logic Quiz</h1>
+    <p class="tagline">120 questions across three topics. Configure your session below.</p>
+
+    <div class="section-label">Select category</div>
+    <div class="cat-grid">${cats.map(c=>`<div class="cat-card${selCat===c?' selected':''}" onclick="selCatFn('${c}')"><div class="cn">${c}</div><div class="cc">${COUNTS[c]} questions</div></div>`).join('')}</div>
+
+    <div class="section-label">Number of questions</div>
+    <div class="qcount-row">
+      <!-- ${presetBtns} -->
+      <button class="qcount-btn${!useCustom&&selCount===max?' selected':''}" onclick="selCountFn(${max})">All (${max})</button>
+      <div class="qcount-custom">
+        <input id="custom-input" type="number" min="1" max="${max}" placeholder="0" class="${useCustom?'selected-input':''}">
+        <span class="qcount-max">max ${max}</span>
+      </div>
     </div>
-    <!-- Tabs for chapter selection -->
-    <div id="chapter-tabs" style="display: none; grid-template-columns: 1fr 1fr; justify-content: center; gap: 12px; margin-bottom: 18px;">
-      <button class="chapter-tab active" onclick="selectChapter('chapter1')">Chapter 1</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter2')">Chapter 2</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter3')">Chapter 3</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter4')">Chapter 4</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter5')">Chapter 5</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter6')">Chapter 6</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter7')">Chapter 7</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter8')">Chapter 8</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter10')">Chapter 10</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter11')">Chapter 11</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter12')">Chapter 12</button>
-      <button class="chapter-tab" onclick="selectChapter('chapter13')">Chapter 13</button>
-      <!-- Add more chapters as needed -->
+    <p style="font-size:13px;color:#aaa;margin-top:-12px;margin-bottom:2rem">${effective} question${effective!==1?'s':''} selected · drawn randomly from the pool</p>
+
+    <div class="section-label">Answer mode</div>
+    <div class="mode-grid">
+      <div class="mode-card${selMode==='immediate'?' selected':''}" onclick="selModeFn('immediate')"><div class="mn">Immediate feedback</div><div class="md">See if you're right after each question</div></div>
+      <div class="mode-card${selMode==='end'?' selected':''}" onclick="selModeFn('end')"><div class="mn">Reveal at the end</div><div class="md">All answers shown on the results screen</div></div>
     </div>
 
-    <p id="timer"></p>
-    <div id="feedback-toggle">
-      <span>Immediate Feedback</span>
-      <label class="switch">
-        <input type="checkbox" id="feedbackSwitch">
-        <span class="slider"></span>
-      </label>
-      <span>Answers at the end</span>
+    <button class="start-btn" onclick="startQuiz()">Start ${effective} question${effective!==1?'s':''} &#8594;</button>
+  </div>`;
+}
+
+function renderQuiz(){
+  const q=filtered[order[idx]],total=order.length,done=Object.keys(answered).length,pct=Math.round((done/total)*100),sel=answered[idx],isAns=sel!==undefined;
+  const opts=q.opts.map((o,i)=>{
+    let cls='opt';
+    if(isAns){cls+=' disabled';if(selMode==='immediate'){if(i===q.a)cls+=' correct';else if(i===sel&&sel!==q.a)cls+=' wrong';}else{if(i===sel)cls+=' pending';}}
+    return`<button class="${cls}"${isAns?'':` onclick="pick(${i})"`}>${String.fromCharCode(65+i)}. ${o}</button>`;
+  }).join('');
+  let fb='';
+  if(isAns&&selMode==='immediate')fb=`<div class="feedback ${sel===q.a?'correct':'wrong'}">${sel===q.a?'Correct!':'Incorrect — correct answer: '+q.opts[q.a]}</div>`;
+  else if(isAns&&selMode==='end')fb=`<div class="feedback pending">Answer recorded — results revealed at the end.</div>`;
+  return`<div>
+    <div class="quiz-header">
+      <div class="timer"><span class="tdot"></span><span id="td">${fmt(secs)}</span></div>
+      <span class="score-badge">${selMode==='immediate'?score+'/'+done+' correct':'Q '+(idx+1)+' of '+total}</span>
     </div>
-    <button id="restartBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
-    <button id="retakeBtn" onclick="askNumberOfQuestions()" style="display:none;">Retake Quiz</button>
-    <button id="startBtn" onclick="askNumberOfQuestions()">Start Quiz</button>
-    
-    <div id="quiz-container"></div>
-    <p id="questionCount" style="text-align: right;"></p>
-    <div id="navigation">
-      <button id="prevBtn" onclick="prevQuestion()" disabled>Previous</button>
-      <button id="submitBtn" onclick="confirmSubmit()" style="display: none;">Submit</button>
-      <button id="nextBtn" onclick="nextQuestion()">Next</button>
+    <div class="meta-bar">Q${idx+1} of ${total} &nbsp;·&nbsp; ${selCat} &nbsp;·&nbsp; ${selMode==='immediate'?'Immediate feedback':'Reveal at end'}</div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="question-card">
+      <div class="q-cat">${q.cat}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">${opts}</div>${fb}
     </div>
-    <!-- <div id="question-navigation"></div> -->
-    <p id="result"></p>
-    <div id="summary"></div>
-  </div>
-  <script src="index.js"></script>
+    <div class="nav-row">
+      <button class="btn" onclick="nav(-1)"${idx===0?' disabled':''}>&#8592; Prev</button>
+      <button class="btn ghost" onclick="goHome()">&#215; Quit</button>
+      ${idx<total-1?`<button class="btn primary" onclick="nav(1)"${!isAns?' disabled':''}>Next &#8594;</button>`:`<button class="btn primary" onclick="finish()"${!isAns?' disabled':''}>Finish &#10003;</button>`}
+    </div>
+  </div>`;
+}
+
+function renderResults(){
+  const total=order.length,pct=Math.round((score/total)*100),wrong=total-score;
+  return`<div class="results">
+    <div class="big-score">${pct}%</div>
+    <div class="sub">You scored ${score} out of ${total}</div>
+    <div class="time-taken">Time: ${fmt(finalTime)} &nbsp;·&nbsp; ${selCat} &nbsp;·&nbsp; ${selMode==='immediate'?'Immediate feedback':'Reveal at end'}</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-n" style="color:#2a7a2a">${score}</div><div class="stat-l">Correct</div></div>
+      <div class="stat"><div class="stat-n" style="color:#b02020">${wrong}</div><div class="stat-l">Incorrect</div></div>
+      <div class="stat"><div class="stat-n">${total}</div><div class="stat-l">Questions</div></div>
+    </div>
+    <div class="rbtns">
+      <button class="btn primary" onclick="restartSame()">Retry</button>
+      <button class="btn" onclick="goHome()">Change settings</button>
+      <button class="btn" onclick="goReview()">Review answers</button>
+    </div>
+  </div>`;
+}
+
+function renderReview(){
+  const total=order.length;
+  let html=`<div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap">
+      <button class="btn" onclick="screen='results';render()">&#8592; Results</button>
+      <span style="font-size:13px;color:#888">${total} questions · ${fmt(finalTime)} · ${score}/${total} correct</span>
+    </div>`;
+  order.forEach((qi,i)=>{
+    const q=filtered[qi],sel=answered[i],ok=sel===q.a;
+    const sc=sel===undefined?'#aaa':ok?'#2a7a2a':'#b02020';
+    const sl=sel===undefined?'Not answered':ok?'Correct':'Incorrect';
+    html+=`<div class="review-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <span style="font-size:11px;color:#bbb;text-transform:uppercase;letter-spacing:.5px">${i+1}. ${q.cat}</span>
+        <span style="font-size:12px;font-weight:500;color:${sc}">${sl}</span>
+      </div>
+      <div class="q-text" style="font-size:14px;margin-bottom:10px">${q.q}</div>
+      <div class="options">${q.opts.map((o,oi)=>{let c='opt disabled';if(oi===q.a)c+=' correct';else if(oi===sel&&sel!==q.a)c+=' wrong';return`<div class="${c}">${String.fromCharCode(65+oi)}. ${o}</div>`;}).join('')}</div>
+      ${sel===undefined?`<div class="feedback wrong">Not answered. Correct: ${q.opts[q.a]}</div>`:ok?`<div class="feedback correct">Correct!</div>`:`<div class="feedback wrong">You chose: ${q.opts[sel]}. Correct: ${q.opts[q.a]}</div>`}
+    </div>`;
+  });
+  html+='</div>';
+  return html;
+}
+
+render();
+</script>
 </body>
 </html>
