@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Philosophy & Logic Quiz</title>
+<title>Origins of Science Quiz</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,-apple-system,sans-serif;background:#f5f4f0;color:#1a1a1a;min-height:100vh;padding:2rem 1rem}
@@ -26,8 +26,6 @@ h1{font-size:28px;font-weight:500;margin-bottom:6px}
 .mode-card .mn{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:3px}
 .mode-card.selected .mn{color:#1a6ef5}
 .mode-card .md{font-size:12px;color:#aaa;line-height:1.4}
-
-/* Q COUNT SELECTOR */
 .qcount-row{display:flex;align-items:center;gap:10px;margin-bottom:2rem;flex-wrap:wrap}
 .qcount-btn{padding:8px 18px;border-radius:20px;border:1.5px solid #e0e0e0;cursor:pointer;font-size:14px;font-weight:500;background:#fff;color:#888;transition:all .15s}
 .qcount-btn:hover{border-color:#bbb;color:#1a1a1a}
@@ -37,12 +35,9 @@ h1{font-size:28px;font-weight:500;margin-bottom:6px}
 .qcount-custom input:focus{border-color:#1a6ef5}
 .qcount-custom input.selected-input{border-color:#1a6ef5;background:#f0f5ff;color:#1a6ef5}
 .qcount-max{font-size:12px;color:#bbb}
-
 .start-btn{width:100%;padding:14px;border-radius:10px;border:none;background:#1a6ef5;color:#fff;font-size:15px;font-weight:500;cursor:pointer;transition:background .15s}
 .start-btn:hover{background:#1560d8}
 .start-btn:disabled{background:#ccc;cursor:default}
-
-/* QUIZ */
 .quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:8px;flex-wrap:wrap}
 .timer{font-size:14px;font-weight:500;color:#1a1a1a;background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:5px 14px;display:flex;align-items:center;gap:6px}
 .tdot{width:7px;height:7px;border-radius:50%;background:#1a6ef5;animation:pulse 1.2s infinite}
@@ -73,8 +68,6 @@ h1{font-size:28px;font-weight:500;margin-bottom:6px}
 .btn.ghost{border-color:transparent;color:#bbb}
 .btn.ghost:hover{color:#888;background:transparent}
 .meta-bar{font-size:13px;color:#aaa;margin-bottom:8px}
-
-/* RESULTS */
 .results{text-align:center;padding:2rem 1rem}
 .big-score{font-size:58px;font-weight:500;line-height:1;margin-bottom:6px}
 .sub{font-size:15px;color:#888;margin-bottom:4px}
@@ -84,8 +77,6 @@ h1{font-size:28px;font-weight:500;margin-bottom:6px}
 .stat-n{font-size:24px;font-weight:500}
 .stat-l{font-size:12px;color:#888;margin-top:2px}
 .rbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-
-/* REVIEW */
 .review-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.25rem;margin-bottom:10px}
 </style>
 </head>
@@ -93,178 +84,200 @@ h1{font-size:28px;font-weight:500;margin-bottom:6px}
 <div class="container" id="app"></div>
 <script>
 const QS=[
-  // ── CHAPTER 1 ─────────────────────────────────────────────────────────────
-  {cat:"Chapter 1",q:"Who was the first philosopher in the cosmology group?",opts:["Socrates","Archimedes","Thales of Miletus","Anaximander"],a:2},
-  {cat:"Chapter 1",q:"What did Thales of Miletus consider as the basic principle underlying reality?",opts:["Air","Fire","Earth","Water"],a:3},
-  {cat:"Chapter 1",q:"Thales of Miletus is remembered for predicting what astronomical event?",opts:["A lunar eclipse","A solar eclipse","The movement of planets","The rotation of the Earth"],a:1},
-  {cat:"Chapter 1",q:"In which century did Thales of Miletus live?",opts:["4th century B.C.","5th century B.C.","6th century B.C.","7th century B.C."],a:2},
-  {cat:"Chapter 1",q:"What date is generally agreed upon for the solar eclipse predicted by Thales?",opts:["May 28, 485 B.C.","May 28, 585 B.C.","June 10, 500 B.C.","March 21, 550 B.C."],a:1},
-  {cat:"Chapter 1",q:"Which of the following is NOT mentioned as a pre-Socratic philosopher?",opts:["Pythagoras","Zeno","Anaximenes","Plato"],a:3},
-  {cat:"Chapter 1",q:"What term is used to describe the philosophers of the pre-Socratic period?",opts:["Rationalists","Empiricists","Cosmologists","Metaphysicists"],a:2},
-  {cat:"Chapter 1",q:"What was the main interest of the pre-Socratic philosophers?",opts:["Ethics and morality","Discovering the basic nature of reality","Political philosophy","Rhetoric and debate"],a:1},
-  {cat:"Chapter 1",q:"Who is considered the father of modern philosophy?",opts:["Socrates","Plato","Aristotle","René Descartes"],a:3},
-  {cat:"Chapter 1",q:"Which philosopher argued that man should focus on self-knowledge rather than searching for ultimate reality?",opts:["Aristotle","Socrates","Plato","Pythagoras"],a:1},
-  {cat:"Chapter 1",q:"Which era came after the Classical Socratic or Platonic Era?",opts:["Medieval Philosophy","Renaissance of Philosophy","Late Modern Philosophy","Postmodern Philosophy"],a:1},
-  {cat:"Chapter 1",q:"What period was known as the Golden Age of Greece?",opts:["Classical Socratic or Platonic Era","Medieval Philosophy","Modern Philosophy","Contemporary Philosophy"],a:0},
-  {cat:"Chapter 1",q:"Which philosopher is credited with the phrase \"knowledge is power\"?",opts:["John Locke","Francis Bacon","Thomas Hobbes","Immanuel Kant"],a:1},
-  {cat:"Chapter 1",q:"What institution played a dominant role in Medieval Philosophy?",opts:["Greek Schools","The Church","The Roman Empire","The Scientific Community"],a:1},
-  {cat:"Chapter 1",q:"Which period of philosophy sought to reconcile faith and reason?",opts:["Classical Period","Medieval Period","Modern Period","Existentialist Period"],a:1},
-  {cat:"Chapter 1",q:"Which Arabic philosopher contributed to Medieval Philosophy?",opts:["René Descartes","Karl Marx","Al-Farabi","Jean-Paul Sartre"],a:2},
-  {cat:"Chapter 1",q:"What period saw the need to reconcile science with philosophy?",opts:["Renaissance of Philosophy","Medieval Philosophy","Modern Philosophy","Existentialism"],a:0},
-  {cat:"Chapter 1",q:"Who was called \"the trumpeter of the new science\"?",opts:["Immanuel Kant","Francis Bacon","Thomas Hobbes","John Locke"],a:1},
-  {cat:"Chapter 1",q:"Which philosopher is famous for the phrase \"I think, therefore I am\"?",opts:["René Descartes","David Hume","John Locke","Friedrich Nietzsche"],a:0},
-  {cat:"Chapter 1",q:"Which two philosophical schools were prominent in the 16th and 17th centuries?",opts:["Stoicism and Existentialism","Rationalism and Empiricism","Realism and Materialism","Scholasticism and Pragmatism"],a:1},
-  {cat:"Chapter 1",q:"Which philosopher wrote \"The Leviathan\"?",opts:["John Locke","Immanuel Kant","Thomas Hobbes","David Hume"],a:2},
-  {cat:"Chapter 1",q:"Who is credited with reconciling rationalism and empiricism?",opts:["Karl Marx","Immanuel Kant","Hegel","William James"],a:1},
-  {cat:"Chapter 1",q:"Who was a disciple of Hegel and applied dialectics to economics?",opts:["Jean-Paul Sartre","Friedrich Nietzsche","Karl Marx","Auguste Comte"],a:2},
-  {cat:"Chapter 1",q:"Which philosophical movement is associated with John Stuart Mill and Jeremy Bentham?",opts:["Existentialism","Utilitarianism","Scholasticism","Nihilism"],a:1},
-  {cat:"Chapter 1",q:"Which philosopher defined existentialism with the phrase \"existence precedes essence\"?",opts:["Karl Marx","Jean-Paul Sartre","Martin Heidegger","Immanuel Kant"],a:1},
-  {cat:"Chapter 1",q:"Which school of thought was prominent in the early 20th century?",opts:["Scholasticism","Classical Rationalism","Logical Positivism","Medieval Scholasticism"],a:2},
-  {cat:"Chapter 1",q:"Who was a major figure in American Pragmatism?",opts:["John Locke","Friedrich Nietzsche","John Dewey","Karl Marx"],a:2},
-  {cat:"Chapter 1",q:"Who is considered the founder of Positivism?",opts:["Hegel","Karl Marx","John Locke","Auguste Comte"],a:3},
-  {cat:"Chapter 1",q:"Which period of philosophy spanned from 1100 A.D. to 1400 A.D.?",opts:["Medieval Philosophy","Renaissance Philosophy","Modern Philosophy","Contemporary Philosophy"],a:0},
-  {cat:"Chapter 1",q:"What was the primary focus of Medieval Philosophy?",opts:["Humanism and Science","Faith and Reason","Political Theory","Existentialism"],a:1},
-  {cat:"Chapter 1",q:"Which period followed the Renaissance of Philosophy?",opts:["Classical Philosophy","Early Modern Philosophy","Scholasticism","Medieval Philosophy"],a:1},
-  {cat:"Chapter 1",q:"Which school of thought was associated with Martin Heidegger and Edmund Husserl?",opts:["Logical Positivism","Phenomenology","Empiricism","Rationalism"],a:1},
 
-  // ── CATEGORICAL PROPOSITIONS ───────────────────────────────────────────────
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"All birds are animals.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:0},
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"No fish are mammals.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:1},
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"Some students are not lazy.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:3},
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"Some trees are tall.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:2},
-  {cat:"Categorical Propositions",q:"Which represents a universal affirmative proposition?",opts:["Some dogs are friendly.","All cars are vehicles.","No birds are reptiles.","Some students are not diligent."],a:1},
-  {cat:"Categorical Propositions",q:"Which represents a universal negative proposition?",opts:["All fish live in water.","Some birds cannot fly.","No insects are mammals.","Some dogs are not brown."],a:2},
-  {cat:"Categorical Propositions",q:"Which represents a particular affirmative proposition?",opts:["Some cars are electric.","No cats are reptiles.","All whales are mammals.","Some birds are not sparrows."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"All squares are rectangles.\"",opts:["Some rectangles are squares.","No rectangles are squares.","Some squares are not rectangles.","Some rectangles are not squares."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No mammals are cold-blooded.\"",opts:["Some cold-blooded creatures are mammals.","No cold-blooded creatures are mammals.","Some mammals are cold-blooded.","All cold-blooded creatures are mammals."],a:1},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some birds are not carnivorous.\"",opts:["Some carnivorous creatures are birds.","No birds are carnivorous.","Some non-carnivorous creatures are birds.","Conversion is not valid."],a:3},
-  {cat:"Categorical Propositions",q:"Obvert the proposition \"All reptiles are vertebrates.\"",opts:["Some reptiles are vertebrates.","No reptiles are invertebrates.","Some vertebrates are reptiles.","Some vertebrates are not reptiles."],a:1},
-  {cat:"Categorical Propositions",q:"Obvert the proposition \"Some trees are not deciduous.\"",opts:["Some trees are evergreen.","No trees are deciduous.","Some trees are non-deciduous.","All trees are deciduous."],a:2},
-  {cat:"Categorical Propositions",q:"What is the contradictory of \"All dogs are friendly\"?",opts:["Some dogs are friendly.","No dogs are friendly.","Some dogs are not friendly.","All dogs are unfriendly."],a:2},
-  {cat:"Categorical Propositions",q:"What is the contrary of \"No fruits are sour\"?",opts:["Some fruits are not sour.","Some fruits are sour.","All fruits are sour.","Some non-fruits are sour."],a:2},
-  {cat:"Categorical Propositions",q:"If \"All whales are marine animals\" is false, what can we conclude?",opts:["No whales are marine animals.","Some whales are marine animals.","Some whales are not marine animals.","All whales are not marine animals."],a:2},
-  {cat:"Categorical Propositions",q:"If \"No mammals lay eggs\" is true, what is its subcontrary?",opts:["Some mammals lay eggs.","Some mammals do not lay eggs.","All mammals lay eggs.","Some mammals are reptiles."],a:1},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some birds are migratory.\"",opts:["Some migratory creatures are birds.","All migratory creatures are birds.","No migratory creatures are birds.","Some migratory creatures are not birds."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No snakes have legs.\"",opts:["Some creatures with legs are snakes.","No legged creatures are snakes.","Some snakes have legs.","All snakes have legs."],a:1},
-  {cat:"Categorical Propositions",q:"If \"All humans are rational\" is true, what can we infer about \"Some humans are rational\"?",opts:["It must be true.","It must be false.","It is independent.","It is contradictory."],a:0},
-  {cat:"Categorical Propositions",q:"What is the correct obversion of \"Some cars are sports cars\"?",opts:["Some cars are not sports cars.","No cars are sports cars.","Some cars are non-sports cars.","Some non-cars are sports cars."],a:2},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some cats are not wild animals.\"",opts:["Some wild animals are not cats.","Some non-wild animals are cats.","Conversion is not valid.","No wild animals are cats."],a:2},
-  {cat:"Categorical Propositions",q:"If \"All birds have feathers\" is false, what can be inferred?",opts:["Some birds do not have feathers.","No birds have feathers.","Some birds have feathers.","Some birds are mammals."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No trees are animals.\"",opts:["Some animals are not trees.","No animals are trees.","Some trees are animals.","All animals are trees."],a:1},
-  {cat:"Categorical Propositions",q:"If \"Some planets are habitable\" is false, what does it imply?",opts:["No planets are habitable.","All planets are habitable.","Some planets are not habitable.","Some planets are stars."],a:0},
-  {cat:"Categorical Propositions",q:"If \"Some mammals are not carnivorous\" is false, what can we conclude?",opts:["All mammals are carnivorous.","Some mammals are carnivorous.","No mammals are carnivorous.","Some non-mammals are carnivorous."],a:0},
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"Some books are fiction.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:2},
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"No reptiles have fur.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:1},
-  {cat:"Categorical Propositions",q:"What type of categorical proposition is this? \"All students are not lazy.\"",opts:["Universal Affirmative","Universal Negative","Particular Affirmative","Particular Negative"],a:0},
-  {cat:"Categorical Propositions",q:"Which is an example of a particular negative proposition?",opts:["No fish are amphibians.","Some birds are not carnivores.","Some mammals are herbivores.","All teachers are educated."],a:1},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"All triangles have three sides.\"",opts:["Some three-sided shapes are triangles.","No triangles have three sides.","Some triangles do not have three sides.","Some triangles are three-sided shapes."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No cats are reptiles.\"",opts:["Some reptiles are cats.","Some cats are reptiles.","No reptiles are cats.","Some reptiles are not cats."],a:2},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some birds are not flightless.\"",opts:["Some flightless creatures are birds.","Some birds are flightless.","Some non-flightless creatures are birds.","Conversion is not valid."],a:3},
-  {cat:"Categorical Propositions",q:"Obvert the proposition \"All snakes are reptiles.\"",opts:["No snakes are non-reptiles.","Some reptiles are snakes.","No reptiles are snakes.","Some snakes are reptiles."],a:0},
-  {cat:"Categorical Propositions",q:"Obvert the proposition \"Some musicians are not classical artists.\"",opts:["Some musicians are classical artists.","No musicians are classical artists.","Some musicians are non-classical artists.","Some non-musicians are classical artists."],a:2},
-  {cat:"Categorical Propositions",q:"What is the contradictory of \"Some animals are not mammals\"?",opts:["Some animals are mammals.","No animals are mammals.","All animals are mammals.","Some animals are not reptiles."],a:2},
-  {cat:"Categorical Propositions",q:"What is the contrary of \"No humans are perfect\"?",opts:["Some humans are not perfect.","Some humans are perfect.","All humans are perfect.","No perfect beings are human."],a:2},
-  {cat:"Categorical Propositions",q:"If \"All computers have processors\" is false, what can we conclude?",opts:["Some computers do not have processors.","No computers have processors.","Some computers have processors.","All computers are outdated."],a:0},
-  {cat:"Categorical Propositions",q:"If \"No fish have lungs\" is true, what is its subcontrary?",opts:["Some fish have lungs.","Some fish do not have lungs.","All fish have lungs.","No fish breathe oxygen."],a:1},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some scientists are Nobel laureates.\"",opts:["Some Nobel laureates are scientists.","All Nobel laureates are scientists.","No Nobel laureates are scientists.","Some scientists are not Nobel laureates."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No birds are insects.\"",opts:["Some insects are not birds.","No insects are birds.","Some birds are insects.","All insects are birds."],a:1},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some flowers are not roses.\"",opts:["Some roses are flowers.","Some non-roses are flowers.","No flowers are roses.","Conversion is not valid."],a:3},
-  {cat:"Categorical Propositions",q:"If \"All astronauts are scientists\" is true, what can we infer about \"Some astronauts are scientists\"?",opts:["It must be true.","It must be false.","It is independent.","It is contradictory."],a:0},
-  {cat:"Categorical Propositions",q:"What is the correct obversion of \"Some musicians are composers\"?",opts:["Some musicians are not composers.","No musicians are composers.","Some musicians are non-composers.","Some composers are not musicians."],a:2},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"Some mammals are not marsupials.\"",opts:["Some marsupials are not mammals.","Some non-marsupials are mammals.","Conversion is not valid.","No marsupials are mammals."],a:2},
-  {cat:"Categorical Propositions",q:"If \"All snakes are reptiles\" is false, what does it imply?",opts:["Some snakes are not reptiles.","No snakes are reptiles.","Some snakes are reptiles.","Some reptiles are not snakes."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No dolphins are fish.\"",opts:["Some fish are not dolphins.","No fish are dolphins.","Some dolphins are fish.","All fish are dolphins."],a:1},
-  {cat:"Categorical Propositions",q:"If \"Some planets have moons\" is false, what does it imply?",opts:["No planets have moons.","All planets have moons.","Some planets do not have moons.","Some moons are planets."],a:0},
-  {cat:"Categorical Propositions",q:"If \"Some birds are not carnivorous\" is false, what can we conclude?",opts:["All birds are carnivorous.","Some birds are carnivorous.","No birds are carnivorous.","Some birds are herbivorous."],a:0},
-  {cat:"Categorical Propositions",q:"If \"No mathematicians are poets\" is true, what can be inferred about \"Some mathematicians are poets\"?",opts:["It is true.","It is false.","It is undetermined.","It contradicts the original statement."],a:1},
-  {cat:"Categorical Propositions",q:"Which best represents the obversion of \"Some animals are reptiles\"?",opts:["Some animals are non-reptiles.","No animals are non-reptiles.","Some animals are not non-reptiles.","No animals are reptiles."],a:2},
-  {cat:"Categorical Propositions",q:"What is the subcontrary of \"Some mammals are not carnivores\"?",opts:["Some mammals are carnivores.","No mammals are carnivores.","All mammals are carnivores.","Some mammals are herbivores."],a:0},
-  {cat:"Categorical Propositions",q:"If \"All teachers are literate\" is false, what must be true?",opts:["Some teachers are not literate.","No teachers are literate.","Some teachers are literate.","All teachers are not literate."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"All whales are mammals\" correctly.",opts:["Some mammals are whales.","No mammals are whales.","Some whales are not mammals.","Some mammals are not whales."],a:0},
-  {cat:"Categorical Propositions",q:"If \"Some birds can fly\" is false, what must be true?",opts:["No birds can fly.","Some birds cannot fly.","All birds can fly.","Some birds are mammals."],a:0},
-  {cat:"Categorical Propositions",q:"If \"No lawyers are criminals\" is true, which is its correct conversion?",opts:["Some criminals are lawyers.","No criminals are lawyers.","Some lawyers are criminals.","All criminals are not lawyers."],a:1},
-  {cat:"Categorical Propositions",q:"If \"Some insects are not dangerous\" is false, what must be true?",opts:["All insects are dangerous.","Some insects are dangerous.","No insects are dangerous.","Some insects are not harmless."],a:0},
-  {cat:"Categorical Propositions",q:"What is the contrapositive of \"If it rains, the ground gets wet\"?",opts:["If the ground is wet, then it has rained.","If the ground is not wet, then it has not rained.","If it does not rain, then the ground is not wet.","If the ground is wet, then it will rain."],a:1},
-  {cat:"Categorical Propositions",q:"Which proposition contradicts \"All dogs are friendly\"?",opts:["Some dogs are friendly.","No dogs are friendly.","Some dogs are not friendly.","Some dogs are aggressive."],a:2},
-  {cat:"Categorical Propositions",q:"Which is an example of a particular affirmative proposition?",opts:["Some fruits are citrus.","No fruits are citrus.","All fruits are citrus.","Some citrus are not fruits."],a:0},
-  {cat:"Categorical Propositions",q:"If \"All engineers are problem-solvers\" is true, which is its correct conversion?",opts:["Some problem-solvers are engineers.","No problem-solvers are engineers.","Some engineers are not problem-solvers.","Some engineers are mathematicians."],a:0},
-  {cat:"Categorical Propositions",q:"If \"Some animals are not mammals\" is false, what can we conclude?",opts:["All animals are mammals.","No animals are mammals.","Some animals are mammals.","Some mammals are animals."],a:0},
-  {cat:"Categorical Propositions",q:"Convert the proposition \"No doctors are illiterate\" correctly.",opts:["Some illiterate people are doctors.","No illiterate people are doctors.","Some doctors are not illiterate.","No doctors are literate."],a:1},
-  {cat:"Categorical Propositions",q:"If \"All metals conduct electricity\" is true, what must be true?",opts:["Some metals conduct electricity.","Some metals do not conduct electricity.","No metals conduct electricity.","All metals are insulators."],a:0},
-  {cat:"Categorical Propositions",q:"What is the obversion of \"No cats are reptiles\"?",opts:["No reptiles are cats.","All cats are reptiles.","All cats are non-reptiles.","Some reptiles are cats."],a:2},
-  {cat:"Categorical Propositions",q:"What is the correct contrapositive of \"If someone is a thief, then they are dishonest\"?",opts:["If someone is not dishonest, then they are not a thief.","If someone is dishonest, then they are not a thief.","If someone is a thief, then they are honest.","If someone is not a thief, then they are dishonest."],a:0},
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 1: Creation Theories
+// ══════════════════════════════════════════════════════════════
+{cat:"Creation Theories",q:"Which creation theory states that God created the universe in six days and rested on the seventh?",opts:["Creatina","Gap theory","Progressive creation","Theistic evolution"],a:0},
+{cat:"Creation Theories",q:"Which theory includes a \"gap\" period between creation events?",opts:["Creatina","Gap theory","Deistic evolution","Pantheistic evolution"],a:1},
+{cat:"Creation Theories",q:"Which theory proposes that God created different life forms at successive times over a long period?",opts:["Creatina","Progressive creation","Theistic evolution","Evolution (natural evolution)"],a:1},
+{cat:"Creation Theories",q:"Which theory asserts that although evolution occurs, God continuously controls the process?",opts:["Theistic evolution","Deistic evolution","Progressive creation","Gap theory"],a:0},
+{cat:"Creation Theories",q:"Which theory suggests that the Earth and life evolved by natural processes until God \"took charge\"?",opts:["Creatina","Deistic evolution","Progressive creation","Pantheistic evolution"],a:1},
+{cat:"Creation Theories",q:"Which view holds that God is identical with the evolving universe?",opts:["Creatina","Theistic evolution","Pantheistic evolution","Gap theory"],a:2},
+{cat:"Creation Theories",q:"Which perspective argues that life and the universe have evolved solely by natural processes over billions of years?",opts:["Creatina","Progressive creation","Theistic evolution","Evolution"],a:3},
+{cat:"Creation Theories",q:"Which creation theory implies there was a gap period between acts of creation?",opts:["Creatina","Gap theory","Progressive creation","Deistic evolution"],a:1},
+{cat:"Creation Theories",q:"Which theory accepts a long evolutionary process for earth and life while maintaining that God is in control?",opts:["Gap theory","Creatina","Theistic evolution","Evolution"],a:2},
+{cat:"Creation Theories",q:"Which theory posits that God himself evolved along with the universe and that life arose from extra-terrestrial organisms?",opts:["Theistic evolution","Deistic evolution","Pantheistic evolution","Progressive creation"],a:2},
+{cat:"Creation Theories",q:"Which theory holds God created successively at different times during the long age of the earth and life?",opts:["Gap theory","Creatina","Progressive creation","Deistic evolution"],a:2},
+{cat:"Creation Theories",q:"Which viewpoint favors natural processes without further divine intervention after creation?",opts:["Theistic evolution","Progressive creation","Pantheistic evolution","Evolution"],a:3},
+{cat:"Creation Theories",q:"Which theory proposes that God created in six days, then after a gap period resumed creation?",opts:["Creatina","Theistic evolution","Gap theory","Pantheistic evolution"],a:2},
+{cat:"Creation Theories",q:"Which creation theory is consistent with long ages for the earth and life and involves periodic divine intervention?",opts:["Gap theory","Progressive creation","Creatina","Deistic evolution"],a:1},
+{cat:"Creation Theories",q:"What is the term for the view that life and the universe evolved over thousands and billions of years solely by natural processes?",opts:["Progressive creation","Gap theory","Theistic evolution","Evolution"],a:3},
 
-  // ── LOGIC & ARGUMENTS ─────────────────────────────────────────────────────
-  {cat:"Logic & Arguments",q:"The three laws of thought include all of the following EXCEPT:",opts:["The Law of Identity","The Law of Contradiction","The Law of Rationality","The Law of the Excluded Middle"],a:2},
-  {cat:"Logic & Arguments",q:"Which best defines a valid argument?",opts:["An argument where premises and conclusion are all true","An argument where the premises logically lead to the conclusion","An argument that uses persuasive language","An argument that is widely accepted"],a:1},
-  {cat:"Logic & Arguments",q:"Which type of logic focuses on the structure of reasoning rather than the truth of the premises?",opts:["Material logic","Informal logic","Formal logic","Inductive logic"],a:2},
-  {cat:"Logic & Arguments",q:"What is the key feature of a deductive argument?",opts:["It moves from specific cases to general principles","Its conclusion is only probable, not certain","If the premises are true, the conclusion must be true","It relies on examples and observation"],a:2},
-  {cat:"Logic & Arguments",q:"What distinguishes material logic from formal logic?",opts:["Material logic focuses on the truth of premises, while formal logic focuses on structure","Formal logic is concerned with argument content, while material logic checks validity","Material logic uses mathematical formulas, while formal logic does not","There is no difference between the two"],a:0},
-  {cat:"Logic & Arguments",q:"If an argument is valid but has false premises, what can be said about it?",opts:["It is sound","It is unsound","It is neither valid nor invalid","The conclusion must also be false"],a:1},
-  {cat:"Logic & Arguments",q:"\"If it is raining, then the ground is wet\" is an example of:",opts:["A negationless logic statement","A prepositional logic statement","A compound statement","A material logic statement"],a:2},
-  {cat:"Logic & Arguments",q:"What makes an argument sound?",opts:["The premises and conclusion are both true, regardless of validity","The argument is widely accepted","The argument is valid, and all premises are true","The premises are persuasive"],a:2},
-  {cat:"Logic & Arguments",q:"What is the purpose of informal logic?",opts:["To analyze the structure of arguments without considering their truth","To study reasoning in everyday language and practical situations","To ensure that all arguments follow strict rules of inference","To examine only mathematical and symbolic reasoning"],a:1},
-  {cat:"Logic & Arguments",q:"The Law of the Excluded Middle states that:",opts:["Every statement must be either true or false, with no middle ground","Two contradictory statements can both be true under certain conditions","The structure of an argument is more important than its content","A statement can be both true and false at the same time"],a:0},
-  {cat:"Logic & Arguments",q:"\"All mammals are warm-blooded. Whales are mammals. Therefore, whales are warm-blooded.\" Which is the conclusion?",opts:["All mammals are warm-blooded.","Whales are mammals.","Whales are warm-blooded.","Both A and B."],a:2},
-  {cat:"Logic & Arguments",q:"\"John did not study hard. Therefore, John will not pass the test.\" What is the conclusion?",opts:["You must study hard to pass the test.","John did not study hard.","John will not pass the test.","Both A and B support the conclusion."],a:2},
-  {cat:"Logic & Arguments",q:"\"All fruits have seeds. An apple is a fruit. Therefore, an apple has seeds.\" Identify the premises and conclusion.",opts:["Premises: All fruits have seeds; Apple is a fruit. Conclusion: Apple has seeds.","Premise: Apple has seeds; Conclusion: All fruits have seeds.","Premise: Apple has seeds; Conclusion: Apple is a fruit.","Premises: All fruits have seeds; Apple has seeds. Conclusion: Apple is a fruit."],a:0},
-  {cat:"Logic & Arguments",q:"\"Every student in the class passed the exam. Mary is a student. Therefore, Mary passed the exam.\" Which part is the conclusion?",opts:["Every student in the class passed the exam.","Mary is a student in the class.","Mary passed the exam.","Both A and B."],a:2},
-  {cat:"Logic & Arguments",q:"\"All dogs bark. Rex is a dog. Therefore, Rex barks.\" Which shows the premises and conclusion?",opts:["Premise: All dogs bark. Conclusion: Rex is a dog.","Premises: All dogs bark; Rex is a dog. Conclusion: Rex barks.","Premise: Rex barks. Conclusion: All dogs bark and Rex is a dog.","Premise: Rex is a dog. Conclusion: All dogs bark."],a:1},
-  {cat:"Logic & Arguments",q:"\"Studying daily improves your grades. Lisa studies daily. Therefore, Lisa's grades improve.\" What is the conclusion?",opts:["Studying daily improves your grades.","Lisa studies daily.","Lisa's grades improve.","Both A and B."],a:2},
-  {cat:"Logic & Arguments",q:"\"All birds can fly. A penguin is a bird. Therefore, a penguin can fly.\" Is this argument:",opts:["Sound","Valid but unsound","Invalid","Neither"],a:1},
-  {cat:"Logic & Arguments",q:"\"All mammals have hearts. A whale is a mammal. Therefore, a whale has a heart.\" This argument is:",opts:["Valid but unsound","Invalid","Sound","Neither"],a:2},
-  {cat:"Logic & Arguments",q:"\"If it is snowing, then it is cold outside. It is snowing. Therefore, it is cold outside.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Unsound due to false premises"],a:0},
-  {cat:"Logic & Arguments",q:"\"If you study hard, you will get good grades. You did not study hard. Therefore, you will not get good grades.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Sound if the conclusion is true"],a:2},
-  {cat:"Logic & Arguments",q:"\"All cars have engines. My bicycle has an engine. Therefore, my bicycle is a car.\" This argument is:",opts:["Sound","Unsound","Invalid","Both unsound and invalid"],a:3},
-  {cat:"Logic & Arguments",q:"\"Every student in the club is an honor student. Sarah is in the club. Therefore, Sarah is an honor student.\" The argument is:",opts:["Valid and sound","Valid but unsound","Invalid","Neither valid nor unsound"],a:0},
-  {cat:"Logic & Arguments",q:"\"If a person is a doctor, they have a medical degree. John has a medical degree. Therefore, John is a doctor.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Sound if John practices medicine"],a:2},
-  {cat:"Logic & Arguments",q:"\"All computers run on electricity. My laptop is a computer. Therefore, my laptop runs on electricity.\" This argument is:",opts:["Sound","Valid but unsound","Invalid","Sound only if my laptop is plugged in"],a:0},
-  {cat:"Logic & Arguments",q:"\"Only mammals have fur. A dolphin is a mammal. Therefore, a dolphin has fur.\" This argument is:",opts:["Valid and sound","Valid but unsound","Invalid","Neither"],a:2},
-  {cat:"Logic & Arguments",q:"\"If you exercise regularly, you will be healthy. You exercise regularly. Therefore, you are healthy.\" This argument is:",opts:["Valid and sound","Valid but unsound","Invalid","Sound only if no other factors affect health"],a:1},
-  {cat:"Logic & Arguments",q:"\"All fish can fly. Goldie is a fish. Therefore, Goldie can fly.\" Which premise is problematic?",opts:["\"All fish can fly\"","\"Goldie is a fish\"","\"Goldie can fly\"","None of the above"],a:0},
-  {cat:"Logic & Arguments",q:"\"All fruits are sweet. Lemons are fruits. Therefore, lemons are sweet.\" Which premise is problematic?",opts:["\"All fruits are sweet\"","\"Lemons are fruits\"","\"Lemons are sweet\"","None of the above"],a:0},
-  {cat:"Logic & Arguments",q:"\"All vehicles have four wheels. My motorcycle is a vehicle.\" Which premise is untrue?",opts:["\"All vehicles have four wheels\"","\"My motorcycle is a vehicle\"","\"My motorcycle has four wheels\"","None of the above"],a:0},
-  {cat:"Logic & Arguments",q:"\"If a person is a millionaire, then they are happy.\" Which premise is likely questionable?",opts:["\"If a person is a millionaire, then they are happy\"","\"John is not happy\"","\"John is not a millionaire\"","All premises are equally true"],a:0},
-  {cat:"Logic & Arguments",q:"Identify the inductive argument:",opts:["If it rains, the ground gets wet. It rained. Therefore, the ground is wet.","All squares have four sides. A rectangle is a square. Therefore, a rectangle has four sides.","Most dogs bark when they see strangers. My neighbor's dog is barking. Therefore, it probably sees a stranger.","If an animal is a bird, it must lay eggs. A parrot is a bird. Therefore, it lays eggs."],a:2},
-  {cat:"Logic & Arguments",q:"Which argument is deductive?",opts:["The last five times I drank coffee, I felt more awake. Therefore, drinking coffee always makes people more awake.","Every prime number greater than 2 is odd. 13 is a prime number greater than 2. Therefore, 13 is odd.","All swans I've seen are white. Therefore, all swans must be white.","The majority of past presidents have been male. Therefore, the next president will likely be male."],a:1},
-  {cat:"Logic & Arguments",q:"What makes an argument deductive?",opts:["It draws conclusions based on probability and past experience.","It guarantees the truth of the conclusion if the premises are true.","It makes a generalization based on specific observations.","It assumes that the past will always predict the future."],a:1},
-  {cat:"Logic & Arguments",q:"Which of these is an example of inductive reasoning?",opts:["All birds have feathers. A robin is a bird. Therefore, a robin has feathers.","No human can survive without oxygen. John is a human. Therefore, John needs oxygen.","My grandfather smoked and lived to 95. Therefore, smoking does not always cause early death.","If today is Tuesday, then tomorrow is Wednesday. Today is Tuesday. Therefore, tomorrow is Wednesday."],a:2},
-  {cat:"Logic & Arguments",q:"A deductive argument is one in which:",opts:["The conclusion follows with certainty if the premises are true.","The conclusion is always true, even if the premises are false.","The conclusion is only probable, not certain.","The argument is based entirely on past observations."],a:0},
-  {cat:"Logic & Arguments",q:"Which best represents inductive reasoning?",opts:["All men are mortal. Socrates is a man. Therefore, Socrates is mortal.","The last five times I went jogging, I felt great afterward. Therefore, jogging always makes people feel great.","If a shape is a square, then it has four equal sides. Shape X is a square. Therefore, it has four equal sides.","If a student studies, they pass the test. Mike studied. Therefore, he passed the test."],a:1},
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 2: Darwin & Natural Selection
+// ══════════════════════════════════════════════════════════════
+{cat:"Darwin & Natural Selection",q:"On which ship did Charles Darwin make observations that influenced his theory of evolution?",opts:["HMS Victory","HMS Beagle","HMS Endeavour","HMS Explorer"],a:1},
+{cat:"Darwin & Natural Selection",q:"In which island group did Darwin observe finch variations that later supported his ideas on natural selection?",opts:["Hawaiian Islands","Galapagos Islands","Canary Islands","Fiji Islands"],a:1},
+{cat:"Darwin & Natural Selection",q:"What is the key mechanism of evolution proposed by Darwin?",opts:["Genetic drift","Natural selection","Mutation only","Divine intervention"],a:1},
+{cat:"Darwin & Natural Selection",q:"Who is primarily credited with the development of the theory of natural selection?",opts:["Lamarck","Darwin","Wallace","Mendel"],a:1},
+{cat:"Darwin & Natural Selection",q:"Which scientist independently arrived at conclusions similar to Darwin's regarding natural selection?",opts:["Lamarck","Alfred Russel Wallace","Gregor Mendel","Thomas Huxley"],a:1},
+{cat:"Darwin & Natural Selection",q:"What is the title of Darwin's famous book that outlines his theory of natural selection?",opts:["The Descent of Man","On the Origin of Species","The Voyage of the Beagle","The Expression of Emotions"],a:1},
+{cat:"Darwin & Natural Selection",q:"In what year did Darwin present his essay on evolution to the Linnean Society of London?",opts:["1848","1858","1868","1878"],a:1},
+{cat:"Darwin & Natural Selection",q:"What term describes the phenomenon where organisms produce more offspring than can survive, leading to a struggle for existence?",opts:["Natural selection","Overproduction / Struggle for survival","Genetic drift","Adaptation"],a:1},
+{cat:"Darwin & Natural Selection",q:"How did Darwin's study of domesticated animals contribute to his theory?",opts:["It showed that all animals are genetically identical","It demonstrated that selective breeding can produce significant variation","It proved that natural selection does not operate in nature","It indicated that only wild animals evolve"],a:1},
+{cat:"Darwin & Natural Selection",q:"Darwin's main contribution to biology was to explain:",opts:["That species are fixed since creation","How species evolve through natural selection","That evolution is impossible without divine intervention","That inheritance does not affect evolution"],a:1},
+{cat:"Darwin & Natural Selection",q:"Which observation by Darwin helped him formulate his theory of natural selection?",opts:["Uniformity of species across continents","Variation in species correlated with geographic distribution","The immediate creation of species","A lack of variation in domesticated animals"],a:1},
+{cat:"Darwin & Natural Selection",q:"Natural selection acts on populations by:",opts:["Randomly altering all individuals","Favoring individuals with traits that improve fitness","Eliminating genetic diversity entirely","Forcing immediate large-scale changes"],a:1},
+{cat:"Darwin & Natural Selection",q:"Natural selection is considered non-random because it:",opts:["Acts independently of environmental conditions","Consistently favors traits that confer survival advantages","Randomly eliminates individuals regardless of traits","Operates without any selective pressures"],a:1},
+{cat:"Darwin & Natural Selection",q:"Darwin's theory of evolution challenged the view that species are:",opts:["Mutable","Fixed and unchanging","Diverse","Adaptable"],a:1},
+{cat:"Darwin & Natural Selection",q:"What major controversy did Darwin's theory help resolve?",opts:["Whether the Earth is flat","The debate between fixity of species and change in species","The speed of light in a vacuum","The chemical composition of water"],a:1},
+{cat:"Darwin & Natural Selection",q:"Which biblical passage is most often cited in debates over creation versus evolution?",opts:["Genesis 1:1","Genesis 1:11–12","Exodus 20","Psalms 23"],a:1},
+{cat:"Darwin & Natural Selection",q:"What misconception did some theologians have regarding species prior to Darwin's work?",opts:["Species change continuously over time","Species were fixed and unchanging","Species are the result of natural selection","Species are created through hybridization"],a:1},
+{cat:"Darwin & Natural Selection",q:"Darwin's concept of gradualism implies that evolutionary change occurs:",opts:["Suddenly in large leaps","Slowly and incrementally over long periods","Only in response to catastrophic events","Instantly in one generation"],a:1},
+{cat:"Darwin & Natural Selection",q:"The \"Darwin finches\" are significant because they:",opts:["Prove that all birds are identical","Illustrate how different environments can lead to variations in beak shape","Disprove the concept of adaptation","Were not influenced by natural selection"],a:1},
+{cat:"Darwin & Natural Selection",q:"What does \"the struggle for existence\" imply in evolutionary theory?",opts:["Unlimited resources for every organism","Competition among individuals for limited resources","That all individuals survive equally well","That evolution is instantaneous"],a:1},
+{cat:"Darwin & Natural Selection",q:"In evolutionary terms, \"fitness\" is best defined as an organism's ability to:",opts:["Run fast and be strong","Survive and reproduce in its environment","Avoid any genetic mutations","Remain unchanged over time"],a:1},
+{cat:"Darwin & Natural Selection",q:"Continuous change in populations over generations demonstrates that natural selection is:",opts:["A one-time event","An ongoing process","Only observable in fossils","Unrelated to environmental factors"],a:1},
+{cat:"Darwin & Natural Selection",q:"The evolutionary process is best summarized as:",opts:["Random change with no direction","Change through natural selection acting on genetic variation","A completely predetermined process","A phenomenon that contradicts the fossil record"],a:1},
+{cat:"Darwin & Natural Selection",q:"Darwin's voyage on the HMS Beagle is significant because it:",opts:["Showed that all species are identical worldwide","Provided evidence of variation and adaptation in different environments","Confirmed that species do not change","Focused solely on marine organisms"],a:1},
+{cat:"Darwin & Natural Selection",q:"Which statement best describes the pace of evolution?",opts:["Evolution occurs suddenly in one generation","Evolution is a slow, gradual process over many generations","Evolution happens only during catastrophic events","Evolution is instantaneous once a species is formed"],a:1},
 
-  // ── BRANCHES OF PHILOSOPHY ────────────────────────────────────────────────
-  {cat:"Branches of Philosophy",q:"Which branch of philosophy deals with the study of knowledge—its nature, sources, and validity?",opts:["Metaphysics","Epistemology","Axiology","Logic"],a:1},
-  {cat:"Branches of Philosophy",q:"Which statement best captures Descartes's view of metaphysics?",opts:["It is the study of values and moral judgments.","It is primarily concerned with linguistic analysis and the structure of arguments.","It is considered the \"first philosophy,\" dealing with the fundamental nature of reality and existence.","It is purely concerned with political structures and human relationships."],a:2},
-  {cat:"Branches of Philosophy",q:"Which of the following is NOT one of the traditionally recognized major branches of philosophy?",opts:["Epistemology","Metaphysics","Axiology (Ethics and Aesthetics)","Anthropology"],a:3},
-  {cat:"Branches of Philosophy",q:"In epistemology, which source of knowledge involves divine undertones and communication from God?",opts:["Authority","Revelation","Empiricism","Rationalism"],a:1},
-  {cat:"Branches of Philosophy",q:"Logic is primarily concerned with which of the following?",opts:["The study of moral values and judgments","The methods and principles used in distinguishing correct from incorrect reasoning","The study of the origin, nature, and development of the universe","The study of aesthetic values in art and nature"],a:1},
-  {cat:"Branches of Philosophy",q:"Axiology is subdivided mainly into:",opts:["Ethics and Metaphysics","Epistemology and Logic","Ethics and Aesthetics","Anthropology and Cosmology"],a:2},
-  {cat:"Branches of Philosophy",q:"Which philosopher warned that \"If the world's ethical standards fail to rise to the advance of our technological revolution, we shall perish\"?",opts:["Aristotle","Counts (1962)","Copi (1982)","Knight (1990)"],a:1},
-  {cat:"Branches of Philosophy",q:"What does the text describe as the \"king\" of all disciplines, leading to the highest degree in many fields (Ph.D.)?",opts:["Theology","Mathematics","Philosophy","Anthropology"],a:2},
-  {cat:"Branches of Philosophy",q:"Which branch of philosophy studies \"the nature of reality\"?",opts:["Axiology","Metaphysics","Logic","Epistemology"],a:1},
-  {cat:"Branches of Philosophy",q:"According to the text, which of the following is NOT typically a direct source of knowledge mentioned?",opts:["Rationalism (reasoning)","Empiricism (sense perception)","Tradition (passed down without questioning)","Intuition (immediate understanding without reasoning)"],a:2},
-  {cat:"Branches of Philosophy",q:"Which branch of philosophy is primarily focused on the formal principles of reasoning, argument structure, and evaluation of inferences?",opts:["Metaphysics","Epistemology","Logic","Axiology"],a:2},
-  {cat:"Branches of Philosophy",q:"Which sub-branch of axiology is concerned with criteria for what is considered beautiful or artistically valuable?",opts:["Ethics","Aesthetics","Metaphysics","Epistemology"],a:1},
-  {cat:"Branches of Philosophy",q:"Which philosophical method, associated with Descartes, involves doubting all beliefs until reaching an undeniable foundation?",opts:["Empiricism","Induction","Methodological skepticism","Pragmatism"],a:2},
-  {cat:"Branches of Philosophy",q:"\"I think, therefore I am\" is most closely associated with which philosopher?",opts:["Aristotle","René Descartes","Immanuel Kant","Socrates"],a:1},
-  {cat:"Branches of Philosophy",q:"Which source of knowledge is based on direct sensory experience?",opts:["Rationalism","Empiricism","Revelation","Intuition"],a:1},
-  {cat:"Branches of Philosophy",q:"Which branch of philosophy would include the study of moral dilemmas and questions about right and wrong?",opts:["Epistemology","Axiology","Metaphysics","Logic"],a:1},
-  {cat:"Branches of Philosophy",q:"Which best describes the relationship between philosophy and other academic disciplines?",opts:["Philosophy is a specialized field with no connection to other disciplines.","Philosophy is the \"mother of the sciences,\" forming the foundation for various academic fields and the Ph.D. degree.","Philosophy only concerns abstract ideas with no practical application.","Philosophy primarily deals with historical analysis rather than scientific inquiry."],a:1},
-  {cat:"Branches of Philosophy",q:"Which source of knowledge is associated with gaining insight without a deliberate, conscious process?",opts:["Authority","Intuition","Empiricism","Rationalism"],a:1},
-  {cat:"Branches of Philosophy",q:"Which major branch of philosophy deals with questions about the nature of existence, reality, and the universe?",opts:["Epistemology","Axiology","Metaphysics","Logic"],a:2},
-  {cat:"Branches of Philosophy",q:"Which branch studies cosmology, and from which major branch is it deduced?",opts:["Epistemology, deduced from Logic","Cosmology, deduced from Axiology","Cosmology, deduced from Metaphysics","Ethics, deduced from Epistemology"],a:2},
-  {cat:"Branches of Philosophy",q:"Which branch deals with systematic study of valid reasoning and argument structure?",opts:["Logic; to distinguish correct from incorrect reasoning","Epistemology; to analyze the sources of knowledge","Metaphysics; to explore the nature of being","Axiology; to evaluate ethical values"],a:0},
-  {cat:"Branches of Philosophy",q:"The study of moral values, ethical dilemmas, and aesthetic judgments is grouped under which branch?",opts:["Metaphysics; to understand the nature of existence","Epistemology; to question the basis of knowledge","Axiology; to assess what is valuable and good","Logic; to analyze argument structure"],a:2},
-  {cat:"Branches of Philosophy",q:"Which branch is dedicated to understanding the nature, sources, and limits of human knowledge?",opts:["Epistemology; it investigates sense perception, reason, intuition, and revelation","Metaphysics; it investigates the origin of the universe","Logic; it investigates the structure of arguments","Axiology; it investigates moral and aesthetic values"],a:0},
-  {cat:"Branches of Philosophy",q:"Which branch lays the groundwork for scientific inquiry and is sometimes referred to as the \"mother of the sciences\"?",opts:["Ethics","Logic","Metaphysics","Philosophy as a whole (with emphasis on Metaphysics)"],a:3},
-  {cat:"Branches of Philosophy",q:"In evaluating arguments, which branch helps identify fallacies and ensure logical consistency?",opts:["Epistemology; to test the reliability of sensory data","Logic; to distinguish between valid and invalid reasoning","Metaphysics; to explain the nature of reality","Axiology; to define what is ethically right"],a:1},
-  {cat:"Branches of Philosophy",q:"Which branch is directly concerned with questions about existence and being, and how does it relate to the cosmos?",opts:["Epistemology; it relates by explaining how we come to know cosmic phenomena","Axiology; it relates by judging the beauty of the cosmos","Metaphysics; it relates by addressing the fundamental principles that govern existence, including the cosmos","Logic; it relates by structuring the arguments about cosmic theories"],a:2}
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 3: Micro & Macroevolution
+// ══════════════════════════════════════════════════════════════
+{cat:"Micro & Macroevolution",q:"What does the term \"microevolution\" refer to?",opts:["Large-scale transformation of major groups","Small changes within a species over time","The origin of life","Sudden extinction events"],a:1},
+{cat:"Micro & Macroevolution",q:"What does \"macroevolution\" refer to?",opts:["Minor genetic variations within a species","Formation of new subspecies only","Major changes that transform one group into another","Temporary adaptations"],a:2},
+{cat:"Micro & Macroevolution",q:"What is the term for small evolutionary changes within a population that can lead to the formation of new species?",opts:["Macroevolution","Microevolution","Speciation","Genetic drift"],a:1},
+{cat:"Micro & Macroevolution",q:"What term describes large-scale evolutionary changes that can transform one major group of organisms into another?",opts:["Microevolution","Speciation","Macroevolution","Adaptation"],a:2},
+{cat:"Micro & Macroevolution",q:"Which process involves the geographic separation of populations that can lead to speciation?",opts:["Natural selection","Geographic isolation","Genetic recombination","Reproductive isolation"],a:1},
+{cat:"Micro & Macroevolution",q:"What term describes differences that develop to prevent interbreeding between separated populations?",opts:["Genetic drift","Adaptation","Reproductive isolation","Microevolution"],a:2},
+{cat:"Micro & Macroevolution",q:"Which hybrid, resulting from the cross between a horse and a donkey, is an example of reproductive isolation?",opts:["Liger","Mule","Hinny","Hybrid"],a:1},
+{cat:"Micro & Macroevolution",q:"What is speciation?",opts:["The extinction of a species","The process by which new species develop","The hybridization of two species","A form of microevolution only"],a:1},
+{cat:"Micro & Macroevolution",q:"Which best describes the difference between microevolution and macroevolution?",opts:["Microevolution is small-scale change; macroevolution involves major transitions","Microevolution leads to extinction; macroevolution does not","Microevolution occurs only in animals; macroevolution only in plants","There is no difference between them"],a:0},
+{cat:"Micro & Macroevolution",q:"Geographic isolation can lead to speciation because it:",opts:["Eliminates genetic variation","Separates populations so they evolve independently","Forces all individuals to remain identical","Prevents any change in traits"],a:1},
+{cat:"Micro & Macroevolution",q:"How can adaptation to different environments lead to speciation?",opts:["It reduces variation in a population","It causes different populations to develop unique traits over time","It makes all populations identical","It only affects physical appearance temporarily"],a:1},
+{cat:"Micro & Macroevolution",q:"How are microevolution and macroevolution related?",opts:["They are completely independent processes","Microevolutionary changes over long periods can lead to macroevolution","Only microevolution occurs in nature","Macroevolution contradicts microevolution"],a:1},
+{cat:"Micro & Macroevolution",q:"Which example best illustrates reproductive isolation?",opts:["Two bird populations interbreeding freely","A sterile mule resulting from a horse–donkey cross","Variations in beak shape among finches","Seasonal changes in a species' behavior"],a:1},
+{cat:"Micro & Macroevolution",q:"What role do mutations play in evolution?",opts:["They decrease genetic diversity","They introduce genetic variation","They prevent speciation","They only affect non-heritable traits"],a:1},
+{cat:"Micro & Macroevolution",q:"How does genetic recombination affect evolution?",opts:["It reduces genetic diversity","It creates new gene combinations that contribute to variation","It eliminates mutations entirely","It ensures all offspring are identical"],a:1},
+{cat:"Micro & Macroevolution",q:"Which process is central to the formation of new species through isolation?",opts:["Natural selection","Speciation","Hybridization","Genetic drift"],a:1},
+{cat:"Micro & Macroevolution",q:"One common criticism of macroevolution is that it:",opts:["Cannot account for minor genetic changes","Implies extremely large transformations that some find hard to explain","Disregards the fossil record entirely","Is based solely on divine intervention"],a:1},
+{cat:"Micro & Macroevolution",q:"What evolutionary process results in new strains, races, forms, or varieties within a species?",opts:["Macroevolution","Speciation via microevolution","Extinction","Geographic isolation only"],a:1},
+{cat:"Micro & Macroevolution",q:"Which of the following is a recognized mechanism of evolution?",opts:["Instantaneous divine creation","Fixity of species","Natural selection","Complete stasis"],a:2},
+{cat:"Micro & Macroevolution",q:"Adaptive radiation occurs when:",opts:["One species diversifies into multiple forms to exploit different niches","All species converge to a single form","Environmental pressures force a species into extinction","No changes occur despite environmental challenges"],a:0},
+
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 4: Fossil Record & Evidence for Evolution
+// ══════════════════════════════════════════════════════════════
+{cat:"Fossil Record & Evidence",q:"What does the geological column represent?",opts:["A record of chemical compositions in rocks","Rock layers arranged from oldest to youngest","The distribution of fossils by type only","A diagram of tectonic plates"],a:1},
+{cat:"Fossil Record & Evidence",q:"According to the principle of superposition, which rock layer is the oldest?",opts:["The top layer","The bottom layer","The middle layer","All layers are the same age"],a:1},
+{cat:"Fossil Record & Evidence",q:"What is the term for the sudden appearance of many multicellular phyla in the Lower Cambrian?",opts:["Cambrian gap","Cambrian explosion","Cambrian era","Cambrian stasis"],a:1},
+{cat:"Fossil Record & Evidence",q:"In which type of rock are fossils most commonly found?",opts:["Igneous","Metamorphic","Sedimentary","Volcanic"],a:2},
+{cat:"Fossil Record & Evidence",q:"What are fossils?",opts:["Only bones of extinct animals","Preserved remains or imprints of once-living organisms","Rocks shaped like living things","Chemical traces left by organisms"],a:1},
+{cat:"Fossil Record & Evidence",q:"Approximately how many fossil species have scientists described?",opts:["Over 25,000","Over 100,000","Over 250,000","Over 1 million"],a:2},
+{cat:"Fossil Record & Evidence",q:"What is the scientific study of fossils called?",opts:["Geology","Paleontology","Stratigraphy","Biostratigraphy"],a:1},
+{cat:"Fossil Record & Evidence",q:"What is permineralization?",opts:["A process where organisms are frozen","A fossilization process where minerals infiltrate and preserve the structure of organic tissues","A process creating carbon films","Preservation in tree resin"],a:1},
+{cat:"Fossil Record & Evidence",q:"Which fossilization process involves preservation in tree resin?",opts:["Carbonization","Permineralization","Amber preservation","Freezing"],a:2},
+{cat:"Fossil Record & Evidence",q:"What type of fossil provides evidence of an organism's activity or behavior?",opts:["Body fossil","Trace fossil","Index fossil","Transitional fossil"],a:1},
+{cat:"Fossil Record & Evidence",q:"What are transitional fossils?",opts:["Fossils that perfectly match modern species","Fossils that show intermediate forms between ancestral and descendant species","Fossils found only in one location","Fossils that disprove evolution"],a:1},
+{cat:"Fossil Record & Evidence",q:"Which of the following is considered transitional evidence for evolution?",opts:["Vestigial organs","Transitional fossils","Tree rings","Ice core layers"],a:1},
+{cat:"Fossil Record & Evidence",q:"A transitional fossil is characterized by having:",opts:["Only features of modern species","A mix of ancestral and derived traits","No identifiable characteristics","Features that disprove evolution"],a:1},
+{cat:"Fossil Record & Evidence",q:"The fossil record supports evolution by showing:",opts:["A completely random assortment of species","A sequence of forms from simple to complex over time","No clear patterns in the appearance of organisms","Only modern species with no transitions"],a:1},
+{cat:"Fossil Record & Evidence",q:"Why is rapid burial important in the fossilization process?",opts:["It speeds up mineralization","It prevents oxygen from decomposing the remains and protects them from scavengers","It creates trace fossils","It increases the chance of amber formation"],a:1},
+{cat:"Fossil Record & Evidence",q:"Why are fossils rarely found in igneous or metamorphic rocks?",opts:["These rocks are too rare","The processes forming these rocks do not favor the preservation of organic remains","Fossils dissolve in high heat","These rocks are always underwater"],a:1},
+{cat:"Fossil Record & Evidence",q:"Homologous structures are evidence for evolution because they indicate:",opts:["Independent creation of species","Common ancestry among different organisms","That species have no relation to each other","Random distribution of traits"],a:1},
+{cat:"Fossil Record & Evidence",q:"Studies in embryology support evolutionary theory by demonstrating that:",opts:["Embryos of different species often show similar early stages","Every species' embryonic development is completely unique","Embryology disproves common ancestry","Embryos develop without any genetic influence"],a:0},
+{cat:"Fossil Record & Evidence",q:"Which of the following is NOT typically used as evidence for evolution?",opts:["Embryological similarities","Homologous structures","Fossil records","Meteorite composition"],a:3},
+{cat:"Fossil Record & Evidence",q:"What does the arrangement of the geological column indicate about the complexity of life?",opts:["Complexity decreases over time","Simpler organisms appear in older layers, while more complex organisms appear in younger layers","All layers contain the same organisms","Complexity is randomly distributed"],a:1},
+{cat:"Fossil Record & Evidence",q:"What are the two major layers of the geological column?",opts:["Paleozoic and Mesozoic","Precambrian and Phanerozoic","Cambrian and Ordovician","Triassic and Jurassic"],a:1},
+{cat:"Fossil Record & Evidence",q:"The existence of many transitional fossils supports which concept?",opts:["Special creation","Gradual evolution","The immutability of species","Random appearance of modern forms"],a:1},
+{cat:"Fossil Record & Evidence",q:"One reason the fossil record is incomplete is that:",opts:["Fossilization is a very common process for all organisms","Only a small fraction of organisms are preserved as fossils","All fossils are always perfectly preserved","Geological processes do not affect fossil preservation"],a:1},
+{cat:"Fossil Record & Evidence",q:"The idea of \"common descent\" implies that:",opts:["Every species was created independently","All organisms share an ancestral origin","Species are completely unrelated","Evolution is solely a random process"],a:1},
+{cat:"Fossil Record & Evidence",q:"\"Descent with modification\" is best exemplified by:",opts:["The sudden creation of species","The gradual accumulation of changes leading to new forms","The complete stasis of species over time","The direct intervention of a creator at each step"],a:1},
+{cat:"Fossil Record & Evidence",q:"Which of the following is an example of a vestigial structure in humans?",opts:["The opposable thumb","The tailbone (coccyx)","The highly developed brain","The flexible spine"],a:1},
+{cat:"Fossil Record & Evidence",q:"Vestigial structures in organisms are best explained by:",opts:["Complete design perfection","Remnants of organs that were functional in ancestral species","Structures acquired during an organism's lifetime","Features that serve no purpose at all"],a:1},
+{cat:"Fossil Record & Evidence",q:"Which primary line of evidence supports evolution by showing a continuous sequence from simple to complex forms?",opts:["The fossil record","Tree-ring analysis","Meteorological data","Ocean current patterns"],a:0},
+{cat:"Fossil Record & Evidence",q:"What overarching concept unifies evidence from the geological column, fossil records, and embryology?",opts:["Creationism","The theory of evolution","Progressive creation","Theistic evolution"],a:1},
+{cat:"Fossil Record & Evidence",q:"Which type of fossil provides insight into the behavior or movement of an organism?",opts:["Body fossils","Index fossils","Trace fossils","Transitional fossils"],a:2},
+
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 5: Scientific Dating — Overview & Relative Methods
+// ══════════════════════════════════════════════════════════════
+{cat:"Scientific Dating: Overview",q:"What is the primary goal of scientific dating?",opts:["To measure the density of materials","To determine the age of organic and inorganic materials","To analyze the chemical composition of rocks","To locate archaeological sites"],a:1},
+{cat:"Scientific Dating: Overview",q:"Scientific dating is commonly used in which of the following fields?",opts:["Archaeology","Geology","Paleontology","All of the above"],a:3},
+{cat:"Scientific Dating: Overview",q:"The two major categories of dating methods are:",opts:["Relative dating and chronological dating","Absolute dating and radiometric dating","Relative dating and absolute dating","Stratigraphic dating and fossil dating"],a:2},
+{cat:"Scientific Dating: Overview",q:"Relative dating methods are used to:",opts:["Provide specific numerical age estimates","Establish the sequence of events without assigning specific ages","Measure radioactive decay","Date only organic materials"],a:1},
+{cat:"Scientific Dating: Overview",q:"Absolute dating methods use physical, chemical, or biological changes to provide:",opts:["Only a relative sequence of events","Numerical age estimates","Visual descriptions of rock layers","Estimates of environmental conditions"],a:1},
+{cat:"Scientific Dating: Overview",q:"Stratigraphy is the study of:",opts:["Radioactive decay rates","Rock layers or strata","Tree rings","Fossil DNA sequences"],a:1},
+{cat:"Scientific Dating: Overview",q:"The principle of superposition in stratigraphy states that:",opts:["Younger layers are always at the bottom","Older layers are at the bottom and younger layers are at the top","All layers have the same age","Rock layers are randomly arranged"],a:1},
+{cat:"Scientific Dating: Overview",q:"Biostratigraphy uses which of the following as markers to date rock layers?",opts:["Ice layers","Index fossils (index species)","Mineral content","Radiometric isotopes"],a:1},
+{cat:"Scientific Dating: Overview",q:"Lithostratigraphy relies on which characteristics of rock strata?",opts:["Their radioactive decay rates","Their physical characteristics such as composition and texture","Their magnetic properties","Their color patterns only"],a:1},
+{cat:"Scientific Dating: Overview",q:"A drawback of relative dating is that it:",opts:["Provides precise numerical ages","Can be affected by geological disturbances such as earthquakes","Requires complex laboratory equipment","Only applies to organic materials"],a:1},
+{cat:"Scientific Dating: Overview",q:"Which of the following is an example of a relative dating method?",opts:["Carbon-14 dating","Stratigraphy","Uranium-Lead dating","Potassium-Argon dating"],a:1},
+{cat:"Scientific Dating: Overview",q:"Which dating method involves drilling core samples from ice in glaciated regions?",opts:["Stratigraphy","Ice core dating","Dendrochronology","Thermoluminescence dating"],a:1},
+{cat:"Scientific Dating: Overview",q:"In ice core dating, the visible dark and light rings generally represent:",opts:["Changes in mineral composition","Annual variations in snowfall or temperature","Fossil accumulation","Volcanic eruptions"],a:1},
+{cat:"Scientific Dating: Overview",q:"Geological relationships in relative dating involve:",opts:["Measuring tree-ring widths","Observing cross-cutting (truncating) features across rock layers","Determining the half-life of isotopes","Analyzing the luminescence of minerals"],a:1},
+{cat:"Scientific Dating: Overview",q:"Absolute dating methods are considered \"absolute\" because they provide:",opts:["Only the order of events","Specific numerical age estimates","Relative sequences without dates","Estimates of climate change only"],a:1},
+{cat:"Scientific Dating: Overview",q:"Scientific dating is used in all of the following fields EXCEPT:",opts:["Archaeology","Geology","Paleontology","Astrology"],a:3},
+{cat:"Scientific Dating: Overview",q:"A benefit of relative dating methods is that they are:",opts:["Quick and simple to apply","Always numerically precise","Dependent on radioactive decay","Unaffected by disturbances"],a:0},
+{cat:"Scientific Dating: Overview",q:"In geological dating, \"chronology\" refers to:",opts:["The chemical makeup of rocks","The sequence and timing of events","The physical layering of sediments","The magnetic properties of fossils"],a:1},
+{cat:"Scientific Dating: Overview",q:"Absolute dating methods are considered more definitive than relative dating because they provide:",opts:["Only the order of events","Specific numerical ages","Qualitative comparisons","Visual descriptions only"],a:1},
+{cat:"Scientific Dating: Overview",q:"A common drawback of relative dating methods is that they:",opts:["Provide precise numerical ages","Are unaffected by disturbances","Cannot determine the exact age of events","Rely on radioactive decay"],a:2},
+
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 6: Radiometric Dating
+// ══════════════════════════════════════════════════════════════
+{cat:"Radiometric Dating",q:"Radiometric dating is based on the principle of:",opts:["Sediment deposition","Radioactive decay of unstable isotopes","The layering of ice cores","Fossil morphology"],a:1},
+{cat:"Radiometric Dating",q:"In radiometric dating, what does \"half-life\" refer to?",opts:["The time required for a rock layer to form","The time it takes for half of a radioactive isotope to decay","The time period between ice core layers","The time it takes for a fossil to become mineralized"],a:1},
+{cat:"Radiometric Dating",q:"Carbon-14 dating is primarily used to date:",opts:["Volcanic rocks","Organic materials such as wood, bones, and shells","Zircon crystals","Sedimentary rock layers"],a:1},
+{cat:"Radiometric Dating",q:"The approximate half-life of Carbon-14 is:",opts:["1,000 years","5,730 years","10,000 years","50,000 years"],a:1},
+{cat:"Radiometric Dating",q:"Uranium-Lead dating is particularly useful for dating:",opts:["Recent organic remains","Ancient rocks and minerals, especially those with zircon crystals","Ice cores","Tree rings"],a:1},
+{cat:"Radiometric Dating",q:"In Uranium-Lead dating, uranium decays into which stable element?",opts:["Nitrogen","Lead","Argon","Carbon"],a:1},
+{cat:"Radiometric Dating",q:"Potassium-Argon dating is best suited for dating:",opts:["Organic remains","Volcanic rocks and fossil-bearing strata","Ice cores","Modern sediments"],a:1},
+{cat:"Radiometric Dating",q:"Radiometric dating accuracy can be compromised by:",opts:["Consistent isotope levels","Contamination with modern materials","A high concentration of radioactive elements","Perfectly sealed rock samples"],a:1},
+{cat:"Radiometric Dating",q:"Some rocks are unsuitable for radiometric dating because they:",opts:["Are too colorful","Lack sufficient radioactive elements","Are too porous","Are only found in sedimentary basins"],a:1},
+{cat:"Radiometric Dating",q:"Quartz is rarely useful for radiometric dating because:",opts:["It is too hard","It does not accommodate radioactive elements in its crystal structure","It decays too quickly","It is only found in metamorphic rocks"],a:1},
+{cat:"Radiometric Dating",q:"In radiometric dating, a \"parent isotope\" decays into a:",opts:["Sibling isotope","Daughter isotope","Precursor isotope","Partner isotope"],a:1},
+{cat:"Radiometric Dating",q:"The accuracy of radiometric dating depends on the assumption that:",opts:["Decay rates have remained constant over time","Rock layers are always disturbed","All rocks contain the same minerals","Samples have high moisture content"],a:0},
+{cat:"Radiometric Dating",q:"A drawback of Carbon-14 dating is that it is not effective for dating materials older than approximately:",opts:["5,000 years","50,000 years","500,000 years","5 million years"],a:1},
+{cat:"Radiometric Dating",q:"Uranium-Lead dating is particularly useful because zircon crystals in rocks:",opts:["Incorporate uranium but exclude lead when formed","Have high concentrations of carbon","Are only found in sedimentary rocks","Decay too rapidly for dating"],a:0},
+{cat:"Radiometric Dating",q:"Which of the following is NOT a radiometric dating method?",opts:["Carbon-14 dating","Uranium-Lead dating","Dendrochronology","Potassium-Argon dating"],a:2},
+{cat:"Radiometric Dating",q:"The reliability of radiometric dating can be compromised by:",opts:["Consistent environmental conditions","Isotopic contamination","The presence of tree rings","Uniform sedimentation"],a:1},
+{cat:"Radiometric Dating",q:"A limitation of radiometric dating is that it assumes a closed system, meaning that:",opts:["The sample must never have been altered by external influences","The rock can exchange isotopes with its environment","The decay rate is irrelevant","The sample has been reheated recently"],a:0},
+{cat:"Radiometric Dating",q:"The daughter product of Carbon-14 decay is:",opts:["Oxygen","Carbon-12","Nitrogen-14","Uranium"],a:2},
+{cat:"Radiometric Dating",q:"The principle underlying radiometric dating is that radioactive isotopes decay at a:",opts:["Constant and predictable rate","Variable rate depending on temperature","Rate that increases over time","Rate influenced by sediment deposition"],a:0},
+{cat:"Radiometric Dating",q:"A problem in radiometric dating arises when the isotopic system becomes \"open,\" meaning that:",opts:["No isotopes are lost or gained","The sample has exchanged isotopes with its environment","The rock is completely isolated","The decay rate is exactly as predicted"],a:1},
+{cat:"Radiometric Dating",q:"Potassium-Argon dating is based on the decay of Potassium-40 to which gas?",opts:["Carbon dioxide","Argon-40","Nitrogen-14","Oxygen"],a:1},
+{cat:"Radiometric Dating",q:"Carbon-14 is a radioactive isotope of which element?",opts:["Nitrogen","Carbon","Oxygen","Uranium"],a:1},
+{cat:"Radiometric Dating",q:"Which dating method relies on the decay of Potassium-40 to Argon-40?",opts:["Carbon-14 dating","Uranium-Lead dating","Potassium-Argon dating","TL dating"],a:2},
+{cat:"Radiometric Dating",q:"For dating ancient volcanic materials, which method is most appropriate?",opts:["Carbon-14 dating","Dendrochronology","Potassium-Argon dating","TL dating"],a:2},
+{cat:"Radiometric Dating",q:"A major assumption in radiometric dating is related to the sample's initial:",opts:["Color","Isotope concentration","Density","Magnetic field"],a:1},
+
+// ══════════════════════════════════════════════════════════════
+// CATEGORY 7: Non-Radiometric Dating (TL & Dendrochronology)
+// ══════════════════════════════════════════════════════════════
+{cat:"Non-Radiometric Dating",q:"Non-radiometric dating methods differ from radiometric ones because they do not rely on:",opts:["Physical changes","Radioactive decay","Chemical alterations","Biological processes"],a:1},
+{cat:"Non-Radiometric Dating",q:"Thermoluminescence (TL) dating measures the amount of light emitted from a mineral as a result of:",opts:["Radioactive decay","Heating that releases trapped electrons","Magnetic field changes","Chemical reactions with water"],a:1},
+{cat:"Non-Radiometric Dating",q:"TL dating is particularly effective for dating which type of materials?",opts:["Organic remains like wood","Ceramic, burnt stone, and minerals such as feldspar","Ice core layers","Fossilized bones"],a:1},
+{cat:"Non-Radiometric Dating",q:"A pitfall of TL dating is that if a sample has been reheated and cooled, it may:",opts:["Be dated older than it actually is","Lose trapped electrons and be dated younger than it is","Emit no luminescence","Become ideal for radiometric analysis"],a:1},
+{cat:"Non-Radiometric Dating",q:"The accuracy of TL dating is limited because:",opts:["Radiation levels remain perfectly constant","Radiation levels can vary over time","It is not based on electron trapping","It is only used on metallic objects"],a:1},
+{cat:"Non-Radiometric Dating",q:"Dendrochronology is also known as:",opts:["Ice core dating","Tree-ring dating","Radiocarbon dating","Potassium-Argon dating"],a:1},
+{cat:"Non-Radiometric Dating",q:"Dendrochronology is used to determine the age of:",opts:["Rocks","Trees and wooden objects","Fossilized shells","Ceramic artifacts"],a:1},
+{cat:"Non-Radiometric Dating",q:"Besides age, dendrochronology can also provide information about:",opts:["Chemical composition","Past climatic conditions","Radioactive decay rates","Sedimentary processes"],a:1},
+{cat:"Non-Radiometric Dating",q:"A limitation of dendrochronology is that it is geographically restricted to regions where:",opts:["Trees have no visible rings","Trees form distinct annual growth rings","Ice cores are abundant","Volcanic activity is high"],a:1},
+{cat:"Non-Radiometric Dating",q:"Dendrochronology is most effective in:",opts:["Tropical rainforests","Arid regions with distinct growth rings","Deep ocean sediments","Volcanic regions"],a:1},
+{cat:"Non-Radiometric Dating",q:"In TL dating, \"TL\" stands for:",opts:["Total Luminescence","Thermoluminescence","Temporal Luminescence","Transient Luminescence"],a:1},
+{cat:"Non-Radiometric Dating",q:"TL dating is considered a secondary method because its accuracy can be compromised by:",opts:["Its basis in radioactive decay","Prior heating events that reset the electron traps","The inability to measure light emission","Its exclusive use on organic materials"],a:1},
+{cat:"Non-Radiometric Dating",q:"Dendrochronology can provide insights into past climatic conditions because tree rings reflect:",opts:["Radioactive decay rates","Annual variations in growth influenced by climate","The mineral content of soil","The magnetic field of the Earth"],a:1},
+{cat:"Non-Radiometric Dating",q:"Which dating method involves measuring the light emitted from a mineral after heating?",opts:["Carbon-14 dating","Thermoluminescence (TL) dating","Dendrochronology","Uranium-Lead dating"],a:1},
+{cat:"Non-Radiometric Dating",q:"For dating an archaeological wooden artifact, which method would be most appropriate?",opts:["Potassium-Argon dating","Carbon-14 dating","Dendrochronology","Uranium-Lead dating"],a:2},
+{cat:"Non-Radiometric Dating",q:"A general limitation of TL dating is that its accuracy is roughly within:",opts:["5%","15%","50%","90%"],a:1},
+{cat:"Non-Radiometric Dating",q:"TL dating is most accurate when the sample has:",opts:["Never been heated since its last event","Been repeatedly heated","Constant exposure to light","Been mixed with organic material"],a:0},
+{cat:"Non-Radiometric Dating",q:"One advantage of dendrochronology is that it provides:",opts:["Numerical dates with annual resolution","Only relative dates","Information on volcanic activity","Radiometric isotope ratios"],a:0},
+{cat:"Non-Radiometric Dating",q:"A drawback of non-radiometric dating methods is that they:",opts:["Always yield exact numerical ages","Can be influenced by environmental changes","Are independent of physical changes","Are more precise than radiometric methods"],a:1},
+{cat:"Non-Radiometric Dating",q:"Which method is best for dating materials older than 50,000 years?",opts:["Carbon-14 dating","Dendrochronology","Potassium-Argon dating","TL dating"],a:2},
+{cat:"Non-Radiometric Dating",q:"In TL dating, the \"clock\" is reset by:",opts:["Exposure to sunlight","Heating that releases trapped electrons","Cooling in a dark environment","Chemical reactions with water"],a:1},
+{cat:"Non-Radiometric Dating",q:"Which dating method also yields information about past climate conditions?",opts:["Radiometric dating","Dendrochronology","Potassium-Argon dating","Lithostratigraphy"],a:1},
+{cat:"Non-Radiometric Dating",q:"In TL dating, the amount of luminescence is proportional to the:",opts:["Age of the sample","Number of trapped electrons since last heating","Mass of the mineral","Chemical composition only"],a:1},
+{cat:"Non-Radiometric Dating",q:"TL dating is particularly sensitive to changes in:",opts:["Ambient temperature during measurement","Environmental radiation levels over time","The sample's magnetic field","The physical size of the sample"],a:1},
+{cat:"Non-Radiometric Dating",q:"Wooden artifacts are best dated by using:",opts:["Potassium-Argon dating","Radiocarbon (Carbon-14) dating","Uranium-Lead dating","TL dating"],a:1}
+
 ];
 
-const ALL_CATS=["All","Chapter 1","Categorical Propositions","Logic & Arguments","Branches of Philosophy"];
+const ALL_CATS=["All","Creation Theories","Darwin & Natural Selection","Micro & Macroevolution","Fossil Record & Evidence","Scientific Dating: Overview","Radiometric Dating","Non-Radiometric Dating"];
 function countCat(c){return c==="All"?QS.length:QS.filter(q=>q.cat===c).length;}
 const COUNTS=Object.fromEntries(ALL_CATS.map(c=>[c,countCat(c)]));
-const PRESETS=[10,20,30,50];
 
 let screen="start",selCat="All",selMode="immediate",selCount=20,customCount="",useCustom=false;
 let filtered=[],order=[],idx=0,score=0,answered={},secs=0,timerID=null,finalTime=0;
@@ -274,29 +287,21 @@ function fmt(s){const m=Math.floor(s/60),r=s%60;return m>0?`${m}m ${r}s`:`${r}s`
 function tickTimer(){secs++;const el=document.getElementById('td');if(el)el.textContent=fmt(secs);}
 function startTimer(){clearInterval(timerID);secs=0;timerID=setInterval(tickTimer,1000);}
 function stopTimer(){clearInterval(timerID);finalTime=secs;}
-
 function getPool(){return selCat==="All"?[...QS]:QS.filter(q=>q.cat===selCat);}
 function getMaxQ(){return getPool().length;}
-function getEffectiveCount(){
-  const max=getMaxQ();
-  const n=useCustom?parseInt(customCount)||0:selCount;
-  return Math.min(Math.max(1,n),max);
-}
-
-function startQuiz(){
-  const pool=getPool();
-  const n=getEffectiveCount();
-  const shuffled=shuffle(pool.map((_,i)=>i)).slice(0,n);
-  filtered=pool;
-  order=shuffled;
-  idx=0;score=0;answered={};screen="quiz";
-  startTimer();render();
-}
-
+function getEffectiveCount(){const max=getMaxQ();const n=useCustom?parseInt(customCount)||0:selCount;return Math.min(Math.max(1,n),max);}
+function startQuiz(){const pool=getPool();const n=getEffectiveCount();const shuffled=shuffle(pool.map((_,i)=>i)).slice(0,n);filtered=pool;order=shuffled;idx=0;score=0;answered={};screen="quiz";startTimer();render();}
 function pick(i){
-  if(answered[idx]!==undefined)return;
-  answered[idx]=i;
-  if(i===filtered[order[idx]].a)score++;
+  if(selMode==='immediate'&&answered[idx]!==undefined)return; // lock after answer in immediate mode
+  if(selMode==='end'){
+    // allow changing — remove old score contribution if re-answering
+    if(answered[idx]!==undefined&&answered[idx]===filtered[order[idx]].a)score--;
+    answered[idx]=i;
+    if(i===filtered[order[idx]].a)score++;
+  } else {
+    answered[idx]=i;
+    if(i===filtered[order[idx]].a)score++;
+  }
   render();
 }
 function nav(d){idx=Math.max(0,Math.min(order.length-1,idx+d));render();}
@@ -307,32 +312,20 @@ function restartSame(){startQuiz();}
 function selCatFn(c){selCat=c;useCustom=false;render();}
 function selModeFn(m){selMode=m;render();}
 function selCountFn(n){selCount=n;useCustom=false;render();}
-function onCustomInput(v){
-  customCount=v;
-  useCustom=v.trim()!=="";
-  render();
-}
+function onCustomInput(v){customCount=v;useCustom=v.trim()!=="";render();}
 
 function render(){
   document.getElementById('app').innerHTML={start:renderStart,quiz:renderQuiz,results:renderResults,review:renderReview}[screen]();
-  if(screen==="start"){
-    const inp=document.getElementById('custom-input');
-    if(inp){inp.value=customCount;inp.addEventListener('input',e=>onCustomInput(e.target.value));}
-  }
+  if(screen==="start"){const inp=document.getElementById('custom-input');if(inp){inp.value=customCount;inp.addEventListener('input',e=>onCustomInput(e.target.value));}}
 }
 
 function renderStart(){
-  const max=getMaxQ();
-  const effective=getEffectiveCount();
-
+  const max=getMaxQ(),effective=getEffectiveCount();
   return`<div>
-    <div class="brand">MCQs</div>
-    <h1>Philosophy &amp; Logic Quiz</h1>
-    <p class="tagline">${QS.length} questions across four topics. Configure your session below.</p>
-
+    <div class="brand">MCQs · Origins of Science</div>
+    <h1>Origins of Science Quiz</h1> 
     <div class="section-label">Select category</div>
-    <div class="cat-grid">${ALL_CATS.map(c=>`<div class="cat-card${selCat===c?' selected':''}" onclick="selCatFn('${c}')"><div class="cn">${c}</div><div class="cc">${COUNTS[c]} questions</div></div>`).join('')}</div>
-
+    <div class="cat-grid">${ALL_CATS.map(c=>`<div class="cat-card${selCat===c?' selected':''}" onclick="selCatFn('${c.replace(/'/g,"\\'")}')"><div class="cn">${c}</div><div class="cc">${COUNTS[c]} questions</div></div>`).join('')}</div>
     <div class="section-label">Number of questions</div>
     <div class="qcount-row">
       <button class="qcount-btn${!useCustom&&selCount===max?' selected':''}" onclick="selCountFn(${max})">All (${max})</button>
@@ -341,14 +334,11 @@ function renderStart(){
         <span class="qcount-max">max ${max}</span>
       </div>
     </div>
-    <p style="font-size:13px;color:#aaa;margin-top:-12px;margin-bottom:2rem">${effective} question${effective!==1?'s':''} selected · drawn randomly from the pool</p>
-
-    <div class="section-label">Answer mode</div>
+      <div class="section-label">Answer mode</div>
     <div class="mode-grid">
       <div class="mode-card${selMode==='immediate'?' selected':''}" onclick="selModeFn('immediate')"><div class="mn">Immediate feedback</div><div class="md">See if you're right after each question</div></div>
       <div class="mode-card${selMode==='end'?' selected':''}" onclick="selModeFn('end')"><div class="mn">Reveal at the end</div><div class="md">All answers shown on the results screen</div></div>
     </div>
-
     <button class="start-btn" onclick="startQuiz()">Start ${effective} question${effective!==1?'s':''} &#8594;</button>
   </div>`;
 }
@@ -357,18 +347,26 @@ function renderQuiz(){
   const q=filtered[order[idx]],total=order.length,done=Object.keys(answered).length,pct=Math.round((done/total)*100),sel=answered[idx],isAns=sel!==undefined;
   const opts=q.opts.map((o,i)=>{
     let cls='opt';
-    if(isAns){cls+=' disabled';if(selMode==='immediate'){if(i===q.a)cls+=' correct';else if(i===sel&&sel!==q.a)cls+=' wrong';}else{if(i===sel)cls+=' pending';}}
-    return`<button class="${cls}"${isAns?'':` onclick="pick(${i})"`}>${String.fromCharCode(65+i)}. ${o}</button>`;
+    const lockEnd=selMode==='end'?false:isAns; // in end mode, never lock
+    if(selMode==='immediate'&&isAns){
+      cls+=' disabled';
+      if(i===q.a)cls+=' correct';
+      else if(i===sel&&sel!==q.a)cls+=' wrong';
+    } else if(selMode==='end'&&isAns){
+      if(i===sel)cls+=' pending'; // highlight selected but keep clickable
+    }
+    const clickable=(selMode==='end')||(selMode==='immediate'&&!isAns);
+    return`<button class="${cls}"${clickable?` onclick="pick(${i})"`:''} >${String.fromCharCode(65+i)}. ${o}</button>`;
   }).join('');
   let fb='';
   if(isAns&&selMode==='immediate')fb=`<div class="feedback ${sel===q.a?'correct':'wrong'}">${sel===q.a?'Correct!':'Incorrect — correct answer: '+q.opts[q.a]}</div>`;
-  else if(isAns&&selMode==='end')fb=`<div class="feedback pending">Answer recorded — results revealed at the end.</div>`;
+  else if(isAns&&selMode==='end')fb=`<div class="feedback pending"></div>`;
   return`<div>
     <div class="quiz-header">
       <div class="timer"><span class="tdot"></span><span id="td">${fmt(secs)}</span></div>
       <span class="score-badge">${selMode==='immediate'?score+'/'+done+' correct':'Q '+(idx+1)+' of '+total}</span>
     </div>
-    <div class="meta-bar">Q${idx+1} of ${total} &nbsp;·&nbsp; ${selCat} &nbsp;·&nbsp; ${selMode==='immediate'?'Immediate feedback':'Reveal at end'}</div>
+    <div class="meta-bar">Q${idx+1} of ${total} &nbsp;·&nbsp; ${q.cat} &nbsp;·&nbsp; ${selMode==='immediate'?'Immediate feedback':'Reveal at end'}</div>
     <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
     <div class="question-card">
       <div class="q-cat">${q.cat}</div>
