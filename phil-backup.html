@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Philosophy & Logic Quiz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f4f0;color:#1a1a1a;min-height:100vh;padding:2rem 1rem}
+.container{max-width:720px;margin:0 auto}
+.brand{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;margin-bottom:12px}
+h1{font-size:28px;font-weight:500;margin-bottom:6px}
+.tagline{font-size:15px;color:#888;margin-bottom:2.5rem}
+.section-label{font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:#aaa;margin-bottom:10px}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
+.cat-card{padding:14px 16px;border-radius:10px;border:1.5px solid #e0e0e0;cursor:pointer;background:#fff;transition:all .15s;text-align:left}
+.cat-card:hover{border-color:#bbb}
+.cat-card.selected{border-color:#1a6ef5;background:#f0f5ff}
+.cat-card .cn{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:2px}
+.cat-card .cc{font-size:12px;color:#aaa}
+.cat-card.selected .cn{color:#1a6ef5}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
+.mode-card{padding:14px 16px;border-radius:10px;border:1.5px solid #e0e0e0;cursor:pointer;background:#fff;transition:all .15s;text-align:left}
+.mode-card:hover{border-color:#bbb}
+.mode-card.selected{border-color:#1a6ef5;background:#f0f5ff}
+.mode-card .mn{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:3px}
+.mode-card.selected .mn{color:#1a6ef5}
+.mode-card .md{font-size:12px;color:#aaa;line-height:1.4}
+
+/* Q COUNT SELECTOR */
+.qcount-row{display:flex;align-items:center;gap:10px;margin-bottom:2rem;flex-wrap:wrap}
+.qcount-btn{padding:8px 18px;border-radius:20px;border:1.5px solid #e0e0e0;cursor:pointer;font-size:14px;font-weight:500;background:#fff;color:#888;transition:all .15s}
+.qcount-btn:hover{border-color:#bbb;color:#1a1a1a}
+.qcount-btn.selected{border-color:#1a6ef5;background:#f0f5ff;color:#1a6ef5}
+.qcount-custom{display:flex;align-items:center;gap:8px;flex:1;min-width:160px}
+.qcount-custom input{width:80px;padding:8px 12px;border-radius:20px;border:1.5px solid #e0e0e0;font-size:14px;font-weight:500;color:#1a1a1a;background:#fff;text-align:center;outline:none}
+.qcount-custom input:focus{border-color:#1a6ef5}
+.qcount-custom input.selected-input{border-color:#1a6ef5;background:#f0f5ff;color:#1a6ef5}
+.qcount-max{font-size:12px;color:#bbb}
+
+.start-btn{width:100%;padding:14px;border-radius:10px;border:none;background:#1a6ef5;color:#fff;font-size:15px;font-weight:500;cursor:pointer;transition:background .15s}
+.start-btn:hover{background:#1560d8}
+.start-btn:disabled{background:#ccc;cursor:default}
+
+/* QUIZ */
+.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;gap:8px;flex-wrap:wrap}
+.timer{font-size:14px;font-weight:500;color:#1a1a1a;background:#fff;border:1px solid #e8e8e8;border-radius:20px;padding:5px 14px;display:flex;align-items:center;gap:6px}
+.tdot{width:7px;height:7px;border-radius:50%;background:#1a6ef5;animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.score-badge{font-size:13px;font-weight:500;padding:5px 14px;border-radius:20px;background:#e8f4e8;color:#2a7a2a}
+.progress-bar{height:4px;background:#e0e0e0;border-radius:2px;margin-bottom:1.25rem;overflow:hidden}
+.progress-fill{height:100%;background:#1a6ef5;border-radius:2px;transition:width .3s}
+.question-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.25rem;margin-bottom:1rem}
+.q-cat{font-size:11px;color:#bbb;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.q-text{font-size:15px;font-weight:500;line-height:1.55;margin-bottom:1rem}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:10px 14px;border-radius:8px;border:1px solid #e8e8e8;cursor:pointer;font-size:14px;color:#1a1a1a;background:#fafafa;transition:all .15s;text-align:left;line-height:1.4;width:100%}
+.opt:hover:not(.disabled){background:#fff;border-color:#bbb}
+.opt.pending{background:#eef3ff;border-color:#1a6ef5}
+.opt.correct{background:#e8f4e8;border-color:#5ab85a;color:#1a5a1a}
+.opt.wrong{background:#fde8e8;border-color:#e05a5a;color:#5a1a1a}
+.opt.disabled{cursor:default}
+.feedback{margin-top:10px;padding:8px 12px;border-radius:8px;font-size:13px;line-height:1.5}
+.feedback.correct{background:#e8f4e8;color:#1a5a1a}
+.feedback.wrong{background:#fde8e8;color:#5a1a1a}
+.feedback.pending{background:#eef3ff;color:#1a4ab5}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.btn{padding:8px 18px;border-radius:8px;border:1px solid #ddd;cursor:pointer;font-size:14px;background:#fff;color:#1a1a1a;transition:all .15s}
+.btn:hover{background:#f5f5f5}
+.btn.primary{background:#1a6ef5;color:#fff;border-color:transparent}
+.btn.primary:hover{background:#1560d8}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.ghost{border-color:transparent;color:#bbb}
+.btn.ghost:hover{color:#888;background:transparent}
+.meta-bar{font-size:13px;color:#aaa;margin-bottom:8px}
+
+/* RESULTS */
+.results{text-align:center;padding:2rem 1rem}
+.big-score{font-size:58px;font-weight:500;line-height:1;margin-bottom:6px}
+.sub{font-size:15px;color:#888;margin-bottom:4px}
+.time-taken{font-size:13px;color:#aaa;margin-bottom:1.5rem}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem}
+.stat{background:#f5f4f0;border-radius:8px;padding:1rem}
+.stat-n{font-size:24px;font-weight:500}
+.stat-l{font-size:12px;color:#888;margin-top:2px}
+.rbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+
+/* REVIEW */
+.review-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:1.25rem;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+<script>
+const ALL_DATA = {
+"Ch 1: Historical Background":[
+{q:"What does the Greek word 'Philos' mean?",o:["Wisdom","Knowledge","Love","Truth"],a:2},
+{q:"What does 'Sophia' mean in Greek?",o:["Love","The love of wisdom","Truth","Reality"],a:1},
+{q:"Who is quoted as saying 'you say one must philosophize, you must philosophize in either case'?",o:["Plato","Socrates","Aristotle","Fulmer"],a:2},
+{q:"According to Fulmer (2003), philosophy is the rational search for:",o:["God","Ultimate reality and truth","Scientific facts","Social justice"],a:1},
+{q:"Jose Gasset described philosophy as an attempt to place us in contact with:",o:["Ancient wisdom","Naked reality itself","The divine","Social reality"],a:1},
+{q:"The study of Philosophy provides a valuable base to help us:",o:["Become better educators","Think more clearly","Find God","Master science"],a:1},
+{q:"Wisdom is described in the textbook as:",o:["Knowledge of science","Good judgments and understanding of what is true and right","Belief in God","Emotional intelligence"],a:1},
+{q:"Jaspers (1972) sees philosophy as a process of thinking that helps the thinker reach:",o:["Scientific certainty","Authentic awareness of themselves and reality","Religious faith","Economic success"],a:1},
+{q:"Martin Heidegger defines philosophy as that thinking that breaks path and hierarchies of knowledge in which a person:",o:["Reaches political power","Fulfills himself historically and culturally","Becomes wealthy","Masters logic"],a:1},
+{q:"Which of the following is NOT listed as a philosophical role?",o:["Examine intellectual tools of any era","Suggest alternative methods of thinking","Develop sensitivity to logic and language","Discover scientific laws"],a:3},
+{q:"The first pre-Socratic philosopher was:",o:["Socrates","Plato","Thales of Miletus","Pythagoras"],a:2},
+{q:"Thales of Miletus lived in which century B.C.?",o:["4th","5th","6th","7th"],a:2},
+{q:"The ancient pre-Socratic period spanned approximately:",o:["600 B.C. to 103 A.D.","500 B.C. to 200 A.D.","700 B.C. to 100 B.C.","400 B.C. to 400 A.D."],a:0},
+{q:"Philosophers of the pre-Socratic epoch were popularly known as:",o:["Dialecticians","Cosmologists","Empiricists","Idealists"],a:1},
+{q:"Socrates, Plato, and Aristotle are known as the philosophers of:",o:["The Dark Ages","The Golden Age of Greece","The Medieval Period","The Renaissance"],a:1},
+{q:"Plato was a pupil of:",o:["Aristotle","Thales","Socrates","Pythagoras"],a:2},
+{q:"Aristotle stated that instead of man searching for ultimate reality, man should be busy with:",o:["Scientific inquiry","The quest for self-knowledge","Economic development","Political power"],a:1},
+{q:"The Medieval Period of philosophy spanned approximately:",o:["900–1300 A.D.","1100–1400 A.D.","800–1200 A.D.","1200–1500 A.D."],a:1},
+{q:"During the Medieval Period, most philosophical discourse dealt with the relationship between:",o:["Science and politics","Faith and reason","Logic and emotion","Economy and society"],a:1},
+{q:"Francis Bacon is credited with the maxim:",o:["I think therefore I am","Knowledge is power","Man is the measure","Being is time"],a:1},
+{q:"Francis Bacon was known as the pioneer of:",o:["Political philosophy","Modern philosophical thought","Ancient ethics","Existentialism"],a:1},
+{q:"The Renaissance period of philosophy spanned:",o:["1200–1400","1450–1600","1600–1800","1300–1450"],a:1},
+{q:"René Descartes is popularly called:",o:["The father of empiricism","The father of modernism","The father of existentialism","The father of pragmatism"],a:1},
+{q:"Descartes' famous thesis is:",o:["Man is born free","I think therefore I am","Existence precedes essence","Knowledge is power"],a:1},
+{q:"Thomas Hobbes wrote:",o:["The Republic","The Leviathan","Critique of Pure Reason","Being and Time"],a:1},
+{q:"Immanuel Kant wrote:",o:["The Leviathan","Essay Concerning Human Understanding","Critique of Pure Reason","The Republic"],a:2},
+{q:"Hegel is credited with the triad of:",o:["Knowledge, wisdom, truth","Thesis, antithesis, synthesis","Past, present, future","Faith, reason, experience"],a:1},
+{q:"Karl Marx looked at reality from what point of view?",o:["Idealistic","Materialistic","Empirical","Spiritual"],a:1},
+{q:"Which philosopher declared the death of God?",o:["Hegel","Marx","Nietzsche","Kierkegaard"],a:2},
+{q:"Jean Paul Sartre's popular phrase that defines existentialism is:",o:["Knowledge is power","I think therefore I am","Existence precedes essence","Man is the measure of all things"],a:2},
+{q:"The contemporary period of philosophy was chiefly dominated by which school of thought?",o:["Rationalism","Epistemological school and logical positivism","Medieval theology","Ancient cosmology"],a:1},
+{q:"Philosophy of education is defined as:",o:["The study of ancient philosophers","The application of philosophical ideas to educational problems","The practice of memorizing facts","Religious instruction"],a:1},
+{q:"According to Knight (1980), 'speculating' in philosophy means:",o:["Guessing randomly","Moving beyond what can be demonstrated empirically","Memorizing facts","Following tradition"],a:1},
+{q:"'Synthesizing' in philosophy means to:",o:["Separate ideas","Unite and integrate specialized knowledge into a unified world view","Analyze language","Question all beliefs"],a:1},
+{q:"'Prescription' in philosophy seeks to establish standards for evaluating:",o:["Scientific theories","Values in conduct and art","Political systems","Economic models"],a:1},
+{q:"Self-awareness as a philosophical attitude entails:",o:["Knowledge of science","Commitment to being honest with oneself about biases and prejudices","Memorizing great thinkers","Mastering logic"],a:1},
+{q:"Comprehensiveness involves:",o:["Focusing on one source","Collecting as much relevant data from a wide spectrum of sources","Only reading textbooks","Ignoring minority views"],a:1},
+{q:"Penetration as a philosophical attitude is:",o:["Quickness of thought","A desire to think deeply into a problem","Acceptance of tradition","Emotional sensitivity"],a:1},
+{q:"Flexibility includes a willingness to:",o:["Change one's view based on sufficient evidence","Always agree with authorities","Ignore new evidence","Avoid questioning"],a:0},
+{q:"The content of philosophy is better seen in the light of questions than:",o:["Arguments","Answers","Debates","Experiments"],a:1},
+{q:"Metaphysics is the branch of philosophy that deals with:",o:["Ethics","The study of the nature or reality","Logic","Axiology"],a:1},
+{q:"Ontology is the study of:",o:["Knowledge","The nature of existence","Values","Language"],a:1},
+{q:"Theology in philosophy deals with:",o:["Political theory","Conceptions of and about God","Scientific method","Logic"],a:1},
+{q:"Anthropology as an aspect of metaphysics studies:",o:["Ancient ruins","Man — both subject and object of inquiry","Scientific laws","Language"],a:1},
+{q:"Cosmology is the study of:",o:["The cosmos, its origin and development","Language","Values","Knowledge"],a:0},
+{q:"Epistemology is a branch of philosophy that studies:",o:["Values","The nature, sources, and validity of truth and knowledge","Political systems","Artistic beauty"],a:1},
+{q:"Skepticism in its narrow sense claims that it is impossible to:",o:["Find beauty","Gain knowledge; the search for truth is vain","Believe in God","Do science"],a:1},
+{q:"Agnosticism is a profession of:",o:["Strong faith","Ignorance, especially regarding God's existence","Scientific certainty","Political belief"],a:1},
+{q:"Axiology is the branch of philosophy that deals with:",o:["Reality","The study of value","Language","Logic"],a:1},
+{q:"Ethics is the study of:",o:["Artistic beauty","Moral values and conduct","Scientific laws","Political power"],a:1},
+{q:"Aesthetics is described as the science of:",o:["Logic","Correct taste — the realm of beauty and art","Knowledge","Reality"],a:1}
+],
+"Ch 2: Specialized Branches":[
+{q:"Philosophy of language investigates the nature of:",o:["Scientific laws","Human language — its origins, use, meaning and relation to reality","Political systems","Religious belief"],a:1},
+{q:"Which of the following is a central problem of the philosophy of language?",o:["The existence of God","The nature of meaning","The basis of morality","The structure of atoms"],a:1},
+{q:"Philosophy of language is also intimately related to:",o:["Aesthetics","Logic","Ethics","Axiology"],a:1},
+{q:"Philosophy of language can be described as more like a branch of applied:",o:["Ethics","Epistemology","Aesthetics","Metaphysics"],a:1},
+{q:"Philosophy of law is also known as:",o:["Normative ethics","Legal philosophy","Applied science","Social theory"],a:1},
+{q:"Analytic jurisprudence involves:",o:["Moral judgments","Providing an analysis of the essence of law to differentiate it from ethics","Political campaigns","Religious doctrine"],a:1},
+{q:"Normative jurisprudence examines:",o:["Scientific laws","Normative, evaluative and prescriptive issues about law","Historical records","Mathematical logic"],a:1},
+{q:"Critical theories of law include:",o:["Ancient philosophy","Critical legal studies and feminist jurisprudence","Scientific realism","Ethics of care"],a:1},
+{q:"Philosophy of religion examines themes and concepts involved in:",o:["Economic systems","Religious traditions and broader philosophical tasks","Scientific experimentation","Political governance"],a:1},
+{q:"Philosophy of religion involves all the main areas of philosophy EXCEPT:",o:["Metaphysics","Epistemology","Political science","Value theory"],a:2},
+{q:"Philosophy of science is concerned with the foundations, methods and implications of:",o:["Religion","Science","Art","Politics"],a:1},
+{q:"The general philosophy of science emerged as a distinct discipline in:",o:["The 18th century","The 20th century","The 16th century","Ancient Greece"],a:1},
+{q:"The logical positivist movement aimed to formulate criteria for:",o:["Religious truth","Ensuring all philosophical statements' meaningfulness and objectivity","Economic planning","Political governance"],a:1},
+{q:"Philosophers of science consider philosophical problems within particular sciences such as:",o:["Theology and ethics","Biology, physics, social sciences","Law and politics","Language and arts"],a:1},
+{q:"Some philosophers of science use contemporary results in science to reach conclusions about:",o:["God","Philosophy itself","Law","History"],a:1},
+{q:"Which branch of philosophy deals with the logical form of propositions?",o:["Ethics","Logic","Aesthetics","Axiology"],a:1},
+{q:"The philosophy of language relates to metaphysics in what way?",o:["It replaces it","Metaphysics interacts with philosophy of language in a very intimate manner","They are unrelated","Metaphysics refutes language philosophy"],a:1},
+{q:"Legal philosophy tends to be more abstract than:",o:["Applied ethics and political philosophy","Metaphysics","Ancient theology","Scientific theory"],a:0},
+{q:"Whereas ethics asks 'is capital punishment morally permissible?', legal philosophy asks:",o:["Is it cheap?","Can the institution of punishment be justified?","Does it deter crime?","Is it popular?"],a:1},
+{q:"Philosophy of science focuses on metaphysical, epistemic and semantic aspects of:",o:["Religious practice","Scientific practice","Artistic creation","Legal systems"],a:1},
+{q:"Ethical issues in science such as bioethics are often considered branches of:",o:["Legal philosophy","Ethics or science studies rather than philosophy of science","Aesthetics","Axiology"],a:1},
+{q:"Philosophy of language is concerned with four central problems including:",o:["The nature of God","The nature of meaning, language use, language cognition and language–reality relation","The basis of morality","The structure of the atom"],a:1},
+{q:"The philosophy of religion includes investigation and assessment of:",o:["Scientific models","Worldviews including secular naturalism","Economic systems","Political ideologies"],a:1},
+{q:"The philosophy of religion gives significant attention to:",o:["Nominalism","Theism, but also to traditions outside the Abrahamic faiths","Pure logic","Ancient cosmology"],a:1},
+{q:"Scientific realism argues that:",o:["Science is useless","The primary objective of science is to reveal the truth","Science cannot be trusted","Religious truth supersedes scientific truth"],a:1},
+{q:"Scientific anti-realists argue that science:",o:["Reveals absolute truth","Does not aim at absolute truth and fails to achieve it","Is infallible","Proves God's existence"],a:1},
+{q:"The Baykent (2016) reference in the textbook defines philosophy of language as a field studying language:",o:["Philosophically — its ability and the language we speak","Historically","Scientifically","Politically"],a:0},
+{q:"Logic displays a formal and artificial language often contrasted with:",o:["Mathematical notation","Human language","Scientific notation","Legal text"],a:1},
+{q:"The syntactic level of philosophy of language involves questioning language in:",o:["Everyday conversation","Formal logic — the logical form of propositions","Political debate","Religious discourse"],a:1},
+{q:"Philosophy of religion addresses historical events such as:",o:["The French Revolution","The 1755 Lisbon Earthquake and the Holocaust","The Industrial Revolution","The Cold War"],a:1},
+{q:"Philosophy of religion reflects on the religious significance of general features of the cosmos, for example:",o:["Gravity","The laws of nature and the emergence of consciousness","Economic cycles","Political revolutions"],a:1},
+{q:"According to the textbook, philosophy of law ranges from abstract conceptual questions to:",o:["Artistic judgment","Normative questions about law–morality relationships and justification of legal institutions","Scientific experiments","Religious doctrine"],a:1},
+{q:"Legal philosophy differs from political philosophy in that it is more:",o:["Practical","Abstract","Religious","Emotional"],a:1},
+{q:"The question 'how should the U.S. Constitution be interpreted?' belongs to:",o:["Legal philosophy","Democratic theory and political philosophy","Ethics","Science"],a:1},
+{q:"The analysis of legal interpretation falls under:",o:["Applied ethics","Legal philosophy","Political philosophy","Moral philosophy"],a:1},
+{q:"Philosophy of science is both a theoretical and:",o:["Religious discipline","Empirical discipline","Artistic discipline","Political discipline"],a:1},
+{q:"Philosophical thought pertaining to science dates back at least to the time of:",o:["Plato","Aristotle","Socrates","Descartes"],a:1},
+{q:"Philosophers of science also use contemporary scientific results to reach conclusions about:",o:["Religion","Philosophy itself","Law","Economics"],a:1},
+{q:"According to the textbook, the philosophy of language is 'like a branch of applied epistemology' because:",o:["It studies language laws","Its main question is how do we know what an utterance or text means","It examines grammar","It studies rhetoric"],a:1},
+{q:"To interpret a text, one needs linguistic information — specifically:",o:["Knowledge of the author's personal life","Identifying the words uttered and what they mean in the language","Scientific background","Mathematical ability"],a:1},
+{q:"Philosophy of science overlaps with metaphysics, ontology, logic and:",o:["Aesthetics","Epistemology","Axiology","Ethics alone"],a:1},
+{q:"The demarcation problem in philosophy of science concerns distinguishing:",o:["Right from wrong","Science from non-science","Art from craft","Faith from reason"],a:1},
+{q:"'Hypothesis formulation' in science refers to:",o:["Publishing results","Formulating hypotheses that meet logical criteria of contingency, falsifiability and testability","Collecting raw data","Funding research"],a:1},
+{q:"Scientific realism and instrumentalism are primary concerns of:",o:["Moral philosophy","The philosophy of science","Legal philosophy","Aesthetics"],a:1},
+{q:"The textbook says philosophy of science examines the relationship between science and truth in conjunction with:",o:["Aesthetics","Metaphysics and epistemology","Political theory","Religious belief"],a:1},
+{q:"In science, the empirical basis means theories are based on:",o:["Revelation","Verifiable and quantifiable data","Authority","Tradition"],a:1},
+{q:"The use of the scientific method defines science as:",o:["Memorizing facts","Systematic experimentation, observation and analysis","Guessing and confirming","Following authority"],a:1},
+{q:"The criteria for science include falsifiability, meaning:",o:["Theories can never be disproved","The theory is capable of being proved false","Theories are always true","Results are hidden"],a:1},
+{q:"Testability in science means:",o:["There is some real hope of establishing whether a claim is true or false","The test is easy to perform","Only experts can test it","Tests are optional"],a:0},
+{q:"Philosophy of science asks: 'What is science?', 'What is the goal of science?', and:",o:["'What does God want?'","'How should we evaluate scientific work?'","'Who should govern?'","'What is beauty?'"],a:1}
+],
+"Ch 3: Philosophical Doctrines":[
+{q:"Idealism is described as perhaps the oldest systematic philosophy in:",o:["Eastern culture","Western culture","African tradition","Islamic thought"],a:1},
+{q:"Idealists generally believe that:",o:["Matter is the only reality","Ideas are the only true reality","Science explains everything","God does not exist"],a:1},
+{q:"Idealists maintain that the physical world is not ultimately real but a manifestation of:",o:["Scientific fact","A more fundamental incorporeal reality","Economic forces","Political power"],a:1},
+{q:"A modern idealist suggested that 'idea-ism' would be a better title than idealism because idealism is more concerned with:",o:["Physical things","Ideas and concepts rather than superfluous attainments","Scientific data","Religious ritual"],a:1},
+{q:"Plato lived approximately:",o:["600–500 B.C.","427–347 B.C.","300–200 B.C.","100 B.C. – 100 A.D."],a:1},
+{q:"Plato's philosophy was largely a reaction to:",o:["Persian military dominance","The state of flux that had greatly influenced Athenian culture","Egyptian religion","Roman politics"],a:1},
+{q:"In Plato's 'Republic', he wrote about the separation of:",o:["Church and state","The world of ideas from the world of matter","Science and religion","Rich and poor"],a:1},
+{q:"Plato contends that truth is perfect and eternal and therefore NOT found in:",o:["The world of ideas","The world of matter (imperfect and constantly changing)","The mind","The soul"],a:1},
+{q:"Plato subscribes to which method of discussion involving thesis, antithesis and re-examination?",o:["Scientific method","Dialectic","Inductive reasoning","Empirical observation"],a:1},
+{q:"Plato believed that humans do NOT create knowledge — they:",o:["Invent it","Discover it","Learn it through senses","Read it from nature"],a:1},
+{q:"Plato advocated equal opportunity in education for:",o:["Only wealthy citizens","Both girls and boys","Only males","Only the philosopher class"],a:1},
+{q:"Augustine (354–430 AD) was one of the most prominent proponents of:",o:["Realism","Religious idealism","Pragmatism","Existentialism"],a:1},
+{q:"Augustine maintained that man inherited the sin of Adam and was engaged in a struggle to regain:",o:["Political power","Innocence and purity he had before the fall","Scientific knowledge","Economic prosperity"],a:1},
+{q:"Augustine referred to the 'World of God' and the 'World of Man' — the World of Man is:",o:["The world of spirit and good","The material world of darkness, sin, ignorance and suffering","A utopian ideal","Scientific reality"],a:1},
+{q:"Rene Descartes lived approximately:",o:["1596–1650","1700–1770","1500–1560","1650–1710"],a:0},
+{q:"The major contribution of Descartes to idealism was:",o:["Empirical method","His famous Cartesian Principle","Political theory","Ethics of care"],a:1},
+{q:"Descartes explored 'mathematical doubt' by seeking to:",o:["Confirm religious belief","Doubt all things including his own existence","Prove science wrong","Establish political order"],a:1},
+{q:"George Berkeley argued that matter cannot exist except as:",o:["Scientific data","A form of mind","Political construct","Historical fact"],a:1},
+{q:"Berkeley argued that things are known only as we consciously conceive them, leading to an assumption of an omnipresent mind lasting through:",o:["One generation","All time and eternity","Scientific experiment","Political tenure"],a:1},
+{q:"Hegel is widely believed to be the capstone of idealistic philosophy in:",o:["Ancient Greece","The modern era","The medieval period","The Renaissance"],a:1},
+{q:"Hegel's dialectic is often regarded as a mechanical warring between thesis and antithesis, with the result being:",o:["Contradiction","Synthesis","Confusion","Revolution"],a:1},
+{q:"The aims of idealist education include mind development — because idealists stress:",o:["Scientific experimentation","The importance of mind over matter","Political authority","Economic productivity"],a:1},
+{q:"Idealists believe true ideas can be found in:",o:["Sensory data","The conceptual world of ideas","Scientific experiments","Economic models"],a:1},
+{q:"The idealist aim of 'character development' includes Spartan lifestyle and:",o:["Wealth acquisition","Steadfast character as a necessity in the bid for truth","Artistic creativity","Political ambition"],a:1},
+{q:"Self-realization in idealism holds that self lies at the centre of:",o:["Political ideology","Idealist education","Scientific method","Economic theory"],a:1},
+{q:"Realism is the view that things, objects or activities exist independently of:",o:["Scientific theory","The human mind's perception","Religious belief","Political ideology"],a:1},
+{q:"In its broadest form, realism claims that some objects exist independently of:",o:["Government","The experience of any subject","Scientific method","Artistic interpretation"],a:1},
+{q:"Plato's Theory of Forms holds that there exists an unchanging and perfect realm beyond:",o:["Human society","The physical world — referred to as Forms or Ideas","Scientific experiment","Political order"],a:1},
+{q:"Aristotle's realism is called 'Moderate Realism' because he contended that 'Tree-ness' rests in:",o:["The mind","Particular objects","God","Abstract forms"],a:1},
+{q:"Metaphysical realism suggests that everything exists in the world:",o:["Inside your thoughts","Outside your thoughts","In God's mind","In language"],a:1},
+{q:"Scientific realism suggests that science makes mention of structures — like electrons and gravitational fields — whether or not they can be:",o:["Proven mathematically","Directly observed at the time","Found in textbooks","Approved by government"],a:1},
+{q:"Moral realism holds that moral truths exist independently of:",o:["Scientific laws","Human opinions or cultural conventions","Political systems","Religious texts"],a:1},
+{q:"Political realism is associated with figures like Niccolò Machiavelli, emphasizing:",o:["Moral idealism","Power and self-interest driving political actions","Democratic values","Religious governance"],a:1},
+{q:"Existentialism springs from the works of which Danish philosopher?",o:["Hegel","Soren Kierkegaard","Nietzsche","Marx"],a:1},
+{q:"Kierkegaard's three stages on 'life's road' include the Aesthetic, Ethical and:",o:["Political","Religious","Scientific","Economic"],a:1},
+{q:"The aesthetic stage in Kierkegaard's philosophy involves:",o:["Moral duty","Living in sensuous enjoyment where emotions are dominant","Religious devotion","Scientific inquiry"],a:1},
+{q:"Nietzsche declared:",o:["The birth of reason","The death of God and uplifted his version of the superman","The supremacy of science","The equality of man"],a:1},
+{q:"Existentialism became influential especially after:",o:["The Renaissance","World War II","The French Revolution","The Industrial Revolution"],a:1},
+{q:"Existentialists held that the physical universe has neither meaning nor:",o:["Scientific laws","Purpose","Mathematical order","Political structure"],a:1},
+{q:"Sartre claimed that:",o:["God created essence before existence","Existence precedes essence","Knowledge precedes existence","Reason precedes existence"],a:1},
+{q:"Martin Buber is best known for his book:",o:["Being and Time","I and Thou","Being and Nothingness","Critique of Pure Reason"],a:1},
+{q:"Heidegger's magnum opus 'Being and Time' introduced the concept of 'Dasein', meaning:",o:["Being-toward-death","Being-there — describing human existence as being-in-the-world","Being-for-others","Being-in-language"],a:1},
+{q:"Pragmatism evaluates truth based on its:",o:["Correspondence with absolute reality","Practical consequences and usefulness","Correspondence with religious texts","Aesthetic beauty"],a:1},
+{q:"Pragmatism was co-founded by Sanders Charles Peirce, William James and:",o:["Hegel","John Dewey","Kant","Nietzsche"],a:1},
+{q:"William James broadened Peirce's pragmatism by appealing to personal, psychological and:",o:["Economic","Localistic aspects of truth","Political","Religious"],a:1},
+{q:"John Dewey applied pragmatism to education, politics and social reform, developing a version called:",o:["Existentialism","Instrumentalism","Skepticism","Rationalism"],a:1},
+{q:"Empiricism refers to a method of philosophy that assigns primary importance to:",o:["Reason and logic","Experience and perception of the senses as a source of knowledge","Revelation","Political authority"],a:1},
+{q:"John Locke introduced the concept of the mind as a:",o:["Divine creation","Tabula rasa (blank slate)","Mirror of God","Scientific instrument"],a:1},
+{q:"David Hume argued that causation is NOT an objective feature of the world but a:",o:["Scientific law","Mental habit formed by repeated associations","Divine principle","Political construct"],a:1},
+{q:"Phenomenology is a philosophy that looks deeply into how a person feels and experiences something:",o:["Objectively and scientifically","Consciously, describing it while ignoring previous theories","Politically","Economically"],a:1},
+{q:"Edmund Husserl is widely regarded as the:",o:["Father of pragmatism","Founder of phenomenology","Father of empiricism","Founder of existentialism"],a:1}
+],
+"Ch 4–5: Logic & Arguments":[
+{q:"According to Karl Marx, logic is the 'money of the':",o:["Society","Mind","State","Economy"],a:1},
+{q:"Achilike (1991) described logic as the science of:",o:["Nature","Reasoning — separating correct from incorrect reasoning","Mathematics","Politics"],a:1},
+{q:"Stephen Layman (2002) described logic as the study of methods for:",o:["Scientific discovery","Evaluating arguments — whether premises adequately support the conclusion","Political persuasion","Artistic expression"],a:1},
+{q:"Logic is said to be the _____ branch of philosophy:",o:["First","Second","Third","Fourth"],a:3},
+{q:"Logic helps us separate correct reasoning from the:",o:["Beautiful","Incorrect ones","Ancient","Popular"],a:1},
+{q:"The mastery of logic is an effective way to learn how to use language and ideas:",o:["Emotionally","Precisely and to enhance understanding","Rapidly","Poetically"],a:1},
+{q:"There are how many laws of thought in traditional logic?",o:["Two","Three","Four","Five"],a:1},
+{q:"The Law of Identity states that if anything is A, then:",o:["It is not A","It is B","It is A","It could be anything"],a:2},
+{q:"The Law of Contradiction states that nothing can both be A and:",o:["Also A","Not A at the same time","B","Either A or B"],a:1},
+{q:"The Law of Excluded Middle states that anything must be either A or:",o:["B","Both A and not A","Not A","Neither A nor B"],a:2},
+{q:"Propositions are sentences that make:",o:["Commands","Assertions (statements)","Questions","Exclamations"],a:1},
+{q:"An exclamation is an example of which type of sentence?",o:["Proposition","Command","Exclamation like 'What a beautiful life!'","Question"],a:2},
+{q:"In logic, a conjunction is true only when:",o:["At least one component is true","All its components are true","None of its components are true","The conclusion is false"],a:1},
+{q:"In a compound statement, symbols X, Y, Z are used to represent:",o:["Questions","Statements for easy analysis","Arguments","Conclusions"],a:1},
+{q:"An argument in logic is any group of propositions where one is claimed to:",o:["Contradict the others","Follow from the others (which provide grounds for truth)","Precede the others in time","Be more emotional than the others"],a:1},
+{q:"The 'conclusion' of an argument is the proposition that is:",o:["Assumed without proof","Affirmed on the basis of other propositions (the premises)","Always the first statement","Identical to the premise"],a:1},
+{q:"A premises indicator word is:",o:["Therefore","Since / for / because / if","Hence","Thus"],a:1},
+{q:"A conclusion locator word is:",o:["Since","Because","Therefore / then / hence","As"],a:2},
+{q:"A deductive argument is one in which the premises are intended to:",o:["Merely suggest the conclusion","Guarantee the truth of the conclusion","Make the conclusion probable","Disprove the conclusion"],a:1},
+{q:"An inductive argument is one where premises make the conclusion:",o:["Certain","More likely to be true than false — probabilistic","Irrelevant","False"],a:1},
+{q:"The quality of a deductive argument is that it offers:",o:["Probability","Certainty","Emotional appeal","Political validity"],a:1},
+{q:"A deductive argument is usually classified as valid or invalid, and also:",o:["Beautiful or ugly","Sound or unsound","Emotional or unemotional","Old or new"],a:1},
+{q:"A valid argument with all true premises is termed:",o:["Unsound","Sound","Invalid","Weak"],a:1},
+{q:"A cogent argument is one that is:",o:["Valid with false premises","Strong with all true premises","Weak with false premises","Valid but irrelevant"],a:1},
+{q:"Inductive logic is also concerned with tests for the strength and:",o:["Beauty of arguments","Weakness of arguments","Age of arguments","Popularity of arguments"],a:1},
+{q:"In a weak inductive argument, it is not probable that if the premises are true the conclusion is also:",o:["False","True","Probable","Certain"],a:1},
+{q:"There are four types of categorical propositions labeled A, E, I and O. 'A' represents:",o:["Particular affirmative","Universal negative","Universal affirmative","Particular negative"],a:2},
+{q:"'E' represents which type of categorical proposition?",o:["Universal affirmative","Universal negative","Particular affirmative","Particular negative"],a:1},
+{q:"'I' represents which type of categorical proposition?",o:["Universal affirmative","Particular negative","Particular affirmative","Universal negative"],a:2},
+{q:"'O' represents:",o:["Universal affirmative","Universal negative","Particular affirmative","Particular negative"],a:3},
+{q:"In a standard form categorical proposition, the 'S' stands for the:",o:["Predicate term","Subject term","Synthesis","Syllogism"],a:1},
+{q:"A statement is affirmative in quality when it affirms that one class is wholly or partially:",o:["Excluded from another","Included in another class","Negative","Irrelevant to another"],a:1},
+{q:"A and E propositions are universal in quantity. I and O propositions are:",o:["Universal","Particular","Hypothetical","Categorical"],a:1},
+{q:"In the Traditional Square of Opposition, A and E propositions are called:",o:["Subalterns","Superalterns (contraries)","Sub-contraries","Subalterns and contraries"],a:1},
+{q:"Two propositions are contradictories if one is the denial of the other — they cannot both be true and:",o:["Both be unknown","Both be false","Both be probable","Both be relevant"],a:1},
+{q:"Contraries are two statements that cannot both be true but they can both be:",o:["Contradictory","False","Certain","Valid"],a:1},
+{q:"Sub-contraries are two statements that cannot both be false but they can both be:",o:["False","True","Contradictory","Invalid"],a:1},
+{q:"Conversion is formed when the subject-term replaces the predicate-term and the predicate-term replaces:",o:["The conclusion","The subject-term","The quantifier","The copula"],a:1},
+{q:"Obversion always valid — every categorical proposition implies its:",o:["Converse","Obverse","Contrapositive","Subaltern"],a:1},
+{q:"Contraposition is valid for A and O statements but NOT for:",o:["A statements","E and I statements","O statements","I and A statements"],a:1},
+{q:"A categorical syllogism contains three terms — middle, major and:",o:["Conclusion","Minor","Predicate","Subject"],a:1},
+{q:"The middle term appears in both premises but does not appear in the:",o:["Major premise","Minor premise","Conclusion","Subject"],a:2},
+{q:"The mood of a categorical syllogism is determined by the categorical propositions it contains and:",o:["Its length","The order of their appearances","The number of terms","The conclusion's truth"],a:1},
+{q:"The figure of a categorical syllogism is determined by the position of the:",o:["Conclusion","Middle term","Minor term","Major term"],a:1},
+{q:"In all, there are how many forms of categorical syllogism?",o:["64","128","256","512"],a:2},
+{q:"Out of 256 forms of categorical syllogism, only how many are valid?",o:["10","15","20","25"],a:1},
+{q:"Rule 1 for evaluating categorical syllogisms states that the middle term must be distributed at least:",o:["Twice","Once","Three times","Never"],a:1},
+{q:"Rule 3 states that two negative premises must not precede a conclusion — this is the fallacy of:",o:["Undistributed middle","Exclusive premises","Illicit major","Illicit minor"],a:1},
+{q:"Rule 5 states that if both premises are universal, the conclusion cannot be:",o:["Universal","Negative","Particular","Affirmative"],a:2},
+{q:"Rule 4 states that if either premise is negative, the conclusion must be:",o:["Affirmative","Particular","Negative","Universal"],a:2}
+],
+"Ch 6: Critical Thinking":[
+{q:"Critical thinking is defined as the analysis of facts to form a:",o:["Hypothesis","Judgment","Theory","Belief"],a:1},
+{q:"Critical thinking is self-directed, self-disciplined, self-monitored and:",o:["Self-indulgent","Self-corrective","Self-promoting","Self-defeating"],a:1},
+{q:"According to Kompf & Bond (2001), critical thinking involves problem solving, decision making, metacognition, rationality, reasoning, knowledge, intelligence and:",o:["Memorization","A moral component such as reflective thinking","Political awareness","Scientific expertise"],a:1},
+{q:"Critical thinking has how many critical features?",o:["Five","Six","Seven","Eight"],a:2},
+{q:"Which of the following is NOT one of the top five critical thinking skills listed?",o:["Analytical","Communication","Memorization","Creativity"],a:2},
+{q:"Critical thinking is very important in the new:",o:["Political economy","Knowledge economy","Industrial economy","Agricultural economy"],a:1},
+{q:"Critical thinking enhances language and presentation skills, and thinking clearly and systematically can improve:",o:["Physical fitness","The way we express our ideas","Economic productivity","Political power"],a:1},
+{q:"Critical thinking is significant in the learning process of internalization — in the construction of basic ideas, principles and theories inherent in:",o:["History","Content of learning","Politics","Economics"],a:1},
+{q:"The characteristics of critical thinkers include inquisitiveness, concern to be well-informed and:",o:["Indecisiveness","Self-confidence in one's own abilities to reason","Emotional sensitivity","Economic awareness"],a:1},
+{q:"Critical thinking is an important element of all professional fields and academic disciplines by referencing their respective sets of permissible questions, evidence sources and:",o:["Opinions","Criteria","Traditions","Authorities"],a:1},
+{q:"Critical thinking forms a system of related, overlapping modes of thought such as anthropological thinking, sociological thinking, historical thinking, political thinking and:",o:["Emotional thinking","Philosophical thinking, mathematical thinking, chemical thinking etc.","Personal thinking","Religious thinking"],a:1},
+{q:"Critical thinking helps in career because it enables professionals to analyze information, systematically solve problems and:",o:["Follow orders","Generate innovative solutions, plan strategically and think creatively","Avoid controversy","Accept tradition"],a:1},
+{q:"Critical thinking helps ensure your opinions that guide your activities are:",o:["Popular","Well-informed","Emotional","Traditional"],a:1},
+{q:"Critical thinking improves relationships with others because reasoning is properly guided, as well as our use of:",o:["Money","Language for communication","Political power","Religious authority"],a:1},
+{q:"E.G. White posed that every human being, created in the image of God, is endowed with a power akin to that of the Creator — individuality, power to think and to do. It is the work of true education to:",o:["Make students obedient","Develop this power — to train youth to be thinkers, not mere reflectors of others' thought","Give students information","Ensure economic success"],a:1},
+{q:"Advantages of critical thinking include encouraging curiosity, enhancing creativity and:",o:["Promoting indecisiveness","Reinforcing problem-solving ability","Reducing political awareness","Encouraging conformity"],a:1},
+{q:"A disadvantage of critical thinking is that being too critical, especially on matters of Faith, can lead to scepticism and:",o:["Better decisions","Sometimes loss of Faith","Greater creativity","Stronger relationships"],a:1},
+{q:"A disadvantage of critical thinking includes that it is time consuming to gather facts necessary to make a:",o:["Theory","Critical decision","Hypothesis","Syllogism"],a:1},
+{q:"Open-mindedness regarding divergent world views is a characteristic of:",o:["Dogmatic thinkers","Critical thinkers","Authoritarian thinkers","Emotional thinkers"],a:1},
+{q:"Critical thinking presupposes assent to rigorous standards of excellence and mindful command of their use. It entails effective communication and problem-solving abilities and a commitment to overcome native egocentrism and:",o:["Rationalism","Sociocentrism","Empiricism","Idealism"],a:1},
+{q:"Critical thinking is significant in the learning process of application, whereby ideas, principles and theories are implemented effectively as they become relevant in:",o:["History books","Learners' lives","Political systems","Economic models"],a:1},
+{q:"The habits of mind that characterize a person disposed toward critical thinking include a desire to follow reason and evidence, a systematic approach to problem solving and:",o:["Dogmatism","Inquisitiveness, even-handedness and confidence in reasoning","Emotional volatility","Political bias"],a:1},
+{q:"Critical thinking forms a system of related modes of thought — which of the following best captures this?",o:["It applies only to science","Core concepts are always there but embedded in subject-specific content","It applies only to philosophy","It is limited to academic disciplines"],a:1},
+{q:"Critical thinking promotes development of reasoning skills, analytical thinking, evaluative skills, logical thinking, organizational and planning skills, language skills and:",o:["Conformity","Self-reflective capacity, observational skills, open-mindedness, creative visualization techniques","Political obedience","Religious adherence"],a:1},
+{q:"Critical thinking fosters independence and is a skill for life, not just:",o:["Philosophy","Learning","Politics","Economics"],a:1},
+{q:"Sorting fact from fiction and consideration of each source of knowledge is listed as a:",o:["Benefit","Disadvantage of critical thinking","Characteristic","Goal"],a:1},
+{q:"Critical thinking will enable us to take rational decisions when faced with:",o:["Certainty","Alternatives","Simple tasks","Authority"],a:1},
+{q:"Logic will enable us to take rational decisions when faced with alternatives — this is one of the:",o:["Limitations of logic","Relevance of logic","Branches of logic","Laws of thought"],a:1},
+{q:"The mastery of logic greatly assists us to detect and avoid fallacies which are errors in:",o:["Aesthetics","Reasoning","Science","Politics"],a:1},
+{q:"The textbook lists how many branches or types of logic?",o:["Ten","Twelve","Fourteen","Sixteen"],a:2},
+{q:"Dialectical logic and symbolic (mathematical) logic are both listed as types of:",o:["Axiology","Logic","Epistemology","Phenomenology"],a:1},
+{q:"Logic helps the language user to develop a way of thinking that encourages both carefulness and:",o:["Speed","Precision","Emotion","Tradition"],a:1},
+{q:"Logic is useful for analyzing issues concerning phenomena and making predictions with precision using principles of logical:",o:["Theory","Inference","History","Emotion"],a:1},
+{q:"Logic is very helpful in our bid for efficient:",o:["Farming","Planning","Fighting","Entertainment"],a:1},
+{q:"Logic is also useful when we want to ascertain how consistent or otherwise we:",o:["Feel","Are","Think emotionally","React politically"],a:1},
+{q:"Critical thinking reduces impulsivity — specifically the impulsivity of doing anything before thinking critically about the:",o:["Tradition","Consequences of such action","Political impact","Scientific basis"],a:1},
+{q:"Critical thinking helps in making better decisions. One who has decided NOT to take a decision has also taken a decision by:",o:["Avoiding responsibility","Deciding not to take a decision","Following authority","Copying others"],a:1},
+{q:"Critical thinking if well applied leads to:",o:["Confusion","Happiness","Political power","Economic gain"],a:1},
+{q:"Logic is also the nerve centre of:",o:["Mathematical studies","Philosophical studies","Scientific studies","Political studies"],a:1},
+{q:"According to the text, the conclusion locators include which word?",o:["Since","Because","Accordingly","As"],a:2},
+{q:"Inductive logic is concerned with inferences which are probable — these are inferences 'given as evidence' upon propositions. This evidence influences the decision about the claim — one criterion is the occurrence of special indicator words such as:",o:["Therefore, hence, thus","Probable, improbable, plausible, likely, unlikely","Since, for, because","All, some, no"],a:1},
+{q:"The form or style of argumentation the arguer uses is one of the criteria that Hurly (2006) gives for judging inductive arguments. The other two are the occurrence of special indicator words and:",o:["The length of the argument","The actual strength of the inferential link between premises and conclusion","The age of the argument","The popularity of the conclusion"],a:1},
+{q:"A reduction in the impulsivity of doing anything before thinking critically about consequences is listed as a:",o:["Benefit of critical thinking","Disadvantage of critical thinking","Goal of critical thinking","Characteristic of a critical thinker"],a:1},
+{q:"The textbook says critical thinking is not just a skill for learning but a skill for:",o:["School","Life","Work","Politics"],a:1},
+{q:"The textbook lists how many advantages of critical thinking in total (including the expanded list with sub-items)?",o:["Three","Four","Six","More than six"],a:3},
+{q:"According to the text, a 'sound' argument must satisfy two conditions: it must be valid AND:",o:["It must be short","All of its premises must be true","It must be popular","It must be old"],a:1},
+{q:"The validity of an argument does NOT guarantee the _____ of its conclusion:",o:["Length","Truth","Popularity","Age"],a:1},
+{q:"The truth of premises is the task of _____ inquiry in general, since the premises may deal with any subject matter:",o:["Philosophical","Scientific","Religious","Political"],a:1},
+{q:"Logicians are concerned with the correctness of the process of:",o:["Feeling","Reasoning","Believing","Memorizing"],a:1}
+],
+"Ch 7–9: Fallacies & Science":[
+{q:"In Logic, a fallacy is an error in:",o:["Science","Reasoning","Aesthetics","Politics"],a:1},
+{q:"A fallacious argument violates all logical canons necessary for a:",o:["Beautiful argument","Valid argument","Simple argument","Short argument"],a:1},
+{q:"Fallacies are classified into two broad areas — Formal and:",o:["Mathematical","Informal","Aesthetic","Religious"],a:1},
+{q:"An informal fallacy is an error in reasoning caused by carelessness or:",o:["Valid logic","Being misled by language problems","Mathematical errors","Scientific mistakes"],a:1},
+{q:"Informal fallacies are either fallacies of relevance or of:",o:["Form","Ambiguity","Deduction","Validity"],a:1},
+{q:"Argumentum ad Baculum means:",o:["Argument from ignorance","Appeal to force","Attack on the person","Appeal to pity"],a:1},
+{q:"Argumentum ad Hominem means:",o:["Appeal to force","Attacking the man (person)","Begging the question","Red herring"],a:1},
+{q:"The Abusive form of ad Hominem attacks the _____ of the person who made the assertion:",o:["Argument","Personal character","Political views","Financial status"],a:1},
+{q:"The Circumstantial form of ad Hominem involves the irrelevance of the connection between the belief held and the circumstances of those:",o:["Holding the belief","Against the belief","Unaware of the belief","Neutral about the belief"],a:1},
+{q:"'Tu quoque' (What about you?) is a form of:",o:["Ad Baculum","Circumstantial Ad Hominem","Ad Misericordiam","Ignoratio Elenchi"],a:1},
+{q:"Argumentum ad Ignorantiam commits the error of arguing a statement is true because no one has:",o:["Proved it true","Proved it false or vice versa","Defined it","Questioned it"],a:1},
+{q:"Argumentum ad Populum is an appeal to:",o:["Authority","Emotion or popular will","Pity","Force"],a:1},
+{q:"Argumentum ad Misericordiam is an appeal to:",o:["Force","Pity","Popular will","Inappropriate authority"],a:1},
+{q:"Argumentum ad Verecundiam is an appeal to:",o:["Pity","Inappropriate authority","Force","Popular will"],a:1},
+{q:"Ignoratio Elenchi is the fallacy of:",o:["Begging the question","Irrelevant conclusion","Red herring","Complex question"],a:1},
+{q:"Petitio Principii (begging the question) is committed when the conclusion is nothing more than a restatement of:",o:["The argument's form","At least one of the premises","The evidence","The definition"],a:1},
+{q:"The Red Herring Fallacy involves failing to address the issue and instead trying to:",o:["Use force","Distract the attention of the arguer","Appeal to pity","Beg the question"],a:1},
+{q:"Converse Accident is the fallacy of:",o:["Circular reasoning","Hasty generalization — conclusion premised on abnormal or exceptional cases","Ambiguity","False authority"],a:1},
+{q:"The Complex Question fallacy consists of asking a question that illegitimately presupposes some conclusion alluded to in the:",o:["Answer","Question","Premise","Evidence"],a:1},
+{q:"Equivocation occurs when an inference is invalid because a single word is used in:",o:["Two different senses","One clear sense","A formal sense","A scientific sense"],a:0},
+{q:"Amphiboly occurs when the whole sentence — contrasted with single words — is:",o:["Too long","Ambiguous due to its grammatical structure","Too short","Grammatically perfect"],a:1},
+{q:"Accent is the fallacy committed when the shift of meaning arises from changes in the emphasis given to its words or parts — in the latter it is referred to as:",o:["Equivocation","Sensationalism","Amphiboly","Complex question"],a:1},
+{q:"The Composition fallacy is committed when the attributes of the parts of a whole are ascribed to:",o:["The parts themselves","The whole","The observer","The argument"],a:1},
+{q:"Division is the reverse of the fallacy of Composition — it is fallacious to argue that what is true of the whole must also be true of its:",o:["Composition","Parts","Form","Definition"],a:1},
+{q:"A formal fallacy is an error based solely on the _____ of the argument rather than its content:",o:["Length","Form (structure)","Age","Popularity"],a:1},
+{q:"The Fallacy of Affirming the Consequent violates the formal rule of:",o:["Modus Tollens","Modus Ponens (MP)","Ad Hominem","Petitio Principii"],a:1},
+{q:"The Fallacy of Denying the Antecedent violates the rule of:",o:["Modus Ponens","Denying the consequent (Modus Tollens)","Existential fallacy","Ad Baculum"],a:1},
+{q:"The Fallacy of Four Terms occurs when a deductive argument has _____ instead of three:",o:["Two terms","Four terms","Five terms","One term"],a:1},
+{q:"The Existential Fallacy occurs when a categorical syllogism with a particular conclusion has two _____ premises:",o:["Particular","Universal","Negative","Affirmative"],a:1},
+{q:"The Fallacy of Illicit Major occurs when the major term is distributed in the conclusion but NOT in the:",o:["Minor premise","Major premise","Middle term","Conclusion"],a:1},
+{q:"The Fallacy of Illicit Minor occurs when the minor term is distributed in the conclusion but NOT in the:",o:["Major premise","Minor premise","Conclusion","Middle term"],a:1},
+{q:"The Fallacy of Excluded Premises occurs when both premises are:",o:["Affirmative","Negative propositions","Particular","Universal"],a:1},
+{q:"The Fallacy of Undistributed Middle occurs when the middle term is not distributed in either premise or the:",o:["Conclusion — it must be distributed at least once","Major term","Minor term","Copula"],a:0},
+{q:"The Fallacy of Drawing Affirmative Conclusion from Negative Premises violates the rule that every valid categorical syllogism with affirmative conclusion must have two _____ premises:",o:["Negative","Affirmative","Particular","Universal"],a:1},
+{q:"Science began in Mesopotamia, Egypt and Asia Minor about:",o:["2000 years ago","4000 years ago","6000 years ago","1000 years ago"],a:1},
+{q:"Thales (639–544 B.C.) is popularly called the founder of:",o:["Roman Philosophy","Greek Philosophy","Egyptian Philosophy","Persian Philosophy"],a:1},
+{q:"Aristotle studied ethics, politics, biology, cosmology and logic, and he developed a coherent system of thought that was the inspiration for:",o:["Medieval theology","Greek Science in the Hellenistic age","Roman law","Renaissance art"],a:1},
+{q:"The geocentric model of cosmology held that the _____ is at the centre of the universe:",o:["Sun","Earth","Moon","Stars"],a:1},
+{q:"Aristarchus (310–230 B.C.) projected the _____ model of cosmology:",o:["Geocentric","Heliocentric","Cosmocentric","Theocentric"],a:1},
+{q:"Copernicus (1473–1543) presented the heliocentric theory, which most scientists:",o:["Immediately accepted","Rejected","Debated for centuries","Found irrelevant"],a:1},
+{q:"Galileo Galilei (1564–1642) was tried and convicted of heresy by the church in:",o:["1600","1633","1650","1700"],a:1},
+{q:"During the Renaissance, 'Renaissance' is a French word meaning:",o:["Re-discovery","Re-birth","Re-education","Re-science"],a:1},
+{q:"William Harvey demonstrated that the heart pumps blood, previously attributed to:",o:["Newton","God-in-human bodies' mystical action","The brain","The lungs"],a:1},
+{q:"Positivism accepts that knowledge is not real unless it is scientifically:",o:["Popular","Verified","Ancient","Traditional"],a:1},
+{q:"The Duhem-Quine thesis explains that no scientific theory can be tested in:",o:["Isolation from other theories","Laboratories","Schools","Textbooks"],a:1},
+{q:"According to Thomas Kuhn, a paradigm shift occurs when:",o:["A scientist dies","A significant number of irregular observations arise in the old paradigm and a new paradigm overtakes it","A new textbook is published","A government changes"],a:1},
+{q:"Science cannot provide answers to questions about value, moral issues and:",o:["Gravity","The supernatural — which is beyond science","History","Language"],a:1},
+{q:"A useful scientific theory must be testable — meaning it can be potentially:",o:["Approved","Disapproved","Published","Funded"],a:1},
+{q:"Inductive reasoning begins with individual observations and uses them to develop generalizations or general principles — the generalization becomes the assumption that helps to interpret data from another:",o:["Textbook","Experiment","Tradition","Authority"],a:1},
+{q:"According to Occam's Razor Logic, in choosing between opposing hypotheses we prefer the:",o:["Oldest one","Simpler one","Most complex one","Most popular one"],a:1}
+]
+};
+const QS = [];
+const COUNTS = { "All": 0 };
+const ALL_CATS = ["All"];
+for (const [cat, qs] of Object.entries(ALL_DATA)) {
+  ALL_CATS.push(cat);
+  COUNTS[cat] = qs.length;
+  COUNTS["All"] += qs.length;
+  for (const q of qs) {
+    QS.push({ ...q, cat, opts: q.o });
+  }
+}
+const PRESETS=[10,20,30,50];
+
+let screen="start",selCat="All",selMode="immediate",selCount=20,customCount="",useCustom=false;
+let filtered=[],order=[],idx=0,score=0,answered={},secs=0,timerID=null,finalTime=0;
+
+function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function fmt(s){const m=Math.floor(s/60),r=s%60;return m>0?`${m}m ${r}s`:`${r}s`;}
+function tickTimer(){secs++;const el=document.getElementById('td');if(el)el.textContent=fmt(secs);}
+function startTimer(){clearInterval(timerID);secs=0;timerID=setInterval(tickTimer,1000);}
+function stopTimer(){clearInterval(timerID);finalTime=secs;}
+
+function getPool(){return selCat==="All"?[...QS]:QS.filter(q=>q.cat===selCat);}
+function getMaxQ(){return getPool().length;}
+function getEffectiveCount(){
+  const max=getMaxQ();
+  const n=useCustom?parseInt(customCount)||0:selCount;
+  return Math.min(Math.max(1,n),max);
+}
+
+function startQuiz(){
+  const pool=getPool();
+  const n=getEffectiveCount();
+  const shuffled=shuffle(pool.map((_,i)=>i)).slice(0,n);
+  filtered=pool;
+  order=shuffled;
+  idx=0;score=0;answered={};screen="quiz";
+  startTimer();render();
+}
+
+function pick(i){
+  if(answered[idx]!==undefined)return;
+  answered[idx]=i;
+  if(i===filtered[order[idx]].a)score++;
+  render();
+}
+function nav(d){idx=Math.max(0,Math.min(order.length-1,idx+d));render();}
+function finish(){stopTimer();screen="results";render();}
+function goHome(){stopTimer();screen="start";render();}
+function goReview(){screen="review";render();}
+function restartSame(){startQuiz();}
+function selCatFn(c){selCat=c;useCustom=false;render();}
+function selModeFn(m){selMode=m;render();}
+function selCountFn(n){selCount=n;useCustom=false;render();}
+function onCustomInput(v){
+  customCount=v;
+  useCustom=v.trim()!=="";
+  render();
+}
+
+function render(){
+  document.getElementById('app').innerHTML={start:renderStart,quiz:renderQuiz,results:renderResults,review:renderReview}[screen]();
+  if(screen==="start"){
+    const inp=document.getElementById('custom-input');
+    if(inp){inp.value=customCount;inp.addEventListener('input',e=>onCustomInput(e.target.value));}
+  }
+}
+
+function renderStart(){
+  const cats=ALL_CATS;
+  const max=getMaxQ();
+  const effective=getEffectiveCount();
+  const presetBtns=PRESETS.map(n=>{
+    const capped=Math.min(n,max);
+    const disabled=capped<1;
+    const isSelected=!useCustom&&selCount===n;
+    return`<button class="qcount-btn${isSelected?' selected':''}" onclick="selCountFn(${n})" ${disabled?'disabled':''}>${n}</button>`;
+  }).join('');
+
+  return`<div>
+    <div class="brand">MCQs</div>
+    <h1>Philosophy &amp; Logic Quiz</h1>
+    <p class="tagline">${COUNTS["All"]} questions across ${ALL_CATS.length - 1} topics. Configure your session below.</p>
+
+    <div class="section-label">Select category</div>
+    <div class="cat-grid">${cats.map(c=>`<div class="cat-card${selCat===c?' selected':''}" onclick="selCatFn('${c}')"><div class="cn">${c}</div><div class="cc">${COUNTS[c]} questions</div></div>`).join('')}</div>
+
+    <div class="section-label">Number of questions</div>
+    <div class="qcount-row">
+      <!-- ${presetBtns} -->
+      <button class="qcount-btn${!useCustom&&selCount===max?' selected':''}" onclick="selCountFn(${max})">All (${max})</button>
+      <div class="qcount-custom">
+        <input id="custom-input" type="number" min="1" max="${max}" placeholder="0" class="${useCustom?'selected-input':''}">
+        <span class="qcount-max">max ${max}</span>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#aaa;margin-top:-12px;margin-bottom:2rem">${effective} question${effective!==1?'s':''} selected · drawn randomly from the pool</p>
+
+    <div class="section-label">Answer mode</div>
+    <div class="mode-grid">
+      <div class="mode-card${selMode==='immediate'?' selected':''}" onclick="selModeFn('immediate')"><div class="mn">Immediate feedback</div><div class="md">See if you're right after each question</div></div>
+      <div class="mode-card${selMode==='end'?' selected':''}" onclick="selModeFn('end')"><div class="mn">Reveal at the end</div><div class="md">All answers shown on the results screen</div></div>
+    </div>
+
+    <button class="start-btn" onclick="startQuiz()">Start ${effective} question${effective!==1?'s':''} &#8594;</button>
+  </div>`;
+}
+
+function renderQuiz(){
+  const q=filtered[order[idx]],total=order.length,done=Object.keys(answered).length,pct=Math.round((done/total)*100),sel=answered[idx],isAns=sel!==undefined;
+  const opts=q.opts.map((o,i)=>{
+    let cls='opt';
+    if(isAns){cls+=' disabled';if(selMode==='immediate'){if(i===q.a)cls+=' correct';else if(i===sel&&sel!==q.a)cls+=' wrong';}else{if(i===sel)cls+=' pending';}}
+    return`<button class="${cls}"${isAns?'':` onclick="pick(${i})"`}>${String.fromCharCode(65+i)}. ${o}</button>`;
+  }).join('');
+  let fb='';
+  if(isAns&&selMode==='immediate')fb=`<div class="feedback ${sel===q.a?'correct':'wrong'}">${sel===q.a?'Correct!':'Incorrect — correct answer: '+q.opts[q.a]}</div>`;
+  else if(isAns&&selMode==='end')fb=`<div class="feedback pending">Answer recorded — results revealed at the end.</div>`;
+  return`<div>
+    <div class="quiz-header">
+      <div class="timer"><span class="tdot"></span><span id="td">${fmt(secs)}</span></div>
+      <span class="score-badge">${selMode==='immediate'?score+'/'+done+' correct':'Q '+(idx+1)+' of '+total}</span>
+    </div>
+    <div class="meta-bar">Q${idx+1} of ${total} &nbsp;·&nbsp; ${selCat} &nbsp;·&nbsp; ${selMode==='immediate'?'Immediate feedback':'Reveal at end'}</div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="question-card">
+      <div class="q-cat">${q.cat}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">${opts}</div>${fb}
+    </div>
+    <div class="nav-row">
+      <button class="btn" onclick="nav(-1)"${idx===0?' disabled':''}>&#8592; Prev</button>
+      <button class="btn ghost" onclick="goHome()">&#215; Quit</button>
+      ${idx<total-1?`<button class="btn primary" onclick="nav(1)"${!isAns?' disabled':''}>Next &#8594;</button>`:`<button class="btn primary" onclick="finish()"${!isAns?' disabled':''}>Finish &#10003;</button>`}
+    </div>
+  </div>`;
+}
+
+function renderResults(){
+  const total=order.length,pct=Math.round((score/total)*100),wrong=total-score;
+  return`<div class="results">
+    <div class="big-score">${pct}%</div>
+    <div class="sub">You scored ${score} out of ${total}</div>
+    <div class="time-taken">Time: ${fmt(finalTime)} &nbsp;·&nbsp; ${selCat} &nbsp;·&nbsp; ${selMode==='immediate'?'Immediate feedback':'Reveal at end'}</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-n" style="color:#2a7a2a">${score}</div><div class="stat-l">Correct</div></div>
+      <div class="stat"><div class="stat-n" style="color:#b02020">${wrong}</div><div class="stat-l">Incorrect</div></div>
+      <div class="stat"><div class="stat-n">${total}</div><div class="stat-l">Questions</div></div>
+    </div>
+    <div class="rbtns">
+      <button class="btn primary" onclick="restartSame()">Retry</button>
+      <button class="btn" onclick="goHome()">Change settings</button>
+      <button class="btn" onclick="goReview()">Review answers</button>
+    </div>
+  </div>`;
+}
+
+function renderReview(){
+  const total=order.length;
+  let html=`<div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap">
+      <button class="btn" onclick="screen='results';render()">&#8592; Results</button>
+      <span style="font-size:13px;color:#888">${total} questions · ${fmt(finalTime)} · ${score}/${total} correct</span>
+    </div>`;
+  order.forEach((qi,i)=>{
+    const q=filtered[qi],sel=answered[i],ok=sel===q.a;
+    const sc=sel===undefined?'#aaa':ok?'#2a7a2a':'#b02020';
+    const sl=sel===undefined?'Not answered':ok?'Correct':'Incorrect';
+    html+=`<div class="review-card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <span style="font-size:11px;color:#bbb;text-transform:uppercase;letter-spacing:.5px">${i+1}. ${q.cat}</span>
+        <span style="font-size:12px;font-weight:500;color:${sc}">${sl}</span>
+      </div>
+      <div class="q-text" style="font-size:14px;margin-bottom:10px">${q.q}</div>
+      <div class="options">${q.opts.map((o,oi)=>{let c='opt disabled';if(oi===q.a)c+=' correct';else if(oi===sel&&sel!==q.a)c+=' wrong';return`<div class="${c}">${String.fromCharCode(65+oi)}. ${o}</div>`;}).join('')}</div>
+      ${sel===undefined?`<div class="feedback wrong">Not answered. Correct: ${q.opts[q.a]}</div>`:ok?`<div class="feedback correct">Correct!</div>`:`<div class="feedback wrong">You chose: ${q.opts[sel]}. Correct: ${q.opts[q.a]}</div>`}
+    </div>`;
+  });
+  html+='</div>';
+  return html;
+}
+
+render();
+</script>
+</body>
+</html>
