@@ -8,8 +8,8 @@ import { generateQuizPool } from './data/dataUtils';
 export default function App() {
   const [screen, setScreen] = useState('start');
   const [quizState, setQuizState] = useState({
-    selSubject: 'philosophy',
-    selSubjectTitle: '',
+    selCourse: 'philosophy',
+    selCourseTitle: '',
     selCat: 'All',
     selMode: 'immediate',
     filtered: [],
@@ -20,11 +20,11 @@ export default function App() {
     finalTime: 0
   });
 
-  const handleStart = (subjectId, category, mode, count, subjectTitle) => {
-    const { filtered, order } = generateQuizPool(subjectId, category, count);
+  const handleStart = (courseId, category, mode, count, courseTitle) => {
+    const { filtered, order } = generateQuizPool(courseId, category, count);
     setQuizState({
-      selSubject: subjectId,
-      selSubjectTitle: subjectTitle,
+      selCourse: courseId,
+      selCourseTitle: courseTitle,
       selCat: category,
       selMode: mode,
       filtered,

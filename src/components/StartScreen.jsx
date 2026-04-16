@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { getSubjects, getSubjectStats, SUBJECTS } from '../data/dataUtils';
+import { getCourses, getCourseStats, COURSES } from '../data/dataUtils';
+import CurvyBackground from './CurvyBackground';
 
 export default function StartScreen({ onStart }) {
-  const subjects = getSubjects();
+  const courses = getCourses();
 
-  const [selSubject, setSelSubject] = useState(subjects[0].id);
+  const [selCourse, setSelCourse] = useState(courses[0].id);
   const [selCat, setSelCat] = useState('All');
   const [selMode, setSelMode] = useState('immediate');
   const [selCount, setSelCount] = useState(20);
   const [customCount, setCustomCount] = useState('');
   const [useCustom, setUseCustom] = useState(false);
-  const [stats, setStats] = useState(getSubjectStats(subjects[0].id));
+  const [stats, setStats] = useState(getCourseStats(courses[0].id));
 
   useEffect(() => {
-    const s = getSubjectStats(selSubject);
+    const s = getCourseStats(selCourse);
     setStats(s);
     setSelCat('All');
     setUseCustom(false);
-  }, [selSubject]);
+  }, [selCourse]);
 
   const max = stats.max;
   const catMax = stats.catCounts[selCat] || max;
@@ -25,33 +26,31 @@ export default function StartScreen({ onStart }) {
   const presets = [10, 20, 30, 50];
 
   const handleStart = () => {
-    const subjectTitle = SUBJECTS[selSubject].title;
-    onStart(selSubject, selCat, selMode, effective, subjectTitle);
+    const courseTitle = COURSES[selCourse].title;
+    onStart(selCourse, selCat, selMode, effective, courseTitle);
   };
 
   return (
     <div className="page-bg">
-      <div className="blob blob-1" />
-      <div className="blob blob-2" />
-      <div className="blob blob-3" />
+      <CurvyBackground />
 
-      <div className="start-header">
-        <h1>What will you be<br />studying today?</h1>
-        <p>Choose your subject and customise your quiz session</p>
-      </div>
+      {/* <div className="start-header">
+        <h1>Exam Help Portal</h1>
+        <p>Select a course and start your test to sharpen your knowledge</p>
+      </div> */}
 
-      {/* Subject */}
+      {/* Course */}
       <div style={{ width: '100%', maxWidth: 480, position: 'relative', zIndex: 1 }}>
-        <div className="section-label">Choose Subject</div>
-        <div className="subject-grid">
-          {subjects.map(s => (
+        <div className="section-label">Choose Course</div>
+        <div className="course-grid">
+          {courses.map(s => (
             <div
               key={s.id}
-              className={`subject-card ${selSubject === s.id ? 'selected' : ''}`}
-              onClick={() => setSelSubject(s.id)}
+              className={`course-card ${selCourse === s.id ? 'selected' : ''}`}
+              onClick={() => setSelCourse(s.id)}
             >
-              <div className="subject-title">{s.title}</div>
-              <div className="subject-desc">{s.desc}</div>
+              <div className="course-title">{s.title}</div>
+              <div className="course-desc">{s.desc}</div>
             </div>
           ))}
         </div>
@@ -114,14 +113,14 @@ export default function StartScreen({ onStart }) {
             className={`mode-card ${selMode === 'immediate' ? 'selected' : ''}`}
             onClick={() => setSelMode('immediate')}
           >
-            <div className="mn">⚡ Immediate</div>
+            <div className="mn"> Immediate</div>
             <div className="md">See if you're right after each answer</div>
           </div>
           <div
             className={`mode-card ${selMode === 'end' ? 'selected' : ''}`}
             onClick={() => setSelMode('end')}
           >
-            <div className="mn">📋 Reveal at end</div>
+            <div className="mn"> Reveal at end</div>
             <div className="md">All answers shown on results screen</div>
           </div>
         </div>

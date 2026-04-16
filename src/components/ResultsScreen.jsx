@@ -1,4 +1,5 @@
 import React from 'react';
+import CurvyBackground from './CurvyBackground';
 
 const formatTime = (s) => {
   const m = Math.floor(s / 60);
@@ -7,7 +8,7 @@ const formatTime = (s) => {
 };
 
 export default function ResultsScreen({ quizState, onRetry, onChangeSettings, onReview }) {
-  const { order, score, finalTime, selCat, selMode, selSubjectTitle } = quizState;
+  const { order, score, finalTime, selCat, selMode, selCourseTitle } = quizState;
   const total = order.length;
   const pct = Math.round((score / total) * 100) || 0;
   const wrong = total - score;
@@ -22,9 +23,7 @@ export default function ResultsScreen({ quizState, onRetry, onChangeSettings, on
 
   return (
     <div className="page-bg">
-      <div className="blob blob-1" />
-      <div className="blob blob-2" />
-      <div className="blob blob-3" />
+      <CurvyBackground />
 
       <div className="results-card">
         <div className="results-big">
@@ -37,7 +36,7 @@ export default function ResultsScreen({ quizState, onRetry, onChangeSettings, on
             You scored {score} out of {total} · {formatTime(finalTime)}
           </div>
           <div style={{ fontSize: 12, color: '#9ca3af', marginBottom: '1.25rem' }}>
-            {selSubjectTitle} · {selCat} · {selMode === 'immediate' ? 'Immediate' : 'Reveal at end'}
+            {selCourseTitle} · {selCat} · {selMode === 'immediate' ? 'Immediate' : 'Reveal at end'}
           </div>
 
           <div className="stat-grid">

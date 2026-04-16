@@ -17,10 +17,10 @@ for (const [cat, qs] of Object.entries(philosophyData)) {
 // Science data is already a flat array, but let's just use it directly
 const normalizedScienceData = scienceData;
 
-export const SUBJECTS = {
+export const COURSES = {
   philosophy: {
     title: "Philosophy & Logic",
-    desc: "120 qs across Historical Background, Branches, Doctrines, Logic & Arguments, etc.",
+    desc: "Multi-choice Questions across Historical Background, Branches, Doctrines, Logic & Arguments, etc.",
     data: normalizedPhilosophyData
   },
   science: {
@@ -30,14 +30,14 @@ export const SUBJECTS = {
   }
 };
 
-export const getSubjects = () => [
-  { id: 'science', title: SUBJECTS.science.title, desc: SUBJECTS.science.desc },
-  { id: 'philosophy', title: SUBJECTS.philosophy.title, desc: SUBJECTS.philosophy.desc }
+export const getCourses = () => [
+  { id: 'philosophy', title: COURSES.philosophy.title, desc: COURSES.philosophy.desc },
+  { id: 'science', title: COURSES.science.title, desc: COURSES.science.desc }
 ];
 
-export const getSubjectStats = (subjectId) => {
-  if (!subjectId || !SUBJECTS[subjectId]) return { max: 0, categories: [], catCounts: {} };
-  const data = SUBJECTS[subjectId].data;
+export const getCourseStats = (courseId) => {
+  if (!courseId || !COURSES[courseId]) return { max: 0, categories: [], catCounts: {} };
+  const data = COURSES[courseId].data;
   
   const catCounts = { "All": data.length };
   const cats = new Set();
@@ -65,8 +65,8 @@ export const shuffle = (array) => {
 };
 
 // Gets the list of questions for the quiz
-export const generateQuizPool = (subjectId, category, count) => {
-  const data = SUBJECTS[subjectId].data;
+export const generateQuizPool = (courseId, category, count) => {
+  const data = COURSES[courseId].data;
   const pool = category === "All" ? [...data] : data.filter(q => q.cat === category);
   const n = Math.min(Math.max(1, count), pool.length);
   const shuffledOrders = shuffle(pool.map((_, i) => i)).slice(0, n);

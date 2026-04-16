@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import CurvyBackground from './CurvyBackground';
 
 const formatTime = (s) => {
   const m = Math.floor(s / 60);
@@ -12,11 +13,11 @@ export default function QuizScreen({ quizState, onAnswer, onNav, onFinish, onQui
   const [revealed, setRevealed] = useState(false);
   const [localSel, setLocalSel] = useState(null);
 
-  const { filtered, order, idx, score, answered, selMode, selSubjectTitle } = quizState;
+  const { filtered, order, idx, score, answered, selMode, selCourseTitle } = quizState;
   const q = filtered[order[idx]];
   const total = order.length;
   const done = Object.keys(answered).length;
-  const progress = Math.round(((idx) / total) * 100);
+  const progress = Math.round(((idx + 1) / total) * 100);
   const prevSel = answered[idx];
   const isAns = prevSel !== undefined;
 
@@ -35,7 +36,7 @@ export default function QuizScreen({ quizState, onAnswer, onNav, onFinish, onQui
       setLocalSel(null);
       setRevealed(false);
     }
-  }, [idx]);
+  }, [idx, prevSel, selMode]);
 
   const handleSelect = (i) => {
     if (revealed || (selMode === 'immediate' && localSel !== null)) return;
@@ -45,35 +46,11 @@ export default function QuizScreen({ quizState, onAnswer, onNav, onFinish, onQui
 
     if (selMode === 'immediate') {
       setRevealed(true);
-      // Auto-advance after 1200ms if not last question
+      // Auto-advance after 1400ms if not last question
       if (idx < total - 1) {
         setTimeout(() => onNav(1), 1400);
       }
     }
-  };
-
-  const handleManualNav = (dir) => {
-    setRevealed(false);
-    setLocalSel(null);
-    onNav(dir);
-  };
-
-  const handleManualFinish = () => {
-    onFinish(secs);
-  };
-
-  const getOptClass = (i) => {
-    if (!revealed && selMode === 'end') {
-      // end mode: just show selected highlight, no lock
-      if (localSel === i) return 'opt-pending';
-      return 'opt-default';
-    }
-    if (!revealed) return 'opt-default'; // immediate, not yet answered
-
-    // Revealed (immediate mode OR reviewing):
-    if (i === q.a) return 'opt-correct';
-    if (i === localSel && localSel !== q.a) return 'opt-wrong';
-    return 'opt-dimmed';
   };
 
   const scoreLabel = selMode === 'immediate'
@@ -82,155 +59,103 @@ export default function QuizScreen({ quizState, onAnswer, onNav, onFinish, onQui
 
   return (
     <div className="page-bg">
-      <div className="blob blob-1" />
-      <div className="blob blob-2" />
-      <div className="blob blob-3" />
+      <CurvyBackground /> 
 
       <div className="page-header">
-        <h1>{selSubjectTitle || 'Quiz'}</h1>
-        <p>Answer each question to test your knowledge</p>
+        <h1>{selCourseTitle}</h1>
+        <p>Answer the questions to test your knowledge</p>
       </div>
 
       <AnimatePresence mode="wait">
         <motion.div
           key={idx}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.35 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.3 }}
           className="card"
         >
-          {/* Progress bar */}
-          <div style={{ marginBottom: '1.25rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
-              <span style={{ fontSize: 12, color: '#9ca3af', fontWeight: 500 }}>
-                Question {String(idx + 1).padStart(2, '0')} of {String(total).padStart(2, '0')}
-              </span>
-              <span style={{ fontSize: 11, color: '#7c3aed', fontWeight: 600, background: '#f3f0ff', borderRadius: 99, padding: '3px 10px' }}>
-                {q.cat}
-              </span>
-            </div>
-            <div style={{ height: 6, background: '#e5e7eb', borderRadius: 99, overflow: 'hidden' }}>
+          {/* Progress row */}
+          <div className="progress-row">
+            <div className="progress-track">
               <motion.div
-                style={{ height: '100%', background: '#7c3aed', borderRadius: 99 }}
-                initial={{ width: `${Math.max(2, Math.round(((idx - 1) / total) * 100))}%` }}
-                animate={{ width: `${Math.max(2, progress)}%` }}
+                className="progress-fill"
+                initial={{ width: `${Math.max(2, Math.round(((idx) / total) * 100))}%` }}
+                animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.5 }}
               />
             </div>
+            <span className="progress-label">{progress}% Complete</span>
           </div>
 
-          {/* Score / timer row */}
-          <div className="quiz-badge-row">
-            <div className="timer-badge">
-              <span className="tdot" />
-              <span>{formatTime(secs)}</span>
-            </div>
-            <span className="score-badge">{scoreLabel}</span>
+          {/* Question Counter */}
+          <div className="q-counter">
+            Question {String(idx + 1).padStart(2, '0')} of {String(total).padStart(2, '0')}
           </div>
 
-          {/* Question */}
-          <div style={{ marginBottom: '1.5rem' }}>
-            <div className="select-label" style={{ marginBottom: 6 }}>Select Your Answer</div>
-            <h2 style={{ fontSize: 18, fontWeight: 700, lineHeight: 1.5, color: '#111827' }}>
-              {q.q}
-            </h2>
-          </div>
+          {/* Question Text */}
+          <h2 className="q-text">{q.q}</h2>
 
-          {/* Options */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: '1.5rem' }}>
+          <div className="select-label">Select Your Answer:</div>
+
+          {/* Options List */}
+          <div className="options">
             {q.opts.map((o, i) => {
-              const cls = getOptClass(i);
-              const isCorrect = revealed && i === q.a;
-              const isWrong = revealed && i === localSel && localSel !== q.a;
-              const isClickable = !revealed && (selMode === 'end' || localSel === null);
+              const isSelected = localSel === i;
+              
+              let feedbackCls = "";
+              if (revealed) {
+                if (i === q.a) feedbackCls = "correct";
+                else if (isSelected) feedbackCls = "wrong";
+              }
 
               return (
-                <motion.button
-                  key={i}
-                  whileHover={isClickable ? { scale: 1.02 } : {}}
-                  whileTap={isClickable ? { scale: 0.98 } : {}}
+                <div 
+                  key={i} 
+                  className={`opt-row ${isSelected ? 'selected' : ''} ${feedbackCls}`}
                   onClick={() => handleSelect(i)}
-                  disabled={revealed && selMode === 'immediate'}
-                  className={`opt-btn ${cls}`}
                 >
-                  {/* Letter badge */}
-                  <span className="opt-badge">
-                    {String.fromCharCode(65 + i)}
-                  </span>
-                  <span className="opt-label">{o}</span>
-
-                  {/* Result icons */}
-                  <AnimatePresence>
-                    {isCorrect && (
-                      <motion.span
-                        key="check"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        style={{ marginLeft: 'auto', fontSize: 18, flexShrink: 0 }}
-                      >
-                        ✓
-                      </motion.span>
-                    )}
-                    {isWrong && (
-                      <motion.span
-                        key="cross"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        style={{ marginLeft: 'auto', fontSize: 18, flexShrink: 0 }}
-                      >
-                        ✗
-                      </motion.span>
-                    )}
-                  </AnimatePresence>
-                </motion.button>
+                  <div className="opt-radio-circle">
+                    <div className="opt-radio-inner" />
+                  </div>
+                  <span className="opt-text-label">{o}</span>
+                </div>
               );
             })}
           </div>
 
-          {/* Feedback (immediate mode) */}
-          {revealed && selMode === 'immediate' && (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`feedback ${localSel === q.a ? 'correct' : 'wrong'}`}
-              style={{ marginBottom: '1rem' }}
+          {/* Nav Buttons */}
+          <div className="nav-row" style={{ justifyContent: 'flex-end', marginTop: '1rem' }}>
+            <button 
+              className="btn-back" 
+              onClick={() => onNav(-1)} 
+              disabled={idx === 0}
             >
-              {localSel === q.a
-                ? '✓ Correct!'
-                : `✗ Incorrect — correct answer: ${q.opts[q.a]}`}
-            </motion.div>
-          )}
-
-          {/* Navigation */}
-          <div className="nav-row">
-            {selMode === 'end' ? (
-              <>
-                <button className="btn-back" onClick={() => handleManualNav(-1)} disabled={idx === 0}>
-                  Back
-                </button>
-                <button className="btn-quit" onClick={onQuit}>✕ Quit</button>
-                {idx < total - 1 ? (
-                  <button className="btn-next" onClick={() => handleManualNav(1)} disabled={localSel === null}>
-                    Next →
-                  </button>
-                ) : (
-                  <button className="btn-next" onClick={handleManualFinish} disabled={localSel === null}>
-                    Finish ✓
-                  </button>
-                )}
-              </>
+              Back
+            </button>
+            
+            {idx < total - 1 ? (
+              <button 
+                className="btn-next" 
+                onClick={() => onNav(1)} 
+                disabled={localSel === null && selMode === 'end'}
+              >
+                Next
+              </button>
             ) : (
-              /* Immediate mode: auto-advances, just show Quit + manual Finish on last */
-              <>
-                <button className="btn-quit" onClick={onQuit}>✕ Quit</button>
-                {idx === total - 1 && revealed && (
-                  <button className="btn-next" onClick={handleManualFinish}>
-                    Finish ✓
-                  </button>
-                )}
-              </>
+              <button 
+                className="btn-next" 
+                onClick={() => onFinish(secs)} 
+                disabled={localSel === null}
+              >
+                Finish
+              </button>
             )}
+          </div>
+
+          {/* Quit link at very bottom */}
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+             <button className="btn-quit" onClick={onQuit} style={{ color: '#a1a1aa', fontSize: '14px', textDecoration: 'underline' }}>Quit Quiz</button>
           </div>
         </motion.div>
       </AnimatePresence>

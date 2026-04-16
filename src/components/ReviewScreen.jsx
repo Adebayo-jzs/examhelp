@@ -1,4 +1,5 @@
 import React from 'react';
+import CurvyBackground from './CurvyBackground';
 
 const formatTime = (s) => {
   const m = Math.floor(s / 60);
@@ -23,11 +24,9 @@ export default function ReviewScreen({ quizState, onBack }) {
 
   return (
     <div className="page-bg">
-      <div className="blob blob-1" />
-      <div className="blob blob-2" />
-      <div className="blob blob-3" />
+      <CurvyBackground />
 
-      <div style={{ width: '100%', maxWidth: 480, position: 'relative', zIndex: 1 }}>
+      <div style={{ width: '100%', maxWidth: 1000, position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: '1.5rem' }}>
           <button className="btn-back" onClick={onBack}>← Results</button>
@@ -35,7 +34,7 @@ export default function ReviewScreen({ quizState, onBack }) {
             {score}/{total} correct · {formatTime(finalTime)}
           </span>
         </div>
-
+        <div className='review-cards-container'>
         {order.map((qi, i) => {
           const q = filtered[qi];
           const sel = answered[i];
@@ -90,6 +89,7 @@ export default function ReviewScreen({ quizState, onBack }) {
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );
