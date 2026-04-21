@@ -34,10 +34,15 @@ export default function StartScreen({ onStart }) {
     <div className="page-bg">
       <CurvyBackground />
 
-      {/* <div className="start-header">
+      <div className="start-header">
         <h1>Exam Help Portal</h1>
         <p>Select a course and start your test to sharpen your knowledge</p>
-      </div> */}
+        <div style={{ marginTop: '1rem' }}>
+          <a href="/notes" style={{ color: '#c4b5fd', fontSize: '14px', textDecoration: 'none', borderBottom: '1px solid #c4b5fd' }}>
+            Origins and Science Summary Notes&rarr;
+          </a>
+        </div>
+      </div>
 
       {/* Course */}
       <div style={{ width: '100%', maxWidth: 480, position: 'relative', zIndex: 1 }}>

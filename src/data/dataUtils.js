@@ -41,7 +41,7 @@ export const COURSES = {
 };
 
 export const getCourses = () => [
-  { id: 'philosophy', title: COURSES.philosophy.title, desc: COURSES.philosophy.desc },
+  // { id: 'philosophy', title: COURSES.philosophy.title, desc: COURSES.philosophy.desc },
   { id: 'science', title: COURSES.science.title, desc: COURSES.science.desc }
 ];
 

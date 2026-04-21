@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import StartScreen from './components/StartScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultsScreen from './components/ResultsScreen';
 import ReviewScreen from './components/ReviewScreen';
+import NotesPage from './components/NotesPage';
 import { generateQuizPool } from './data/dataUtils';
 
 export default function App() {
@@ -97,7 +99,7 @@ export default function App() {
     setScreen('quiz');
   };
 
-  return (
+  const MainQuizApp = () => (
     <div className="container">
       {screen === 'start' && <StartScreen onStart={handleStart} />}
       
@@ -127,5 +129,12 @@ export default function App() {
         />
       )}
     </div>
+  );
+
+  return (
+    <Routes>
+      <Route path="/" element={<MainQuizApp />} />
+      <Route path="/notes" element={<NotesPage />} />
+    </Routes>
   );
 }
