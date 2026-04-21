@@ -1,5 +1,5 @@
 import { philosophyData } from './philosophy';
-import { scienceData } from './science';
+import { OriginsAndScience } from './science';
 
 // Normalize Philosophy data from object into flat array
 const normalizedPhilosophyData = [];
@@ -14,8 +14,18 @@ for (const [cat, qs] of Object.entries(philosophyData)) {
   }
 }
 
-// Science data is already a flat array, but let's just use it directly
-const normalizedScienceData = scienceData;
+// Normalize Science data from object into flat array
+const normalizedScienceData = [];
+for (const [cat, qs] of Object.entries(OriginsAndScience)) {
+  for (const q of qs) {
+    normalizedScienceData.push({
+      cat,
+      q: q.q,
+      opts: q.o,
+      a: q.a
+    });
+  }
+}
 
 export const COURSES = {
   philosophy: {
