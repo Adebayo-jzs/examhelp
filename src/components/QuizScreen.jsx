@@ -46,10 +46,6 @@ export default function QuizScreen({ quizState, onAnswer, onNav, onFinish, onQui
 
     if (selMode === 'immediate') {
       setRevealed(true);
-      // Auto-advance after 1400ms if not last question
-      if (idx < total - 1) {
-        setTimeout(() => onNav(1), 1400);
-      }
     }
   };
 
